@@ -50,4 +50,8 @@ function readOutLoud(message) {
 //Shashank 2
 //Sanket Raikwar Edit
 //Sanket Raikwar edit2
+<<<<<<< HEAD
 //Shashank 3
+=======
+//Shubham Shrivas edit 0709 at 21.47
+>>>>>>> bbc4dee523da710a1ba78b487b4df30816d6205e
