@@ -47,6 +47,10 @@ function readOutLoud(message) {
     window.speechSynthesis.speak(speech);
 };
 //Shashank
+//Shashank 2
 //Sanket Raikwar Edit
 //Sanket Raikwar edit2
 //Sanket Raikwar edit3
+//Shashank 3
+//Shubham Shrivas edit 0709 at 21.47
+//Tithi Joshi
