@@ -1,12 +1,18 @@
+import React from 'react';
 import './App.css';
-import Chatbot from './Chat bot/Chatbot';
+import Categorysection from './Components/CategorySection/Categorysection';
+import Chatbot from './Components/Chat bot/Chatbot';
 
-function App() {
+class App extends React.Component {
+  render() {
   return (
     <div className="App">
+    
     <Chatbot/>
+    <Categorysection />
     </div>
   );
+  }
 }
 
 export default App;
