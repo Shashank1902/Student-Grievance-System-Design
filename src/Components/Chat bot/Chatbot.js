@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./chatbot.css";
 import Message from "./Message/Message";
@@ -6,11 +6,14 @@ import Message from "./Message/Message";
 function Chatbot() {
   const [botMsg, setBotMsg] = useState("");
   const [clientMsg, setClientMsg] = useState("");
+  const [messages, setMessages] = useState([]);
 
   const message = useRef();
 
   const handleClientMsg = function() {
     setClientMsg(message.current.value);
+    messages.push({isClient: true, msgTxt: message.current.value});
+    console.log(messages);
     console.log(clientMsg);
   }
 
@@ -20,11 +23,21 @@ function Chatbot() {
       .post("http://localhost:3000/chatbot", { message: message.current.value })
       .then((response) => {
         console.log(response.data);
+        messages.push({isClient: false, msgTxt: response.data});
         setBotMsg(response.data);
       });
-
-    console.log(message.current.value);
   };
+
+  const messageEl = useRef(null);
+
+  useEffect(() => {
+    if (messageEl) {
+      messageEl.current.addEventListener('DOMNodeInserted', event => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
+      });
+    }
+  }, [])
 
   return (
     <>
@@ -33,9 +46,8 @@ function Chatbot() {
           <img className="chatbot-avatar-img" src="assets/chatbot-avatar.png" alt=""/>
         </div>
 
-        <div className="message-container">
-          <Message client={1} clientMsg={clientMsg}/>
-          <Message client={0} botMsg={botMsg}/>
+        <div className="message-container" ref={messageEl}>
+          {messages.map((clientMessage, i) => (<Message key={i} isClient={clientMessage.isClient} msg={clientMessage.msgTxt}/>))}
         </div>
         <form onSubmit={handleClick}>
           <div className="input-container">

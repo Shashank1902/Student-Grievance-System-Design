@@ -1,11 +1,11 @@
 import "./message.css"
 
-function Message({client, botMsg, clientMsg}) {
-    console.log(client, botMsg, clientMsg);
+function Message({isClient, msg}) {
+    console.log(isClient, msg);
     return(
         <>
-        <div className={client ? "clientMsg" : "botMsg" }>
-            <div className="msg-box">{client ? clientMsg : botMsg}</div>
+        <div className={isClient ? "clientMsg" : "botMsg"}>
+            <div className="msg-box">{msg}</div>
             <img
               className="message-avatar"
               src="assets/chatbot-avatar.png"
