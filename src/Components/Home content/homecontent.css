@@ -1,14 +1,17 @@
-.homecontent-txt{
-    
-  text-align: justify;
-  position: absolute;
-  width: 790px;
-  height: 99px;
-  left: 80px;
-  top: 160px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
+.homecontent{
+  display: flex;
   font-size: 24px;
-  line-height: 136%;
+  overflow-x: hidden;
+}
+
+.homecontent-txt-container {
+  width: 60%;
+}
+
+.homeImage-container {
+  width: 40%
+}
+
+.homeImage {
+  width: 100%;
 }
