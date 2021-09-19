@@ -1,0 +1,17 @@
+.homecontent{
+  display: flex;
+  font-size: 24px;
+  overflow-x: hidden;
+}
+
+.homecontent-txt-container {
+  width: 60%;
+}
+
+.homeImage-container {
+  width: 40%
+}
+
+.homeImage {
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+.clientMsg {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+.botMsg {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 5px;
+}
