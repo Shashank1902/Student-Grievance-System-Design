@@ -1,0 +1,25 @@
+.foot-container{
+    background-color: #814AC6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400px;
+    color: white;
+    padding-bottom: 20px;
+    
+}
+
+.foot{
+    margin: 4px;
+  display: flex;
+ justify-content: space-around;
+  
+    line-height: 24px;
+    font-size: 15px;
+
+}
+.footbars{
+    border-spacing: 3px;
+    border-top: solid white 4px ;
+    text-align: center;
+    border-bottom:solid white 4px ;
+    
+}
