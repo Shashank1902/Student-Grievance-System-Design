@@ -3,8 +3,8 @@ import "./grievanceform.css";
 function Grievanceform() {
   return (
     <>
-      <h1>Report Your Grievance Here</h1>
       <form className="grievanceForm">
+        <p className="formTitle">Report Your Grievance Here:</p>
         <div className="inputContainer1">
           <label className="inputLabel1" htmlFor="Type_of_Complaint">
             Type of Complaint:
@@ -13,8 +13,9 @@ function Grievanceform() {
             className="formSelect1"
             name="Type of Complaint"
             id="Type_of_Complaint"
+            defaultValue="-"
           >
-            <option value="" disabled selected>
+            <option value="-" disabled>
               Select Grievance Type
             </option>
             <option value="Academic">Academic</option>
@@ -31,8 +32,9 @@ function Grievanceform() {
             name="Category"
             placeholder="Select Category"
             id="Category"
+            defaultValue="-"
           >
-            <option value="" disabled selected>
+            <option value="-" disabled>
               Select Grievance Category
             </option>
             <option value="Category1">Category1</option>
@@ -45,30 +47,29 @@ function Grievanceform() {
             Your Grievance:
           </label>
 
-          <input
+          <textarea
             className="formSelect3"
             type="text"
             id="Your_grievance"
             name="Your grievance"
             placeholder="Type Your Grievance"
-          />
+          ></textarea>
         </div>
 
-        <div>
-          <label>
-            <input
-              className="chatbox"
-              id="Submit_Anonymously"
-              name="Submit Anonymously"
-              type="checkbox"
-            />
-          </label>
+        <div className="checkboxContainer">
+          <input
+            className="checkbox"
+            id="Submit_Anonymously"
+            name="Submit Anonymously"
+            type="checkbox"
+          />
+
           <label className="labelAnonymously" htmlFor="Submit_Anonymously">
             Submit Anonymously
           </label>
         </div>
 
-        <div className="button">
+        <div className="buttonContainer">
           <label htmlFor="submit">
             <button className="buttonSubmit" id="submit">
               Submit

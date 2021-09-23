@@ -4,12 +4,12 @@ function HomeContent() {
     <>
       <div className="homecontent">
         <div className="homecontent-txt-container">
-          <p classname="homecontent-txt">
+          <p className="homecontent-txt">
             This Web Application is developed to provide students with a
             platform where an easy, user-friendly interface serves the purpose
             of lodging complaints in a more formal pattern.{" "}
           </p>
-          <p classname="homecontent-txt">
+          <p className="homecontent-txt">
             It allows users to lay forward their grievances belonging to any of
             our specified categories of academic and/or non-academic issues. The
             college admin would look into all the lodged complaints and solve
@@ -17,7 +17,7 @@ function HomeContent() {
           </p>
         </div>
         <div className="homeImage-container">
-          <img className="homeImage" src="assets/images/student-home-img.png" />
+          <img className="homeImage" src="assets/images/student-home-img.png" alt=""/>
         </div>
       </div>
     </>
