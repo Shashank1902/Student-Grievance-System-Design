@@ -24,7 +24,7 @@ function Categorysection() {
               alt="mental-health-logo"
             />
             <div className="category-text">
-              <p>Fee Realted Issues</p>
+              <p>Fee Related Issues</p>
             </div>
           </div>
 
