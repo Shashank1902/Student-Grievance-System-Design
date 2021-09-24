@@ -1,17 +1,28 @@
 .homecontent{
-  display: flex;
   font-size: 24px;
   overflow-x: hidden;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -5%;
+  margin-bottom: -10%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .homecontent-txt-container {
-  width: 60%;
+  width: 50%;
+}
+
+.homecontent-txt {
+  margin: 40px 0;
 }
 
 .homeImage-container {
-  width: 40%
+  width: 45%;
+  align-self: flex-end;
 }
 
 .homeImage {
-  width: 100%;
+  width: 110%;
 }

@@ -1,33 +1,26 @@
 .title {
-    font-family: Roboto Mono;
-    font-style: normal;
-    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
     font-size: 64px;
-    line-height: 84px;
-    letter-spacing: 0.15em;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: flex-start;
-    justify-content: space-between;
-    font-family: Poppins;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 33px;
-    letter-spacing: 0em;
-    text-align: left;
-
 }
 
 .angular {
     color: #FF004D;
+    margin: 0 0px;
+}
+
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-container1 {
     display: flex;
-    justify-content: flex-start;
     justify-content: space-between;
     width: 50%;
     align-self: center;
@@ -36,9 +29,8 @@
 
 .nav-container2 {
     display: flex;
-    justify-content: flex-end;
     justify-content: space-between;
-    width: 9%;
+    width: 10%;
 }
 
 .icon {
