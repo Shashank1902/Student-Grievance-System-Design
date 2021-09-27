@@ -5,6 +5,8 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
+import Categorysection from "../Components/CategorySection/Categorysection";
+
 
 class StudentCommunity extends React.Component {
   render() {
@@ -14,6 +16,7 @@ class StudentCommunity extends React.Component {
         <Grievanceform />
         <Chatbot />
         <Footbar />
+        <Categorysection />
       </div>
     );
   }
