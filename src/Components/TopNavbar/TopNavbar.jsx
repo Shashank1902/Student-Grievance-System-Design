@@ -12,7 +12,9 @@ function TopNavbar() {
                 </div>
                 <div className="flex-container">
                     <div className="nav-container1">
+                       
                         <span className="nav-item">Home</span>
+                       
                         <span className="nav-item">Student Community</span>
                         <span className="nav-item">Help</span>
                         <span className="nav-item">Contact</span>
