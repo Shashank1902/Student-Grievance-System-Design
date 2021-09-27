@@ -1,6 +1,5 @@
 import "./categorysection.css";
-import {Link} from 'react-router-dom'
-// import {HashLink as Link} from 'react-router-hash-link'
+import { Link } from "react-router-dom";
 
 function Categorysection() {
   return (
@@ -11,7 +10,7 @@ function Categorysection() {
         <div className="row">
           
 
-          <Link style={{textDecoration: 'none'}} to = '/MentalHealth'>
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/MentalHealth'>
           <div className="item">
           <img
               className="categoryLogo"
@@ -27,7 +26,7 @@ function Categorysection() {
           </div>
           </Link>
 
-            <Link style={{textDecoration: 'none'}} to = '/FeeRelatedIssues'>
+            <Link style={{textDecoration: 'none', color: "black" }} to = '/FeeRelatedIssues'>
           <div className="item">
             <img
               className="categoryLogo"
@@ -42,7 +41,7 @@ function Categorysection() {
           </div>
             </Link>
 
-          <Link style={{textDecoration: 'none'}} to = '/LostandFound'>
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/LostandFound'>
           <div className="item">
             <img
               className="categoryLogo"
@@ -59,7 +58,7 @@ function Categorysection() {
         </div>
 
         <div className="row">
-          <Link style={{textDecoration: 'none'}} to = '/TransportationIssues'>
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/TransportationIssues'>
           <div className="item">
             <img
               className="categoryLogo"
@@ -73,7 +72,7 @@ function Categorysection() {
           </div>
             </Link>
 
-          <Link style={{textDecoration: 'none'}} to = '/AntiRagging'>
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/AntiRagging'>
           <div className="item">
             <img
               className="categoryLogo"
@@ -88,7 +87,7 @@ function Categorysection() {
           </div>
             </Link>
 
-          <Link style={{textDecoration: 'none'}} to = '/LibandLabIssues'>
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/LibandLabIssues'>
           <div className="item">
             <img
               className="categoryLogo"
