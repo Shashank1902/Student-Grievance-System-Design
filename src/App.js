@@ -28,6 +28,12 @@ class App extends React.Component {
           <Route path="/AntiRagging" exact component = {AntiRagging} />
           <Route path="/TransportationIssues" exact component = {TransportationIssues} />
           <Route path="/LibandLabIssues" exact component = {LibandLabIssues} />
+          <Router path="/StudentCommunity" exact component = {StudentCommunity} />
+          <Router path="/Help" exact component = {Help} />
+          <Router path="/Contact" exact component = {Contact} />
+          <Router path="/Profile" exact component = {Profile} />
+
+
 
          
           {/* <StudentCommunity />  */}
