@@ -11,8 +11,8 @@ function Categorysection() {
         <div className="row">
           
 
-          <div className="item">
           <Link style={{textDecoration: 'none'}} to = '/MentalHealth'>
+          <div className="item">
           <img
               className="categoryLogo"
               src="assets/CategoryLogo/mental-health.png"
@@ -23,12 +23,12 @@ function Categorysection() {
             <p>Mental Health Support</p>
              
             </div>
-          </Link>
             
           </div>
+          </Link>
 
-          <div className="item">
             <Link style={{textDecoration: 'none'}} to = '/FeeRelatedIssues'>
+          <div className="item">
             <img
               className="categoryLogo"
               src="assets/CategoryLogo/fees.png"
@@ -38,12 +38,12 @@ function Categorysection() {
               <p>Fee Related Issues</p>
             </div>
             
-            </Link>
             
           </div>
+            </Link>
 
-          <div className="item">
           <Link style={{textDecoration: 'none'}} to = '/LostandFound'>
+          <div className="item">
             <img
               className="categoryLogo"
               src="assets/CategoryLogo/lost-and-found.png"
@@ -53,14 +53,14 @@ function Categorysection() {
               <p>Lost & Found</p>
             </div>
             
-            </Link>
             
           </div>
+            </Link>
         </div>
 
         <div className="row">
-          <div className="item">
           <Link style={{textDecoration: 'none'}} to = '/TransportationIssues'>
+          <div className="item">
             <img
               className="categoryLogo"
               src="assets/CategoryLogo/public-transport.png"
@@ -70,11 +70,11 @@ function Categorysection() {
               <p>Transportation Issues</p>
             </div>
             
-            </Link>
           </div>
+            </Link>
 
-          <div className="item">
           <Link style={{textDecoration: 'none'}} to = '/AntiRagging'>
+          <div className="item">
             <img
               className="categoryLogo"
               src="assets/CategoryLogo/stop-violence.png"
@@ -85,11 +85,11 @@ function Categorysection() {
               <p>Anti Ragging</p>
             </div>
             
-            </Link>
           </div>
+            </Link>
 
-          <div className="item">
           <Link style={{textDecoration: 'none'}} to = '/LibandLabIssues'>
+          <div className="item">
             <img
               className="categoryLogo"
               src="assets/CategoryLogo/study.png"
@@ -99,8 +99,8 @@ function Categorysection() {
               <p>Library & Lab Issues</p>
             </div>
             
-            </Link>
           </div>
+            </Link>
         </div>
       </div>
     </>
