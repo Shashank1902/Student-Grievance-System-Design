@@ -18,30 +18,35 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <ScrollToTop/>
+        <ScrollToTop />
         <div className="app">
           <Switch>
-          <Route path="/" exact component = {StudentHome} />
-          <Route path="/MentalHealth" exact component = {MentalHealth} />
-          <Route path="/FeeRelatedIssues" exact component = {FeeRelatedIssues} />
-          <Route path="/LostandFound" exact component = {LostandFound} />
-          <Route path="/AntiRagging" exact component = {AntiRagging} />
-          <Route path="/TransportationIssues" exact component = {TransportationIssues} />
-          <Route path="/LibandLabIssues" exact component = {LibandLabIssues} />
-
-         
-          {/* <StudentCommunity />  */}
-          {/* <Help /> */}
-          {/* <Profile /> */}
-          {/* <Contact /> */}
-          {/* <LoginPage/> */}
-         
+            <Route path="/" exact component={StudentHome} />
+            <Route path="/MentalHealth" exact component={MentalHealth} />
+            <Route
+              path="/FeeRelatedIssues"
+              exact
+              component={FeeRelatedIssues}
+            />
+            <Route path="/LostandFound" exact component={LostandFound} />
+            <Route path="/AntiRagging" exact component={AntiRagging} />
+            <Route
+              path="/TransportationIssues"
+              exact
+              component={TransportationIssues}
+            />
+            <Route path="/LibandLabIssues" exact component={LibandLabIssues} />
+            <Route
+              path="/StudentCommunity"
+              exact
+              component={StudentCommunity}
+            />
+            <Route path="/Help" exact component={Help} />
+            <Route path="/Contact" exact component={Contact} />
+            <Route path="/Profile" exact component={Profile} />
           </Switch>
-          
         </div>
-
       </Router>
-
     );
   }
 }
