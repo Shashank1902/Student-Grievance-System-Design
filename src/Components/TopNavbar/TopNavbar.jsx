@@ -13,22 +13,22 @@ function TopNavbar() {
                 </div>
                 <div className="flex-container">
                     <div className="nav-container1">
-                    <Link style={{ textDecoration: "none" }} to="/">
+                    <Link style={{ textDecoration: "none", color: "black" }} to="/">
                         <span className="nav-item">Home</span>
                     </Link>
-                    <Link style={{ textDecoration: "none" }} to="/StudentCommunity">
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/StudentCommunity">
                         <span className="nav-item">Student Community</span>
                     </Link>
-                    <Link style={{ textDecoration: "none" }} to="/Help">
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/Help">
                         <span className="nav-item">Help</span>
                     </Link>
-                    <Link style={{ textDecoration: "none" }} to="/Contact">
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/Contact">
                         <span className="nav-item">Contact</span>
                     </Link>
 
                     </div>
                     <div className="nav-container2">
-                    <Link style={{ textDecoration: "none" }} to="/Profile">
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/Profile">
                         <span className="profile-text">Profile</span>
                         <span><img className="icon" src="assets/profileicon.png" alt="User" /></span>
                     </Link>

@@ -33,7 +33,7 @@
 .categoryLogo {
   width: 117px;
   height: 117px;
-  margin: 0px 0px 0px 60px;
+   margin: 0 auto;
 }
 
 .category-text {
@@ -41,5 +41,5 @@
   font-size: 24px;
   text-align: center;
   color: black;
-  text-decoration: none;
+  
 }

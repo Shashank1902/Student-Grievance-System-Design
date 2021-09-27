@@ -1,6 +1,5 @@
 import "./categorysection.css";
 import { Link } from "react-router-dom";
-// import {HashLink as Link} from 'react-router-hash-link'
 
 function Categorysection() {
   return (
@@ -9,87 +8,98 @@ function Categorysection() {
         <h1 className="category-heading">Know More:</h1>
 
         <div className="row">
-          <div className="item">
-            <Link style={{ textDecoration: "none" }} to="/MentalHealth">
-              <img
-                className="categoryLogo"
-                src="assets/CategoryLogo/mental-health.png"
-                alt="mental-health-logo"
-              />
+          
 
-              <div className="category-text">
-                <p>Mental Health Support</p>
-              </div>
-            </Link>
-          </div>
-
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/MentalHealth'>
           <div className="item">
-            <Link style={{ textDecoration: "none" }} to="/FeeRelatedIssues">
-              <img
-                className="categoryLogo"
-                src="assets/CategoryLogo/fees.png"
-                alt="mental-health-logo"
-              />
-              <div className="category-text">
-                <p>Fee Related Issues</p>
-              </div>
-            </Link>
-          </div>
+          <img
+              className="categoryLogo"
+              src="assets/CategoryLogo/mental-health.png"
+              alt="mental-health-logo"
+            />
 
-          <div className="item">
-            <Link style={{ textDecoration: "none" }} to="/LostandFound">
-              <img
-                className="categoryLogo"
-                src="assets/CategoryLogo/lost-and-found.png"
-                alt="mental-health-logo"
-              />
-              <div className="category-text">
-                <p>Lost & Found</p>
-              </div>
-            </Link>
+            <div className="category-text">
+            <p>Mental Health Support</p>
+             
+            </div>
+            
           </div>
+          </Link>
+
+            <Link style={{textDecoration: 'none', color: "black" }} to = '/FeeRelatedIssues'>
+          <div className="item">
+            <img
+              className="categoryLogo"
+              src="assets/CategoryLogo/fees.png"
+              alt="mental-health-logo"
+            />
+            <div className="category-text">
+              <p>Fee Related Issues</p>
+            </div>
+            
+            
+          </div>
+            </Link>
+
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/LostandFound'>
+          <div className="item">
+            <img
+              className="categoryLogo"
+              src="assets/CategoryLogo/lost-and-found.png"
+              alt="mental-health-logo"
+            />
+            <div className="category-text">
+              <p>Lost & Found</p>
+            </div>
+            
+            
+          </div>
+            </Link>
         </div>
 
         <div className="row">
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/TransportationIssues'>
           <div className="item">
-            <Link style={{ textDecoration: "none" }} to="/TransportationIssues">
-              <img
-                className="categoryLogo"
-                src="assets/CategoryLogo/public-transport.png"
-                alt="mental-health-logo"
-              />
-              <div className="category-text">
-                <p>Transportation Issues</p>
-              </div>
-            </Link>
+            <img
+              className="categoryLogo"
+              src="assets/CategoryLogo/public-transport.png"
+              alt="mental-health-logo"
+            />
+            <div className="category-text">
+              <p>Transportation Issues</p>
+            </div>
+            
           </div>
+            </Link>
 
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/AntiRagging'>
           <div className="item">
-            <Link style={{ textDecoration: "none" }} to="/AntiRagging">
-              <img
-                className="categoryLogo"
-                src="assets/CategoryLogo/stop-violence.png"
-                alt="mental-health-logo"
-              />
+            <img
+              className="categoryLogo"
+              src="assets/CategoryLogo/stop-violence.png"
+              alt="mental-health-logo"
+            />
 
-              <div className="category-text">
-                <p>Anti Ragging</p>
-              </div>
-            </Link>
+            <div className="category-text">
+              <p>Anti Ragging</p>
+            </div>
+            
           </div>
+            </Link>
 
+          <Link style={{textDecoration: 'none', color: "black" }} to = '/LibandLabIssues'>
           <div className="item">
-            <Link style={{ textDecoration: "none" }} to="/LibandLabIssues">
-              <img
-                className="categoryLogo"
-                src="assets/CategoryLogo/study.png"
-                alt="mental-health-logo"
-              />
-              <div className="category-text">
-                <p>Library & Lab Issues</p>
-              </div>
-            </Link>
+            <img
+              className="categoryLogo"
+              src="assets/CategoryLogo/study.png"
+              alt="mental-health-logo"
+            />
+            <div className="category-text">
+              <p>Library & Lab Issues</p>
+            </div>
+            
           </div>
+            </Link>
         </div>
       </div>
     </>
