@@ -1,5 +1,5 @@
+import {Link} from "react-router-dom";
 import "./topnavbar.css";
-import {Link} from 'react-router-dom'
 
 function TopNavbar() {
     return (
@@ -28,10 +28,10 @@ function TopNavbar() {
 
                     </div>
                     <div className="nav-container2">
-                        
-                        <Link style={{textDecoration: 'none'}} to='/Profile'><span className="profile-text">Profile</span>
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/Profile">
+                        <span className="profile-text">Profile</span>
                         <span><img className="icon" src="assets/profileicon.png" alt="User" /></span>
-                        </Link>
+                    </Link>
                     </div>
                 </div>
 
