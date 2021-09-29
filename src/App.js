@@ -13,7 +13,6 @@ import TransportationIssues from "./Pages/TransportationIssues";
 import LibandLabIssues from "./Pages/LibandLabIssues";
 import Contact from "./Pages/Contact";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
-import CreatePost from "./Components/CreatePost/CreatePost";
 
 
 class App extends React.Component {
@@ -22,8 +21,7 @@ class App extends React.Component {
       <Router>
         <ScrollToTop />
         <div className="app">
-         <CreatePost />
-          {/* <Switch>
+          <Switch>
             <Route path="/" exact component={StudentHome} />
             <Route path="/MentalHealth" exact component={MentalHealth} />
             <Route
@@ -47,7 +45,7 @@ class App extends React.Component {
             <Route path="/Help" exact component={Help} />
             <Route path="/Contact" exact component={Contact} />
             <Route path="/Profile" exact component={Profile} />
-          </Switch> */}
+          </Switch>
         </div>
       </Router>
     );
