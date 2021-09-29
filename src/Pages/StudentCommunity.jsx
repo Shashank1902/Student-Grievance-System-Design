@@ -5,21 +5,24 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
-import Categorysection from "../Components/CategorySection/Categorysection";
+// import Categorysection from "../Components/CategorySection/Categorysection";
+import Post from "../Components/Post/Post";
+
 
 
 class StudentCommunity extends React.Component {
   render() {
     return (
       <div className="App">
+
         <TopNavbar />
-        <Grievanceform />
+        <Post />
         <Chatbot />
         <Footbar />
-        <Categorysection />
+
       </div>
+
     );
   }
 }
-
 export default StudentCommunity;
