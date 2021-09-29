@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import React, {Poll} from "react";
 import "./App.css";
 import Help from "./Pages/Help";
 import MentalHealth from "./Pages/MentalHealth";
@@ -12,7 +13,7 @@ import AntiRagging from "./Pages/AntiRagging";
 import TransportationIssues from "./Pages/TransportationIssues";
 import LibandLabIssues from "./Pages/LibandLabIssues";
 import Contact from "./Pages/Contact";
-import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 
 class App extends React.Component {

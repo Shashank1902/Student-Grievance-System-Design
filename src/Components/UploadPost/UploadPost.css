@@ -1,0 +1,75 @@
+.createpost-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  margin-left: 65px;
+}
+
+.createPostCont-closeBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  margin-top: 5px;
+  background-color: #a644e3;
+  box-shadow: 0px 0px 10px rgba(86, 19, 170, 0.5),
+  0px 0px 10px rgba(86, 19, 170, 0.3);
+  cursor: pointer;
+}
+.closeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+
+.upload-post-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin: 50px 0;
+  cursor: pointer;
+}
+
+.upload-post-cont {
+  height: 150px;
+  width: 350px;
+  background-color: white;
+  padding: 20px;
+  border: 0px solid #a644e3;
+  box-shadow: 0px 0px 10px rgba(86, 19, 170, 0.2),
+  0px 0px 20px rgba(86, 19, 170, 0.25);
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reccontent {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #615e5e;
+}
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.uploadpost-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.upload-post-wrapper .profile-icon {
+ width: 40px;
+ height: 40px;
+}
