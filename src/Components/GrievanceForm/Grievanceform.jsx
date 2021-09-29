@@ -1,9 +1,24 @@
+import {useRef} from "react";
 import "./grievanceform.css";
 
 function Grievanceform() {
+
+  const grievanceType = useRef("null");
+  const grievanceCat = useRef("null");
+  const grievanceText = useRef("null");
+  const isAnonymous = useRef("null");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(grievanceType.current.value);
+    console.log(grievanceCat.current.value);
+    console.log(grievanceText.current.value);
+    console.log(isAnonymous.current.value);
+  }
+
   return (
     <>
-      <form className="grievanceForm">
+      <form className="grievanceForm" onSubmit={handleSubmit}>
         <p className="formTitle">Report Your Grievance Here:</p>
         <div className="inputContainer1">
           <label className="inputLabel1" htmlFor="Type_of_Complaint">
@@ -14,6 +29,7 @@ function Grievanceform() {
             name="Type of Complaint"
             id="Type_of_Complaint"
             defaultValue="-"
+            ref={grievanceType}
           >
             <option value="-" disabled>
               Select Grievance Type
@@ -33,6 +49,7 @@ function Grievanceform() {
             placeholder="Select Category"
             id="Category"
             defaultValue="-"
+            ref={grievanceCat}
           >
             <option value="-" disabled>
               Select Grievance Category
@@ -53,6 +70,7 @@ function Grievanceform() {
             id="Your_grievance"
             name="Your grievance"
             placeholder="Type Your Grievance"
+            ref={grievanceText}
           ></textarea>
         </div>
 
@@ -62,6 +80,7 @@ function Grievanceform() {
             id="Submit_Anonymously"
             name="Submit Anonymously"
             type="checkbox"
+            ref={isAnonymous}
           />
 
           <label className="labelAnonymously" htmlFor="Submit_Anonymously">
@@ -71,7 +90,7 @@ function Grievanceform() {
 
         <div className="buttonContainer">
           <label htmlFor="submit">
-            <button className="buttonSubmit" id="submit">
+            <button className="buttonSubmit" id="submit" type="submit">
               Submit
             </button>
           </label>
