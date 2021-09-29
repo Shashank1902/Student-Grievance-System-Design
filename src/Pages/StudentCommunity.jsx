@@ -1,11 +1,12 @@
 import React from "react";
 import Chatbot from "../Components/Chat bot/Chatbot";
-import Grievanceform from "../Components/GrievanceForm/Grievanceform";
+ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import HomeContent from "../Components/Home content/Homecontent";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 import Categorysection from "../Components/CategorySection/Categorysection";
+import UploadPost from "../Components/UploadPost/UploadPost";
 
 
 class StudentCommunity extends React.Component {
@@ -13,10 +14,11 @@ class StudentCommunity extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
-        <Grievanceform />
+        <UploadPost/>
+        {/* <Grievanceform /> */}
         <Chatbot />
-        <Footbar />
-        <Categorysection />
+        {/* <Footbar /> */}
+        {/* <Categorysection /> */}
       </div>
     );
   }
