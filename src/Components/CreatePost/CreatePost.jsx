@@ -2,7 +2,7 @@ import "./createpost.css";
 
 function CreatePost() {
   return (
-    <div className="container">
+    <div className="uploadpost-container">
       <div className="top">
         <div className="heading">
           <span>Create Post</span>

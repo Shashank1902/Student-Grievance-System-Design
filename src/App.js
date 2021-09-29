@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import React, {Poll} from "react";
 import "./App.css";
 import Help from "./Pages/Help";
 import MentalHealth from "./Pages/MentalHealth";
