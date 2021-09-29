@@ -1,14 +1,28 @@
-.homecontent-txt{
-    
-  text-align: justify;
-  position: absolute;
-  width: 790px;
-  height: 99px;
-  left: 80px;
-  top: 160px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
+.homecontent{
   font-size: 24px;
-  line-height: 136%;
+  overflow-x: hidden;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -5%;
+  margin-bottom: -10%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.homecontent-txt-container {
+  width: 50%;
+}
+
+.homecontent-txt {
+  margin: 40px 0;
+}
+
+.homeImage-container {
+  width: 45%;
+  align-self: flex-end;
+}
+
+.homeImage {
+  width: 110%;
 }

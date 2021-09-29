@@ -1,0 +1,45 @@
+.title {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+.angular {
+    color: #FF004D;
+    margin: 0 0px;
+}
+
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-container1 {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-self: center;
+}
+
+
+.nav-container2 {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.icon {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.profile-text {
+    align-self: center;
+}

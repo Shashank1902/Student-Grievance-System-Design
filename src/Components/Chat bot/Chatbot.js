@@ -1,125 +1,103 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import axios from "axios";
-// import {greetings, weather} from "./chat";
 import "./chatbot.css";
-
-// var msg = [];
+import Message from "./Message/Message";
 
 function Chatbot() {
-  const [content, setContent] = useState("");
+  const [botMsg, setBotMsg] = useState("");
+  const [clientMsg, setClientMsg] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [inputMsg, setInputMsg] = useState("");
 
-  // fetch("http://localhost:3000/chatbot")
-  //   .then((res) => res.json())
-  //   .then((result) => {
-  //     console.log(result);
-  //   });
-
-  // const SpeechRecognition =
-  //   window.SpeechRecognition || window.webkitSpeechRecognition;
-  // const recgnition = new SpeechRecognition();
-
-  // recgnition.onstart = () => {
-  //   console.log("activted voice");
-  // };
-
-  // recgnition.onresult = (event) => {
-  //   const current = event.resultIndex;
-
-  //   const transcript = event.results[current][0].transcript;
-  //   setContent(transcript);
-  //   msgArray.push(transcript);
-  //   console.log(msgArray);
-  //   readOutLoud(transcript);
-  // };
-
-  // function startTalk() {
-  //   recgnition.start();
-  // }
-
-  // function readOutLoud(message) {
-  //   const speech = new SpeechSynthesisUtterance("No warning should arise");
-
-  //   speech.text = "I don't know!!!";
-
-  //   if (message.includes("how are you")) {
-  //     const finalText = greetings[Math.floor(Math.random() * greetings.length)];
-
-  //     speech.text = finalText;
-  //   }
-  //   if (message.includes("weather")) {
-  //     const finalText = weather[Math.floor(Math.random() * weather.length)];
-
-  //     speech.text = finalText;
-  //   }
-
-  //   speech.volume = 1;
-  //   speech.rate = 1;
-  //   speech.pitch = 1;
-  //   window.speechSynthesis.speak(speech);
-  // }
   const message = useRef();
-  const handleClick = function (e) {
+
+  const handleClientMsg = () => {
+    setClientMsg(message.current.value);
+    messages.push({ isClient: true, msgTxt: message.current.value });
+    console.log(messages);
+    console.log(clientMsg);
+  };
+
+  const handleClick = (e) => {
     e.preventDefault();
+    setInputMsg("");
     axios
-      .post("http://localhost:3000/chatbot", { message: message.current.value })
+      .post("http://localhost:8000/chatbot", { message: message.current.value })
       .then((response) => {
         console.log(response.data);
-        setContent(response.data);
+        messages.push({ isClient: false, msgTxt: response.data });
+        setBotMsg(response.data);
       });
-
-    console.log(message.current.value);
   };
+
+  const messageEl = useRef(null);
+  const chatbotContainer = useRef(null);
+  const botBtn = useRef(null);
+
+  useEffect(() => {
+    let flag = 0;
+    botBtn.current.onclick = () => {
+      if (flag === 0) {
+        chatbotContainer.current.style.bottom = "10px";
+        flag = 1;
+      } else if (flag === 1) {
+        chatbotContainer.current.style.bottom = "-410px";
+        flag = 0;
+      }
+    };
+
+    if (messageEl) {
+      messageEl.current.addEventListener("DOMNodeInserted", (event) => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: "smooth" });
+      });
+    }
+  }, []);
 
   return (
     <>
-      <div className="chatbot-container">
+      <div ref={botBtn} className="bot-btn">
+        <img className="bot-btn-img" src="assets/chatbot-avatar.png" alt="" />
+      </div>
+      <div ref={chatbotContainer} className="chatbot-container">
         <div className="chatbot-top">
           <img
             className="chatbot-avatar-img"
             src="assets/chatbot-avatar.png"
             alt=""
-            srcset=""
           />
         </div>
-        {/* <button onClick={startTalk}>Talk</button> */}
-        {/* {msgArray.map(msg=> (
-            <p>{msg}</p>
-        ))} */}
-        <div className="message-container">
-          <div className="client-msg">
-            <div className="msg-box">Hello</div>
-            <img
-              className="message-avatar"
-              src="assets/chatbot-avatar.png"
-              alt=""
+
+        <div className="message-container" ref={messageEl}>
+          {messages.map((clientMessage, i) => (
+            <Message
+              key={i}
+              isClient={clientMessage.isClient}
+              msg={clientMessage.msgTxt}
             />
-          </div>
-          <div className="bot-msg">
-            <img
-              className="message-avatar"
-              src="assets/chatbot-avatar.png"
-              alt=""
-            />
-            <div className="msg-box">Hello Human</div>
-          </div>
-          <div className="bot-msg">
-            <img
-              className="message-avatar"
-              src="assets/chatbot-avatar.png"
-              alt=""
-            />
-            <div className="msg-box">{content}</div>
-          </div>
+          ))}
         </div>
         <form onSubmit={handleClick}>
           <div className="input-container">
             <input
+              id="inputMsgForm"
               className="message-input"
               type="text"
               placeholder="Type your message here"
+              value={inputMsg}
+              onChange={(e) => setInputMsg(e.target.value)}
               ref={message}
             />
-            <button className="submit-button" type="submit"></button>
+            <span className="input-mic">
+              <i className="fas fa-microphone"></i>
+            </span>
+            <button
+              className="submit-button"
+              onClick={handleClientMsg}
+              type="submit"
+            >
+              <i className="fas fa-angle-double-right"></i>
+            </button>
           </div>
         </form>
       </div>
