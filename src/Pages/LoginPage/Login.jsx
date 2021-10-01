@@ -1,10 +1,11 @@
 import React from 'react';
 import './login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
-    
-    
-    
+
+
+
     return (
         <div>
             <div className="login-container">
@@ -15,13 +16,13 @@ const Login = () => {
 
                     </div>
                     <form >
-                        <div className="inputbox">
-                            <input type="text" name="username" required="" placeholder= "Username"/ >
-                           
+                        <div className="login-inputbox">
+                            <input type="text" name="username" required="" placeholder="Username" />
+
                         </div>
-                        <div className="inputbox">
-                            <input type="password" name="password" required="" placeholder= "Password"/>
-                            
+                        <div className="login-inputbox">
+                            <input type="password" name="password" required="" placeholder="Password" />
+
 
                         </div>
 
@@ -29,10 +30,16 @@ const Login = () => {
                             <button className="login-btn" type="submit">Submit</button>
                         </div>
 
+
                         <div className="signup-btn-box">
-                            <span>Register Here <button className="signup-btn" type="submit">Sign in</button> </span>
+                            <span>Register Here
+                                <Link style={{ textDecoration: 'none', }} to='/RegistrationPage'>
+
+                                    <button className="signup-btn" type="submit">Sign in</button>
+
+                                </Link>
+                            </span>
                         </div>
-                        
                     </form>
                 </div>
             </div>

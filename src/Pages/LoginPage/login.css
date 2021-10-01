@@ -29,11 +29,11 @@
     font-weight: 500;
 }
 
-.inputbox{
+.login-inputbox{
     position: relative; 
 
 }
-.inputbox input{
+.login-inputbox input{
     width: 100%;
     padding: 10px 0px;
     font-size: 16px;
