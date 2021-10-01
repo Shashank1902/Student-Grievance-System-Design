@@ -1,16 +1,6 @@
-body {
-    background-color: #eee;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-
-    margin: auto;
-
-}
-
 .container {
-    height: 1500px;
+    height: auto;
     width: 900px;
-    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
