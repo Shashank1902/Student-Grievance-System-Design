@@ -1,57 +1,75 @@
-.rectangle{
-    position: absolute;
-    height:150px;
-    width:690px;
-    background-color:white;
-    margin-top: 50px;
-    padding: 20px;
-    border: 5px solid #a644e3;
-    box-sizing: border-box;
-    border-radius: 15px;
-    left:170px;
-    top:140px
-    }
-    .reccontent
-    {
-      position: absolute;
-      font-family: Arial, Helvetica, sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 27px;
-      color: #615E5E;
+.createpost-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  margin-left: 65px;
+}
 
-    }
-  .image1
-  {
-    position: absolute;
-    width: 30px;
-   height: 30px;    
-   left: 20px;
-    right: px;
-   top: 100px;
-   bottom: 50%;
+.createPostCont-closeBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  margin-top: 5px;
+  background-color: #a644e3;
+  box-shadow: 0px 0px 10px rgba(86, 19, 170, 0.5),
+  0px 0px 10px rgba(86, 19, 170, 0.3);
+  cursor: pointer;
+}
+.closeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+}
+.hidden {
+  display: none;
+}
 
-    
-  }
-  .image2
-  {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 100px;
-    top: 100px;
+.upload-post-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin: 50px 0;
+  cursor: pointer;
+}
 
-  }
-  
-  .Profileicon 
-  {
-    position: absolute;
-width: 87px;
-height: 82px;
-left: 45px;
-top: 230px;
+.upload-post-cont {
+  height: 150px;
+  width: 350px;
+  background-color: white;
+  padding: 20px;
+  border: 0px solid #a644e3;
+  box-shadow: 0px 0px 10px rgba(86, 19, 170, 0.2),
+  0px 0px 20px rgba(86, 19, 170, 0.25);
+  box-sizing: border-box;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reccontent {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #615e5e;
+}
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.uploadpost-icon {
+  width: 30px;
+  height: 30px;
+}
 
-
- }
- 
+.upload-post-wrapper .profile-icon {
+ width: 40px;
+ height: 40px;
+}

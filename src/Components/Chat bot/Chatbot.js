@@ -22,7 +22,7 @@ function Chatbot() {
     e.preventDefault();
     setInputMsg("");
     axios
-      .post("http://localhost:8000/chatbot", { message: message.current.value })
+      .post("https://sgsapi.herokuapp.com/chatbot", { message: message.current.value })
       .then((response) => {
         console.log(response.data);
         messages.push({ isClient: false, msgTxt: response.data });
