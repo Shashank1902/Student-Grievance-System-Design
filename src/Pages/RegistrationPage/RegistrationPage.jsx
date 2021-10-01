@@ -21,52 +21,71 @@ const RegistrationPage = () => {
                     </div>
 
                     <div className="regs-label-box">
+
+                        <label htmlFor="institute-id" className="regs-label" >Institute Id :</label>
+                    </div>
+
+                    <div className="regs-input-box">
+                        <input className="regs-input" type="text" name="name" required="" placeholder="Institued Id" />
+                    </div>
+
+                    <div className="regs-label-box">
                         <label htmlFor="name" className="regs-label" >Email :</label>
 
                     </div>
                     <div className="regs-input-box">
                         <input className="regs-input" type="text" name="email" required="" placeholder="Email" />
                     </div>
+
+
                     <div className="regs-label-box">
                         <label htmlFor="name" className="regs-label" >Mobile NO :</label>
 
                     </div>
+
                     <div className="regs-input-box">
-                        <input className="regs-input" type="text" name="moblieNo" required="" placeholder="Mobile Number" />
+                        <input className="regs-input" type="text" name="mobileNo" required="" placeholder="Mobile Number" />
+                    </div>
+
+
+                    <div className="regs-label-box">
+                        <label htmlFor="name" className="regs-label" >Password :</label>
+
+                    </div>
+                    <div className="regs-input-box">
+                        <input className="regs-input" type="password" name="password" required="" placeholder="Password" />
                     </div>
 
                     <div className="option-box">
-                       
+                        <select
+                            className="branch-option"
+                            name="branch"
+                            id="branch"
+                            defaultValue="-"
+                        >
+                            <option value="-" disabled>
+                                Branch
+                            </option>
+                            <option value="cse">CSE</option>
+                            <option value="it">IT</option>
+                        </select>
 
-                            <select
-                                className="branch-option"
-                                name="branch"
-                                id="branch"
-                                defaultValue="-"
-                            >
-                                <option value="-" disabled>
-                                    Branch
-                                </option>
-                                <option value="cse">CSE</option>
-                                <option value="it">IT</option>
-                            </select>
 
-                       
 
-                            <select
-                                className="sem-option"
-                                name="sem"
-                                id="sem"
-                                defaultValue="-"
+                        <select
+                            className="sem-option"
+                            name="sem"
+                            id="sem"
+                            defaultValue="-"
 
-                            >
-                                <option value="-" disabled>
-                                    Semester
-                                </option>
-                                <option value="sem1">1</option>
-                                <option value="sem2">2</option>
-                            </select>
-                       
+                        >
+                            <option value="-" disabled>
+                                Semester
+                            </option>
+                            <option value="sem1">1</option>
+                            <option value="sem2">2</option>
+                        </select>
+
                     </div>
 
                     <div className="regs-btn-box">
