@@ -14,6 +14,7 @@ import TransportationIssues from "./Pages/TransportationIssues";
 import LibandLabIssues from "./Pages/LibandLabIssues";
 import Contact from "./Pages/Contact";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import Login from "./Pages/LoginPage/Login";
 
 
 class App extends React.Component {
@@ -46,6 +47,8 @@ class App extends React.Component {
             <Route path="/Help" exact component={Help} />
             <Route path="/Contact" exact component={Contact} />
             <Route path="/Profile" exact component={Profile} />
+            <Route path="/Login" exact component={Login} />
+           
           </Switch>
         </div>
       </Router>
