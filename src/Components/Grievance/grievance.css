@@ -1,0 +1,59 @@
+.box {
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+}
+
+.in-box2 {
+border: solid 2px black;
+padding: 15px;
+margin: 10px;
+}
+
+/* .in-box1 {} */
+
+.in-box2 {
+/* justify-self: right; */
+display: flex;
+/* flex-direction: row; */
+border: 2px solid black;
+/* box-sizing: border-box; */
+height: 400px;
+width: 500px;
+/* left: 851px; */
+/* top: 1156px; */
+box-shadow: 10px 13px 15px rgb(204, 199, 199);
+border-radius: 5px;
+  justify-content: flex-end;
+float: right;
+}
+.bookmark {
+justify-items: right;
+right: 0;
+}
+
+.content {
+margin: 5px;
+}
+
+.matter {
+ margin: 4px;
+}
+
+.foot {
+ display: flex;
+flex-direction: row;
+justify-content: space-between;
+ margin-bottom: 5px;
+}
+
+
+
+.timestamp {
+color: gray;
+}
+
+.readless {
+ color: gray;
+/* margin-bottom: 5px; */
+}

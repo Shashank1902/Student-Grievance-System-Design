@@ -1,0 +1,28 @@
+.abc{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.category {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.bttn-item {
+    background-color: rgb(184, 120, 248);
+    border-radius: 25px;
+    height: 20px;
+    width: 25%;
+    text-align: center;
+    align-content: center;
+    padding: 10px;
+}
