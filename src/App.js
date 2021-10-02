@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Help from "./Pages/Help";
 import MentalHealth from "./Pages/MentalHealth";
-import Profile from "./Pages/Profile";
+import Profile from "./Pages/Profile/Profile";
 import StudentCommunity from "./Pages/StudentCommunity";
 import StudentHome from "./Pages/StudentHome";
 import FeeRelatedIssues from "./Pages/FeeRelatedIssues";

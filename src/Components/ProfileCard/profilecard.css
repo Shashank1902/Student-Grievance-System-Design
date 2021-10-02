@@ -1,0 +1,74 @@
+.container-box {
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  width: 800px;
+
+
+
+  border: 2px solid rgb(204, 199, 199);
+
+  margin: auto;
+  margin-top: 15px;
+  
+
+  box-shadow: 5px 5px 5px rgb(204, 199, 199);
+
+}
+
+
+
+.profile-img {
+
+  position: absolute;
+
+  width: 160px;
+
+  height: 160px;
+
+  margin-top: 25px;
+
+  margin-left: 40px;
+
+  border-radius: 50%;
+
+}
+
+
+
+#cam-placement {
+
+ /* margin-bottom:5px; */
+height: 30px;
+width: 30px;
+margin-top: 156px;
+margin-left: 178px;
+}
+
+
+
+.circle {
+
+  justify-content: flex-end;
+
+}
+
+
+
+
+.image {
+
+  display: flex;
+
+  flex-direction: row;
+
+}
+
+.edit-icon {
+  margin-right: 15px;
+  margin-top: 15px;
+}
