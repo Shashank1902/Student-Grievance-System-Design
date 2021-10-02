@@ -13,30 +13,23 @@ const AdminPanel = () => {
                 </div>
 
                 <div className="flex-container">
-                    <span className="nav-item">Welcome Sharmila!
+                    <div className="nav-container1">
+                        <span className="nav-item">Welcome Sharmila!</span>
+                    </div>
 
-                        <span className="icon-container">
-                            <div >
-                                <Link style={{ textDecoration: "none", color: "black"  }} to="/Profile">
-                                    <span><img className="icon" src="assets/profileicon2.png" alt="User" /></span>
-                                </Link>
-                            </div>
+                    <div className="nav-container2">
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/Profile">
+                        <span className="profile-text">Profile</span>
+                        <span><img className="icon" src="assets/ProfileIcon2.png" alt="User" /></span>
+                    </Link>
 
-                            <span className="icon-container">   
-                                <div >
-                                    <Link style={{ textDecoration: "none", color: "black"  }} to="/">
-                                        <span><img className="icon" src="assets/LogoutIcon.png" alt="User" /></span>
-                                    </Link>
-                                </div>
-                            </span>
-                        </span>
-
-                        
-                    
-                    </span>
+                    <Link style={{ textDecoration: "none", color: "black"  }} to="/">
+                        <span className="profile-text">Log Out</span>
+                        <span><img className="icon" src="assets/LogoutIcon.png" alt="User" /></span>
+                    </Link>
+                    </div>
+    
                 </div>
-
-                
 
             </div>
 
