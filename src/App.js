@@ -17,6 +17,8 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Login from "./Pages/LoginPage/Login";
 import Registration from "./Pages/RegistrationPage/RegistrationPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
+import AdminProfile from "./Pages/AdminPanel/AdminPanel";
+import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 
 
 class App extends React.Component {
@@ -51,6 +53,7 @@ class App extends React.Component {
             <Route path="/Profile" exact component={Profile} />
             <Route path="/Login" exact component={Login} />
             <Route path="/RegistrationPage" exact component={RegistrationPage} />
+            <Route path="/AdminPanel" exact component={AdminPanel} />
            
           </Switch>
         </div>
