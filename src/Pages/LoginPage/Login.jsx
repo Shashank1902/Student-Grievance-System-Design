@@ -1,23 +1,29 @@
-import React, { useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./login.css";
-import axios from "axios";
+import { loginCall, loginCheck } from "../../apiCalls";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
+  const email = useRef("null");
+  const password = useRef("null");
 
-    const email = useRef("null");
-    const password = useRef("null");
+  const didMount = useRef(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const { user, isFetching, dispatch } = useContext(AuthContext);
 
-        console.log(email.current.value, password.current.value);
-        const userEmail = email.current.value;
-        const userPassword = password.current.value;
-        axios.post("http://localhost:8000/login", {email: userEmail, password: userPassword})
-        .then(response => {
-            console.log(response);
-        });
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userEmail = email.current.value;
+    const userPassword = password.current.value;
+
+    loginCall({ email: userEmail, password: userPassword }, dispatch);
+  };
+
+  useEffect(() => {
+    if (didMount.current) {
+      loginCheck(dispatch);
+    } 
+  }, []);
 
   return (
     <div>
@@ -27,7 +33,7 @@ const Login = () => {
             <h2 className="login-heading">Login</h2>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="inputbox">
+            <div className="login-inputbox">
               <input
                 type="text"
                 name="username"
@@ -36,7 +42,7 @@ const Login = () => {
                 ref={email}
               />
             </div>
-            <div className="inputbox">
+            <div className="login-inputbox">
               <input
                 type="password"
                 name="password"
@@ -47,8 +53,8 @@ const Login = () => {
             </div>
 
             <div className="login-btn-box">
-              <button className="login-btn" type="submit">
-                Submit
+              <button className="login-btn" type="submit" disabled={isFetching}>
+                {isFetching ? "Loging in..." : "Log in"}
               </button>
             </div>
 

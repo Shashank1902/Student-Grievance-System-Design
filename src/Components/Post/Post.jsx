@@ -3,11 +3,11 @@ import "./post.css";
 import Poll from "react-polls";
 
 function Post() {
-  const pollQuestion = "Is react-polls useful?";
-  const pollAnswers = [
-    { option: "Yes", votes: 9 },
-    { option: "No", votes: 1 },
-  ];
+  // const pollQuestion = "Is react-polls useful?";
+  // const pollAnswers = [
+  //   { option: "Yes", votes: 9 },
+  //   { option: "No", votes: 1 },
+  // ];
 
   const handleVote = () => {
     console.log("voted");
@@ -61,14 +61,11 @@ function Post() {
             </div>
 
             <div className="caption">
-              <p>
-                {" "}
-                <Poll
+                {/* <Poll
                   question={pollQuestion}
                   answers={pollAnswers}
                   onVote={handleVote}
-                />{" "}
-              </p>
+                /> */}
             </div>
           </div>
         </div>
@@ -88,10 +85,7 @@ function Post() {
             </div>
 
             <div className="caption">
-              <p>
-                {" "}
                 <b>Poll 2</b>
-              </p>
             </div>
           </div>
         </div>

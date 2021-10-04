@@ -1,0 +1,116 @@
+.regs-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+            0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+     border-radius: 10px;
+     width: 700px;
+     
+     
+}
+.regs-heading-box{
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    border-bottom: .5px solid #a644e3;
+    margin: 10px 0px;
+    
+}
+
+.regs-label-box{
+    margin: 15px 0px 0px 0px;
+    
+}
+.regs-label{
+    position: relative;
+    left: 98px;
+    color: #cb76ff;
+    margin: 10px 0px;
+
+    
+}
+.regs-input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px 0px;
+    
+   
+}
+
+.regs-input{
+    width: 500px;
+    border: none;
+    outline: none;
+    /* border-bottom: .5px solid #a644e3; */
+    box-shadow: 0px 5px 17px rgba(190, 155, 229, 0.507),
+    0px 10px 33px 4px rgba(178, 138, 226, 0.315);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.option-box{
+    position: relative;
+   left: 81px;
+   /* padding: 12px 0; */
+   margin: 20px 0px;
+   display: flex;
+}
+
+
+.sem-option ,.branch-option{
+    width: 130px;
+    outline: none;
+    margin: 0px 10px;
+    border: none;
+    box-shadow: 0px 5px 17px rgba(190, 155, 229, 0.507),
+    0px 10px 33px 4px rgba(178, 138, 226, 0.315);
+    border-radius: 10px;
+    padding: 5px 5px;
+    color: #a644e3;
+}
+
+.regs-btn-box{
+    display: flex;
+   justify-content: center;
+}
+
+.regs-btn{
+    width: 194px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #a644e3;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px 0px 0px;
+    font-size: 19px;
+}
+
+.signin-btn-box{
+    display: flex;
+    float: right;
+    margin: 0  20px 17px 0;
+}
+.regs-signup-btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #a644e3;
+    
+}
+
+.signin-logo{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -10px;
+    /* background-color: #a644e3 ; */
+    
+}
