@@ -1,102 +1,76 @@
-.login-container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Poppins";
 }
 
-
-.login-box{
-  
-    padding: 40px;
-    width: 400px;
-    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
-            0px 10px 33px 4px rgba(86, 19, 170, 0.25);
-     border-radius: 10px;
-    box-sizing: border-box;
+.login-box {
+  padding: 40px;
+  width: 400px;
+  box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+    0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
 }
-.login-heading-box{
-    margin:  0 30px;
-    padding: 0px;
-    text-align: center;
-    font-weight: 500;
-    
+.login-heading-box {
+  margin: 0 30px;
+  padding: 0px;
+  text-align: center;
+  font-weight: 500;
 }
 
-.login-heading{
-    margin: 12px;
-    color: #a644e3;
-    font-weight: 500;
+.login-heading {
+  margin: 12px;
+  color: #a644e3;
+  font-weight: 500;
 }
 
-.login-inputbox{
-    position: relative; 
-
+.login-inputbox {
+  position: relative;
 }
-.login-inputbox input{
-    width: 100%;
-    padding: 10px 0px;
-    font-size: 16px;
-    
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 1px solid #a644e3;
-}
-/* .login-box .inputbox label{
-    position: absolute;   
-    left: 0px;
-    top: 0px;
-    padding: 10px 0px;
-    font-size: 16px;
-   
-    pointer-events: none;
-    transition: .5s;
-} */
+.login-inputbox input {
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 16px;
 
-/* .login-box .inputbox input:focus~ label,
-.login-box .inputbox input:valid~ label{
-    top: top(20px);
-    left: 0px;
-    color: #a644e3;
-    font-size: 12px;
-   
-
-} */
-
-.login-btn-box{
-   
-    display: flex;
-    justify-content: center;
-}
-.login-btn
-{
-   
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #a644e3;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #a644e3;
 }
 
-.signup-btn-box{
-    display: flex;
-   justify-content: center;
+.login-btn-box {
+  display: flex;
+  justify-content: center;
+}
+.login-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #a644e3;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.login-btn:disabled {
+    cursor: not-allowed;
+}
+.signup-btn-box {
+  display: flex;
+  justify-content: center;
 }
 
-.signup-btn{
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #a644e3;
-    outline: none;
-    cursor: pointer;
-    font-size: 17px;
-    color: #a644e3;
-    margin: 15px 0 0 0px;
-    
+.signup-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #a644e3;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+  color: #a644e3;
+  margin: 15px 0 0 0px;
 }
