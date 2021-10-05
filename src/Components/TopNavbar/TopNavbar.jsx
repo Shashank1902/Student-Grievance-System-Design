@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./topnavbar.css";
-import { AuthContext } from "../../context/AuthContext";
+import { useAuthState } from "../../context/ContextIndex";
 
 function TopNavbar() {
-  const { user } = useContext(AuthContext);
+  const user = useAuthState();
 
   return (
     <>
@@ -35,7 +34,7 @@ function TopNavbar() {
             to="/Profile"
           >
             <div className="nav-container2">
-              <span className="profile-text">{}</span>
+              <span className="profile-text">{user.userDetails ? user.userDetails.username : "Unknown"}</span>
               <span>
                 <img className="icon" src="assets/profileicon.png" alt="User" />
               </span>

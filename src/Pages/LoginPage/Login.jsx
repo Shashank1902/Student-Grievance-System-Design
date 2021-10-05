@@ -1,29 +1,37 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
+// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./login.css";
-import { loginCall, loginCheck } from "../../apiCalls";
-import { AuthContext } from "../../context/AuthContext";
+//import { loginCall } from "../../apiCalls";
+//import { AuthContext } from "../../context/AuthContext";
 
-const Login = () => {
+import { loginUser, useAuthDispatch } from "../../context/ContextIndex";
+
+const Login = (props) => {
   const email = useRef("null");
   const password = useRef("null");
+  let history = useHistory();
 
-  const didMount = useRef(false);
+  // const { isFetching, dispatch } = useContext(AuthContext);
 
-  const { user, isFetching, dispatch } = useContext(AuthContext);
+  const dispatch = useAuthDispatch();
+  // const { loading, errorMessage } = useAuthState();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const userEmail = email.current.value;
     const userPassword = password.current.value;
 
-    loginCall({ email: userEmail, password: userPassword }, dispatch);
+    // let payload = {userEmail, userPassword}
+        try {
+            let response = await loginUser(dispatch, {email: userEmail, password: userPassword}) //loginUser action makes the request and handles all the neccessary state changes
+            if (!response) return
+            history.push('/') //navigate to dashboard on success
+        } catch (error) {
+            console.log(error)
+        }
+    // loginCall({ email: userEmail, password: userPassword }, dispatch);
   };
-
-  useEffect(() => {
-    if (didMount.current) {
-      loginCheck(dispatch);
-    } 
-  }, []);
 
   return (
     <div>
@@ -53,8 +61,9 @@ const Login = () => {
             </div>
 
             <div className="login-btn-box">
-              <button className="login-btn" type="submit" disabled={isFetching}>
-                {isFetching ? "Loging in..." : "Log in"}
+              <button className="login-btn" type="submit" /*disabled={isFetching}*/>
+                {/* {isFetching ? "Loging in..." : "Log in"} */}
+                Login
               </button>
             </div>
 

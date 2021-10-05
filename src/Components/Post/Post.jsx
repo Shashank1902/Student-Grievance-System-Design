@@ -1,17 +1,17 @@
 import "./post.css";
 // import React, { Poll } from 'react';
-import Poll from "react-polls";
+//import Poll from "react-polls";
 
 function Post() {
-  // const pollQuestion = "Is react-polls useful?";
-  // const pollAnswers = [
-  //   { option: "Yes", votes: 9 },
-  //   { option: "No", votes: 1 },
-  // ];
+//   // const pollQuestion = "Is react-polls useful?";
+//   // const pollAnswers = [
+//   //   { option: "Yes", votes: 9 },
+//   //   { option: "No", votes: 1 },
+//   // ];
 
-  const handleVote = () => {
-    console.log("voted");
-  }
+  // const handleVote = () => {
+  //   console.log("voted");
+  // }
 
   return (
     <div>

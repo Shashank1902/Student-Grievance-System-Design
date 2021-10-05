@@ -51,6 +51,7 @@ const RegistrationPage = () => {
 
   return (
     <>
+    <div className="regs-box-cont">
       <div className="regs-box">
         <form onSubmit={handleSubmit}>
           <div className="regs-heading-box">
@@ -193,6 +194,8 @@ const RegistrationPage = () => {
             </div>
           </Link>
         </form>
+      </div>
+        <div className="">embrace</div>
       </div>
     </>
   );

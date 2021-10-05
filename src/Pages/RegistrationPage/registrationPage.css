@@ -1,3 +1,7 @@
+.regs-box-cont {
+    display: flex;
+    flex-direction: row;
+}
 .regs-box{
     position: absolute;
     top: 50%;
@@ -7,8 +11,7 @@
             0px 10px 33px 4px rgba(86, 19, 170, 0.25);
      border-radius: 10px;
      width: 700px;
-     
-     
+    
 }
 .regs-heading-box{
     padding: 10px;
