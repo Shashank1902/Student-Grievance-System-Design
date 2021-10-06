@@ -26,7 +26,7 @@ const Profile = () => {
         <TopNavbar />
         <div className="xyz">
           <ProfileCard />
-        </div>ya
+        </div>
         <div>
           <div className="outer-container">
             <div className="category">
