@@ -1,8 +1,18 @@
 import "./post.css";
 // import React, { Poll } from 'react';
-// import Poll from 'react-polls';
+//import Poll from "react-polls";
 
 function Post() {
+//   // const pollQuestion = "Is react-polls useful?";
+//   // const pollAnswers = [
+//   //   { option: "Yes", votes: 9 },
+//   //   { option: "No", votes: 1 },
+//   // ];
+
+  // const handleVote = () => {
+  //   console.log("voted");
+  // }
+
   return (
     <div>
       <div className="container">
@@ -10,17 +20,17 @@ function Post() {
           <div className="container-inner">
             <div className="profile-outer">
               <div className="profile-card">
-                <img className="profile-pic" src="assets/user.png" />
+                <img className="profile-pic" src="assets/user.png" alt="" />
                 <div className="profile-name">
                   <span className="font-weight-bold">Student-name I</span>
                   <div className="time">
                     {" "}
-                    <small class="">20 mins</small>
+                    <small className="">20 mins</small>
                   </div>
                 </div>
               </div>
               <i className="icon">
-                <img src="assets/menuicon.png" />
+                <img src="assets/menuicon.png" alt="" />
               </i>
             </div>
             <div className="caption">
@@ -31,7 +41,7 @@ function Post() {
             </div>
             <div className="post-pic">
               {" "}
-              <img width="760px" src="assets/postimage.png" />
+              <img width="760px" src="assets/postimage.png" alt="" />
             </div>
           </div>
         </div>
@@ -39,22 +49,23 @@ function Post() {
           <div className="container-inner">
             <div className="profile-outer">
               <div className="profile-card">
-                <img className="profile-pic" src="assets/user.png" />
+                <img className="profile-pic" src="assets/user.png" alt="" />
                 <div className="profile-name">
                   <span className="font-weight-bold">Student-name II</span>
                   <small className="time">20 mins</small>
                 </div>
               </div>
               <i className="icon">
-                <img src="assets/menuicon.png" />
+                <img src="assets/menuicon.png" alt="" />
               </i>
             </div>
 
             <div className="caption">
-              <p>
-                {" "}
-                <b> Poll 1</b>
-              </p>
+                {/* <Poll
+                  question={pollQuestion}
+                  answers={pollAnswers}
+                  onVote={handleVote}
+                /> */}
             </div>
           </div>
         </div>
@@ -62,22 +73,19 @@ function Post() {
           <div className="container-inner">
             <div className="profile-outer">
               <div className="profile-card">
-                <img className="profile-pic" src="assets/user.png" />
+                <img className="profile-pic" src="assets/user.png" alt="" />
                 <div className="profile-name">
                   <span className="font-weight-bold">Student-name III</span>
                   <small className="time">20 mins</small>
                 </div>
               </div>
               <i className="icon">
-                <img src="assets/menuicon.png" />
+                <img src="assets/menuicon.png" alt="" />
               </i>
             </div>
 
             <div className="caption">
-              <p>
-                {" "}
                 <b>Poll 2</b>
-              </p>
             </div>
           </div>
         </div>

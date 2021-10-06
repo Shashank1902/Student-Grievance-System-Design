@@ -16,7 +16,8 @@ function UploadPost() {
     closeBtn.current.addEventListener("click", (event) => {
       console.log("clicked");
       createPostContainer.current.classList.add("hidden");
-    });  }, []);
+    });
+  }, []);
 
   return (
     <>
