@@ -6,40 +6,40 @@ function ProfileCard() {
 
   return (
     <div>
-      <div class="container-box">
-        <div class="image">
-          <img class="profile-img" src="assets/user.png" alt="" />
+      <div className="container-box">
+        <div className="image">
+          <img className="profile-img" src="assets/user.png" alt="" />
 
           <img id="cam-placement" src="assets/cameraicon.png" alt="" />
         </div>
 
-        <div class="text-container">
-          <p class="title-text">
+        <div className="text-container">
+          <p className="title-text">
             {user.userDetails ? user.userDetails.username : "Unknown"}
             {/* {user.userDetails.username || "Unknown"} */}
           </p>
 
-          <div class="desc-textcontainer">
-            <span class="desc-textcontainer1">
-              <p class="container1-items">
+          <div className="desc-textcontainer">
+            <span className="desc-textcontainer1">
+              <p className="container1-items">
                 {user.userDetails ? user.userDetails.branch : "Unknown"}
               </p>
 
-              <p class="container1-items">
+              <p className="container1-items">
                 {user.userDetails ? user.userDetails.mob_no : "Unknown"}
               </p>
 
-              <p class="container1-items">
+              <p className="container1-items">
                 {user.userDetails ? user.userDetails.institution_id : "Unknown"}
               </p>
             </span>
 
-            <span class="desc-textcontainer2">
-              <p class="container2-itmes">
+            <span className="desc-textcontainer2">
+              <p className="container2-itmes">
                 {user.userDetails ? user.userDetails.email : "Unknown"}
               </p>
 
-              <p class="container2-items">
+              <p className="container2-items">
                 {user.userDetails ? user.userDetails.semester : "Unknown"}
               </p>
             </span>
@@ -47,7 +47,7 @@ function ProfileCard() {
         </div>
 
         <div>
-          <img class="edit-icon" src="assets/editicon3.png" alt="" />{" "}
+          <img className="edit-icon" src="assets/editicon3.png" alt="" />{" "}
         </div>
       </div>
     </div>

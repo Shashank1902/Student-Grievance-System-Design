@@ -23,18 +23,32 @@ const Login = (props) => {
     const userPassword = password.current.value;
 
     // let payload = {userEmail, userPassword}
-        try {
-            let response = await loginUser(dispatch, {email: userEmail, password: userPassword}) //loginUser action makes the request and handles all the neccessary state changes
-            if (!response) return
-            history.push('/') //navigate to dashboard on success
-        } catch (error) {
-            console.log(error)
-        }
+    try {
+      let response = await loginUser(dispatch, { email: userEmail, password: userPassword }) //loginUser action makes the request and handles all the neccessary state changes
+      if (!response) return
+      history.push('/') //navigate to dashboard on success
+    } catch (error) {
+      console.log(error)
+    }
     // loginCall({ email: userEmail, password: userPassword }, dispatch);
   };
 
   return (
-    <div>
+    <div className="bigdiv">
+       <div >
+          <img className="loginimg" src=".\assets\images\loginIllus.png" />
+        </div>
+      <div className="leftside">
+        <div className="embrace-div">
+           <div className="title">
+          <span className="angular">&lt;</span>
+          <span>em</span>
+          <span className="angular">&gt;</span>
+          <span>brace</span>
+        </div>
+        </div>
+       
+      </div>
       <div className="login-container">
         <div className="login-box">
           <div className="login-heading-box">
