@@ -1,76 +1,56 @@
-import "./profilecard.css"
+import "./profilecard.css";
+import { useAuthState } from "../../context/ContextIndex";
 
 function ProfileCard() {
-    return (
+  const user = useAuthState();
+
+  return (
+    <div>
+      <div className="container-box">
+        <div className="image">
+          <img className="profile-img" src="assets/user.png" alt="" />
+
+          <img id="cam-placement" src="assets/cameraicon.png" alt="" />
+        </div>
+
+        <div className="text-container">
+          <p className="title-text">
+            {user.userDetails ? user.userDetails.username : "Unknown"}
+            {/* {user.userDetails.username || "Unknown"} */}
+          </p>
+
+          <div className="desc-textcontainer">
+            <span className="desc-textcontainer1">
+              <p className="container1-items">
+                {user.userDetails ? user.userDetails.branch : "Unknown"}
+              </p>
+
+              <p className="container1-items">
+                {user.userDetails ? user.userDetails.mob_no : "Unknown"}
+              </p>
+
+              <p className="container1-items">
+                {user.userDetails ? user.userDetails.institution_id : "Unknown"}
+              </p>
+            </span>
+
+            <span className="desc-textcontainer2">
+              <p className="container2-itmes">
+                {user.userDetails ? user.userDetails.email : "Unknown"}
+              </p>
+
+              <p className="container2-items">
+                {user.userDetails ? user.userDetails.semester : "Unknown"}
+              </p>
+            </span>
+          </div>
+        </div>
+
         <div>
-            {/* <div class="container-box">
-                <div class="circle">
-                    <img id="cam-placement" src="assets/cameraicon.png" />
-                </div>
-                <img class="edit-icon" src="assets/editicon3.png"/>
-                <div>
-                <img class ="profile-img" src="assets/user.png"/>
-                </div>
-                <div class ="text-container">
-                <p class ="title-text">Name</p>
-                <div class ="desc-textcontainer">
-                <span class ="desc-textcontainer1">
-                <p class ="container1-items">Branch</p>
-                <p class ="container1-items">Mobile Number</p>
-                <p class ="container1-items">Institution ID</p>
-                </span>
-                <span class ="desc-textcontainer2">
-                <p class ="container2-itmes">Email</p>
-                <p class ="container2-items">Semester</p>
-                </span>
-                </div>
-                </div>
-            </div> */}
-
-            <div class="container-box">
-
-                <div class="image">
-
-                    <img class="profile-img" src="assets/user.png"/>
-
-                    <img id="cam-placement" src="assets/cameraicon.png"/>
-
-                    </div>
-
-                    <div class ="text-container">
-
-                    <p class ="title-text">Name</p>
-
-                    <div class ="desc-textcontainer">
-
-                    <span class ="desc-textcontainer1">
-
-                    <p class ="container1-items">Branch</p>
-
-                    <p class ="container1-items">Mobile Number</p>
-
-                    <p class ="container1-items">Institution ID</p>
-
-                    </span>
-
-                    <span class ="desc-textcontainer2">
-
-                    <p class ="container2-itmes">Email</p>
-
-                    <p class ="container2-items">Semester</p>
-
-                    </span>
-
-                    </div>
-
-                    </div>
-
-                    <div><img class ="edit-icon" src="assets/editicon3.png"/> </div>
-
-                </div>
-
-            </div>
-
-            );
+          <img className="edit-icon" src="assets/editicon3.png" alt="" />{" "}
+        </div>
+      </div>
+    </div>
+  );
 }
-            export default ProfileCard;
+export default ProfileCard;

@@ -1,6 +1,5 @@
 import React from "react";
 import Chatbot from "../../Components/Chat bot/Chatbot";
-import Grievanceform from "../../Components/GrievanceForm/Grievanceform";
 //import HomeContent from "../Components/Home content/Homecontent";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../../Components/Footbar/Footbar";
@@ -9,9 +8,19 @@ import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 import Grievance from "../../Components/Grievance/Grievance";
 import Post from "../../Components/Post/Post";
 import "./profile.css"
+import { useHistory } from "react-router-dom";
 
-class Profile extends React.Component {
-  render() {
+import { logout, useAuthDispatch } from "../../context/ContextIndex";
+
+const Profile = () => {
+  let history = useHistory();
+  const dispatch = useAuthDispatch()
+
+  const handleLogout= () => {
+    logout(dispatch) 
+    history.push('/login')
+    console.log("logout");
+  }
     return (
       <div className="App">
         <TopNavbar />
@@ -21,6 +30,7 @@ class Profile extends React.Component {
         <div>
           <div className="outer-container">
             <div className="category">
+              <p className="bttn-item" onClick={handleLogout}>LOGOUT</p>
               <p className="bttn-item">Selected Grievance</p>
               <p className="bttn-item">Pending Grievance</p>
               <p className="bttn-item">Bookmarked Grievance</p>
@@ -35,7 +45,6 @@ class Profile extends React.Component {
         <Footbar />
       </div>
     );
-  }
 }
 
 export default Profile;

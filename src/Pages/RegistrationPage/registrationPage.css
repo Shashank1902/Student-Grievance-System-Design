@@ -1,21 +1,26 @@
+.regs-box-cont {
+    display: flex;
+    flex-direction: row;
+    font-family: "Poppins"
+}
 .regs-box{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
-            0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+    /* box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+            0px 10px 33px 4px rgba(86, 19, 170, 0.25); */
      border-radius: 10px;
      width: 700px;
-     
-     
+    
 }
 .regs-heading-box{
     padding: 10px;
     text-align: center;
-    font-weight: 500;
+    font-weight: bolder;
+    color:#a644e3 ;
     font-size: 25px;
-    border-bottom: .5px solid #a644e3;
+    /* border-bottom: .5px solid #a644e3; */
     margin: 10px 0px;
     
 }
@@ -26,23 +31,24 @@
 }
 .regs-label{
     position: relative;
-    left: 98px;
-    color: #cb76ff;
+    left: 135px;
+    color: #964BF6;
     margin: 10px 0px;
+    font-weight: bold;
 
     
 }
 .regs-input-box{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:center;
     margin: 8px 0px;
     
    
 }
 
 .regs-input{
-    width: 500px;
+    width: 400px;
     border: none;
     outline: none;
     /* border-bottom: .5px solid #a644e3; */
@@ -64,13 +70,15 @@
 .sem-option ,.branch-option{
     width: 130px;
     outline: none;
-    margin: 0px 10px;
+    margin: 0px 60px;
     border: none;
     box-shadow: 0px 5px 17px rgba(190, 155, 229, 0.507),
     0px 10px 33px 4px rgba(178, 138, 226, 0.315);
     border-radius: 10px;
     padding: 5px 5px;
-    color: #a644e3;
+    color:#964BF6;
+    font-weight: bold;
+    align-items: center;
 }
 
 .regs-btn-box{
@@ -114,3 +122,44 @@
     /* background-color: #a644e3 ; */
     
 }
+.big-box{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+  }
+  .leftside{
+    display: flex;
+    flex-direction: row;
+  }
+  .title {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bolder;
+    font-size: 64px;
+   margin-top: 100px;
+  
+  
+    /* position: absolute; */
+  }
+  
+  .angular {
+    color: #FF004D;
+    margin: 0 0px;
+  }
+  .embrace-div
+  {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
+    height: 200px;
+    width: 500px;
+  }
+  .loginimg{
+    /* height: 100vh; */
+    position: absolute;
+    bottom: 0;
+    left: -35.64px;
+    height: 450px;
+    width: 450px;
+    transform: rotate(-10.35deg);
+  }

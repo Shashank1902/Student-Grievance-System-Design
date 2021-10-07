@@ -1,7 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import React, {Poll} from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import "./App.css";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+
+// Importing Routes for students
 import Help from "./Pages/Help";
 import MentalHealth from "./Pages/MentalHealth";
 import Profile from "./Pages/Profile/Profile";
@@ -13,53 +20,69 @@ import AntiRagging from "./Pages/AntiRagging";
 import TransportationIssues from "./Pages/TransportationIssues";
 import LibandLabIssues from "./Pages/LibandLabIssues";
 import Contact from "./Pages/Contact";
-import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Login from "./Pages/LoginPage/Login";
-import Registration from "./Pages/RegistrationPage/RegistrationPage";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
-import AdminProfile from "./Pages/AdminPanel/AdminPanel";
-import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 
+import { useAuthState } from "./context/ContextIndex";
 
-class App extends React.Component {
-  render() {
-    return (
+function App() {
+  const user = useAuthState();
+
+  // console.log(user);
+
+  return (
+    <div className="app">
+      {/* <AuthProvider> */}
       <Router>
         <ScrollToTop />
-        <div className="app">
-          <Switch>
-            <Route path="/" exact component={StudentHome} />
-            <Route path="/MentalHealth" exact component={MentalHealth} />
-            <Route
-              path="/FeeRelatedIssues"
-              exact
-              component={FeeRelatedIssues}
-            />
-            <Route path="/LostandFound" exact component={LostandFound} />
-            <Route path="/AntiRagging" exact component={AntiRagging} />
-            <Route
-              path="/TransportationIssues"
-              exact
-              component={TransportationIssues}
-            />
-            <Route path="/LibandLabIssues" exact component={LibandLabIssues} />
-            <Route
-              path="/StudentCommunity"
-              exact
-              component={StudentCommunity}
-            />
-            <Route path="/Help" exact component={Help} />
-            <Route path="/Contact" exact component={Contact} />
-            <Route path="/Profile" exact component={Profile} />
-            <Route path="/Login" exact component={Login} />
-            <Route path="/RegistrationPage" exact component={RegistrationPage} />
-            <Route path="/AdminPanel" exact component={AdminPanel} />
-           
-          </Switch>
-        </div>
+        <Switch>
+          {/* /////////// Routes for students ////////////// */}
+          <Route exact path="/">
+            {
+              /*localStorage.getItem("currentUser")*/ user.userDetails ? (
+                <StudentHome />
+              ) : (
+                <Login />
+              )
+            }
+          </Route>
+          <Route path="/Login">
+            {
+              /*localStorage.getItem("userId")*/ user.userDetails ? (
+                <Redirect to="/" />
+              ) : (
+                <Login />
+              )
+            }
+          </Route>
+          <Route path="/Register">
+            {
+              /*localStorage.getItem("currentUser")*/ user.userDetails ? (
+                <Redirect to="/" />
+              ) : (
+                <RegistrationPage />
+              )
+            }
+          </Route>
+          <Route path="/MentalHealth" exact component={MentalHealth} />
+          <Route path="/FeeRelatedIssues" exact component={FeeRelatedIssues} />
+          <Route path="/LostandFound" exact component={LostandFound} />
+          <Route path="/AntiRagging" exact component={AntiRagging} />
+          <Route
+            path="/TransportationIssues"
+            exact
+            component={TransportationIssues}
+          />
+          <Route path="/LibandLabIssues" exact component={LibandLabIssues} />
+          <Route path="/StudentCommunity" exact component={StudentCommunity} />
+          <Route path="/Help" exact component={Help} />
+          <Route path="/Contact" exact component={Contact} />
+          <Route path="/Profile" exact component={Profile} />
+        </Switch>
       </Router>
-    );
-  }
+      {/* </AuthProvider> */}
+    </div>
+  );
 }
 
 export default App;
