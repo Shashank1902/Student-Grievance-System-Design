@@ -34,21 +34,17 @@ function TopNavbar() {
             to="/Profile"
           >
             <div className="nav-container2">
-              <span className="profile-text">{user.userDetails ? user.userDetails.username : "Unknown"}</span>
+              <span className="profile-text">
+                {user.userDetails ? user.userDetails.username : "Unknown"}
+              </span>
               <span>
                 <img className="icon" src="assets/profileicon.png" alt="User" />
               </span>
             </div>
-<<<<<<< HEAD
-
-        </>
-    );
-=======
           </Link>
         </div>
       </div>
     </>
   );
->>>>>>> 11b43522d04913905770056d53b2f0959e361505
 }
 export default TopNavbar;
