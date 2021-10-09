@@ -122,23 +122,6 @@ const RegistrationPage = () => {
 
               <div className="regs-label-box">
                 <label htmlFor="name" className="regs-label">
-                  Mobile No. :
-                </label>
-              </div>
-
-              <div className="regs-input-box">
-                <input
-                  className="regs-input"
-                  type="text"
-                  name="mobileNo"
-                  required=""
-                  // placeholder="Mobile Number"
-                  ref={mobNo}
-                />
-              </div>
-
-              <div className="regs-label-box">
-                <label htmlFor="name" className="regs-label">
                   Password :
                 </label>
               </div>
@@ -151,36 +134,6 @@ const RegistrationPage = () => {
                   // placeholder="Password"
                   ref={password}
                 />
-              </div>
-
-              <div className="option-box">
-                <select
-                  className="branch-option"
-                  name="branch"
-                  id="branch"
-                  defaultValue="-"
-                  ref={branch}
-                >
-                  <option value="-" disabled>
-                    Branch
-                  </option>
-                  <option value="cse">CSE</option>
-                  <option value="it">IT</option>
-                </select>
-
-                <select
-                  className="sem-option"
-                  name="sem"
-                  id="sem"
-                  defaultValue="-"
-                  ref={sem}
-                >
-                  <option value="-" disabled>
-                    Semester
-                  </option>
-                  <option value="sem1">1</option>
-                  <option value="sem2">2</option>
-                </select>
               </div>
 
               <div className="regs-btn-box">
