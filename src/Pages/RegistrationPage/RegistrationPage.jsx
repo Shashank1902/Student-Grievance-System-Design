@@ -56,10 +56,10 @@ const RegistrationPage = () => {
       </div>
       <div className="leftside">
         <div className="embrace-div">
-          <div className="title">
-            <span className="angular">&lt;</span>
+          <div className="regs-title">
+            <span className="regs-angular">&lt;</span>
             <span>em</span>
-            <span className="angular">&gt;</span>
+            <span className="regs-angular">&gt;</span>
             <span>brace</span>
           </div>
         </div>

@@ -24,30 +24,32 @@ const Login = (props) => {
 
     // let payload = {userEmail, userPassword}
     try {
-      let response = await loginUser(dispatch, { email: userEmail, password: userPassword }) //loginUser action makes the request and handles all the neccessary state changes
-      if (!response) return
-      history.push('/') //navigate to dashboard on success
+      let response = await loginUser(dispatch, {
+        email: userEmail,
+        password: userPassword,
+      }); //loginUser action makes the request and handles all the neccessary state changes
+      if (!response) return;
+      history.push("/"); //navigate to dashboard on success
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
     // loginCall({ email: userEmail, password: userPassword }, dispatch);
   };
 
   return (
     <div className="bigdiv">
-       <div >
-          <img className="loginimg" src=".\assets\images\loginIllus.png" />
-        </div>
+      <div>
+        <img className="loginimg" src=".\assets\images\loginIllus.png" />
+      </div>
       <div className="leftside">
         <div className="embrace-div">
-           <div className="title">
-          <span className="angular">&lt;</span>
-          <span>em</span>
-          <span className="angular">&gt;</span>
-          <span>brace</span>
+          <div className="title-login">
+            <span className="angular-login">&lt;</span>
+            <span>em</span>
+            <span className="angular-login">&gt;</span>
+            <span>brace</span>
+          </div>
         </div>
-        </div>
-       
       </div>
       <div className="login-container">
         <div className="login-box">
@@ -75,7 +77,10 @@ const Login = (props) => {
             </div>
 
             <div className="login-btn-box">
-              <button className="login-btn" type="submit" /*disabled={isFetching}*/>
+              <button
+                className="login-btn"
+                type="submit" /*disabled={isFetching}*/
+              >
                 {/* {isFetching ? "Loging in..." : "Log in"} */}
                 Login
               </button>
