@@ -39,9 +39,9 @@ const RegistrationPage = () => {
 
     try {
       axios
-      .post("http://localhost:8000/register", user)
+      .post("https://sgsapi.herokuapp.com/register", user)
       .then((response) => {
-        console.log(response.data.rows[0]);
+        console.log(response);
       });   
       history.push("/Login") 
     } catch (error) {

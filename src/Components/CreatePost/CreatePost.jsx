@@ -1,17 +1,39 @@
+import axios from "axios";
 import { useRef } from "react";
 import "./createpost.css";
+import { useAuthState } from "../../context/ContextIndex";
 
 function CreatePost() {
-  
-  const aboutPost = useRef("null");
-  
+  const user = useAuthState();
+
+  const postDesc = useRef("");
+  const postImg = useRef("");
+  const userId = user.userDetails.user_id;
+  const token = user.token;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(aboutPost.current.value);
-  }
-  
-  
-  
+    axios
+      .post(
+        "http://localhost:8000/post",
+        {
+          postDesc: postDesc.current.value,
+          postImg: postImg.current.value,
+          userId: userId,
+        },
+        {
+          headers: { "auth-token": token },
+        }
+      )
+      .then((result) => {
+        console.log(result);
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="uploadpost-container " onSubmit={handleSubmit}>
       <form action="" className="uploadFrom">
@@ -37,8 +59,6 @@ function CreatePost() {
               {" "}
               <span>Sanket Raikwar</span>{" "}
             </div>
-
-
           </div>
         </div>
 
@@ -47,16 +67,13 @@ function CreatePost() {
           name=""
           id=""
           rows="6"
-          placeholder="What's on your mind?"
-          ref = {aboutPost}
+          placeholder="Write here!"
+          ref={postDesc}
         ></textarea>
 
         <div className="addpost">
-
           <span>
-            <img className="PostLogo"
-              src="assets/poll.png"
-              alt="" />
+            <img className="PostLogo" src="assets/poll.png" alt="" />
           </span>
 
           <span>
@@ -66,8 +83,6 @@ function CreatePost() {
               alt=""
             />
           </span>
-
-
         </div>
         <div className="btn-container">
           <button className="btn" type="submit">
@@ -75,7 +90,6 @@ function CreatePost() {
           </button>
         </div>
       </form>
-
     </div>
   );
 }

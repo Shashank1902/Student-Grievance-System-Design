@@ -19,7 +19,6 @@ const Profile = () => {
   const handleLogout= () => {
     logout(dispatch) 
     history.push('/login')
-    console.log("logout");
   }
     return (
       <div className="App">

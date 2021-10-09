@@ -1,38 +1,9 @@
-// const AuthReducer = (state, action) => {
-//   switch (action.type) {
-//     case "LOGIN_START":
-//       return {
-//         user: null,
-//         isFetching: true,
-//         error: false,
-//       };
-//     case "LOGIN_SUCCESS":
-//       return {
-//         user: action.payload,
-//         isFetching: false,
-//         error: false,
-//       };
-//     case "LOGIN_FAILURE":
-//       return {
-//         user: null,
-//         isFetching: false,
-//         error: action.payload,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// export default AuthReducer;
-
-//import React, { useReducer } from "react";
- 
 let user = localStorage.getItem("currentUser")
   ? JSON.parse(localStorage.getItem("currentUser"))
   : null;
 
 let token = localStorage.getItem("currentUser")
-  ? JSON.parse(localStorage.getItem("currentUser")).user_id
+  ? JSON.parse(localStorage.getItem("token"))
   : null;
 
 export const initialState = {
@@ -53,8 +24,8 @@ export const AuthReducer = (initialState, action) => {
     case "LOGIN_SUCCESS":
       return {
         ...initialState,
-        userDetails: action.payload.data.user.rows[0],
-        token: action.payload.data.user.rows[0].user_id,
+        userDetails: action.payload.data.user,
+        token: action.payload.data.token,
         loading: false,
         loggedin: true
       };

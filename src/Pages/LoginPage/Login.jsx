@@ -1,36 +1,36 @@
 import React, { useRef } from "react";
-// import { useHistory } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./login.css";
-//import { loginCall } from "../../apiCalls";
-//import { AuthContext } from "../../context/AuthContext";
 
-import { loginUser, useAuthDispatch } from "../../context/ContextIndex";
+import {
+  loginUser,
+  useAuthDispatch,
+  useAuthState,
+} from "../../context/ContextIndex";
 
-const Login = (props) => {
+const Login = () => {
   const email = useRef("null");
   const password = useRef("null");
   let history = useHistory();
 
-  // const { isFetching, dispatch } = useContext(AuthContext);
-
   const dispatch = useAuthDispatch();
-  // const { loading, errorMessage } = useAuthState();
+  const { loading, errorMessage } = useAuthState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userEmail = email.current.value;
     const userPassword = password.current.value;
 
-    // let payload = {userEmail, userPassword}
-        try {
-            let response = await loginUser(dispatch, {email: userEmail, password: userPassword}) //loginUser action makes the request and handles all the neccessary state changes
-            if (!response) return
-            history.push('/') //navigate to dashboard on success
-        } catch (error) {
-            console.log(error)
-        }
-    // loginCall({ email: userEmail, password: userPassword }, dispatch);
+    try {
+      let response = await loginUser(dispatch, {
+        email: userEmail,
+        password: userPassword,
+      });
+      if (!response) return;
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -61,12 +61,12 @@ const Login = (props) => {
             </div>
 
             <div className="login-btn-box">
-              <button className="login-btn" type="submit" /*disabled={isFetching}*/>
-                {/* {isFetching ? "Loging in..." : "Log in"} */}
-                Login
+              <button className="login-btn" type="submit" disabled={loading}>
+                {loading ? "Loging in..." : "Log in"}
               </button>
             </div>
 
+            <div>{errorMessage ? "User not found!" : null}</div>
             <div className="signup-btn-box">
               <span>
                 Register Here{" "}

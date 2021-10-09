@@ -1,17 +1,18 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import "./post.css";
-// import React, { Poll } from 'react';
-//import Poll from "react-polls";
 
-function Post() {
-//   // const pollQuestion = "Is react-polls useful?";
-//   // const pollAnswers = [
-//   //   { option: "Yes", votes: 9 },
-//   //   { option: "No", votes: 1 },
-//   // ];
-
-  // const handleVote = () => {
-  //   console.log("voted");
-  // }
+function Post({desc, userId}) {
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    axios.get(`https://sgsapi.herokuapp.com/user/${userId}`)
+    .then((result) => {
+      setUsername(result.data.username)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  })
 
   return (
     <div>
@@ -22,7 +23,7 @@ function Post() {
               <div className="profile-card">
                 <img className="profile-pic" src="assets/user.png" alt="" />
                 <div className="profile-name">
-                  <span className="font-weight-bold">Student-name I</span>
+                  <span className="font-weight-bold">{username}</span>
                   <div className="time">
                     {" "}
                     <small className="">20 mins</small>
@@ -35,8 +36,7 @@ function Post() {
             </div>
             <div className="caption">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+                {desc}
               </p>
             </div>
             <div className="post-pic">
@@ -45,6 +45,7 @@ function Post() {
             </div>
           </div>
         </div>
+{/*         
         <div className="post-card" id="post-card2">
           <div className="container-inner">
             <div className="profile-outer">
@@ -61,14 +62,11 @@ function Post() {
             </div>
 
             <div className="caption">
-                {/* <Poll
-                  question={pollQuestion}
-                  answers={pollAnswers}
-                  onVote={handleVote}
-                /> */}
+                
             </div>
           </div>
         </div>
+
         <div className="post-card" id="post-card3">
           <div className="container-inner">
             <div className="profile-outer">
@@ -88,7 +86,8 @@ function Post() {
                 <b>Poll 2</b>
             </div>
           </div>
-        </div>
+        </div> */}
+
       </div>
     </div>
   );

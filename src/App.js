@@ -27,7 +27,6 @@ import { useAuthState } from "./context/ContextIndex";
 
 function App() {
   const user = useAuthState();
-
   // console.log(user);
 
   return (
