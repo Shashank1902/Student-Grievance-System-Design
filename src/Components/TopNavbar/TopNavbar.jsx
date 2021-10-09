@@ -39,6 +39,9 @@ function TopNavbar() {
                 <img className="icon" src="assets/profileicon.png" alt="User" />
               </span>
             </div>
+
+    
+    
           </Link>
         </div>
       </div>

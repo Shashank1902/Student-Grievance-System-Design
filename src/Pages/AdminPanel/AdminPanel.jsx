@@ -1,56 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AdminNavbar from '../../Components/AdminNavbar/AdminNavbar';
+import AdminSidebar from '../../Components/AdminSidebar/AdminSidebar';
 import './adminPanel.css';
 import { Link } from 'react-router-dom';
-const AdminPanel = () => {
-    return (
-        <>
-            <div>
-                <div className="title-adminPage">
-                    <span className="angular-adminPage">&lt;</span>
-                    <span>em</span>
-                    <span className="angular-adminPage">&gt;</span>
-                    <span>brace</span>
-                </div>
 
-                <div className="admin-container">
-                    <div className="admin-container1">
-                        <span className="admin-title">Welcome Sharmila!</span>
-                    </div>
-
-                    <div className="admin-container2">
-                    
-                    <Link style={{ textDecoration: "none", color: "black"  }} to="/Profile">
-
-                        <span className="admin-profile-text">Profile</span>
-
-                        <span><img className="admin-icon" src="assets/ProfileIcon2.png" alt="User" /></span>
-
-                    </Link>
-
-
-                    <Link style={{ textDecoration: "none", color: "black"  }} to="/">
-
-                        <span className="admin-profile-text">Log Out</span>
-
-                        <span><img className="admin-icon" src="assets/LogoutIcon.png" alt="User" /></span>
-
-                    </Link>
-
-                    </div>
-    
-                </div>
-
+class AdminPanel extends React.Component {
+    render() {
+        return (
+            <>
+            <div className="AdNav">
+                <AdminNavbar></AdminNavbar>
             </div>
 
+            <div>
+                <AdminSidebar></AdminSidebar>
+            </div>
+            </>
+            
 
 
 
+        );
+    }
+} 
 
-
-
-
-        </>
-    )
-}
-
-export default AdminPanel; 
+export default AdminPanel;

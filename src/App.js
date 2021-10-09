@@ -79,6 +79,8 @@ function App() {
           <Route path="/Help" exact component={Help} />
           <Route path="/Contact" exact component={Contact} />
           <Route path="/Profile" exact component={Profile} />
+          <Route path="/admin" exact component={AdminPanel} />
+
           
 
         </Switch>
