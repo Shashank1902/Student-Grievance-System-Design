@@ -34,7 +34,20 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="bigdiv">
+      <div>
+        <img className="loginimg" src=".\assets\images\loginIllus.png" />
+      </div>
+      <div className="leftside">
+        <div className="embrace-div">
+          <div className="title-login">
+            <span className="angular-login">&lt;</span>
+            <span>em</span>
+            <span className="angular-login">&gt;</span>
+            <span>brace</span>
+          </div>
+        </div>
+      </div>
       <div className="login-container">
         <div className="login-box">
           <div className="login-heading-box">
@@ -61,8 +74,12 @@ const Login = () => {
             </div>
 
             <div className="login-btn-box">
-              <button className="login-btn" type="submit" disabled={loading}>
-                {loading ? "Loging in..." : "Log in"}
+              <button
+                className="login-btn"
+                type="submit" /*disabled={isFetching}*/
+              >
+                {/* {isFetching ? "Loging in..." : "Log in"} */}
+                Login
               </button>
             </div>
 

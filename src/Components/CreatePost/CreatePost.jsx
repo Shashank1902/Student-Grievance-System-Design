@@ -1,10 +1,14 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./createpost.css";
 import { useAuthState } from "../../context/ContextIndex";
 
 function CreatePost() {
   const user = useAuthState();
+
+  const [image, setImage] = useState();
+  const [preview, setPreview] = useState();
+  const fileInputRef = useRef();
 
   const postDesc = useRef("");
   const postImg = useRef("");
@@ -15,7 +19,7 @@ function CreatePost() {
     e.preventDefault();
     axios
       .post(
-        "http://localhost:8000/post",
+        "https://sgsapi.herokuapp.com/post",
         {
           postDesc: postDesc.current.value,
           postImg: postImg.current.value,
@@ -32,6 +36,27 @@ function CreatePost() {
       .catch((err) => {
         console.log(err);
       });
+    }
+
+
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(image);
+    } else {
+      setPreview(null);
+    }
+  }, [image]);
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    fileInputRef.current.click();
+
+    document.querySelector("textarea").rows = "3";
+    document.querySelector(".post-img").style.minHeight = "350px";
   };
 
   return (
@@ -71,16 +96,45 @@ function CreatePost() {
           ref={postDesc}
         ></textarea>
 
+        <div className="post-img-box">
+          <img
+            className="post-img"
+            src={preview}
+            // style={{ objectFit: "contain" }}
+            onClick={() => {
+              setImage(null);
+            }}
+          />
+        </div>
+
         <div className="addpost">
           <span>
             <img className="PostLogo" src="assets/poll.png" alt="" />
           </span>
 
           <span>
+            <input
+              type="file"
+              style={{ display: "none" }}
+              ref={fileInputRef}
+              accept="image/*"
+              onChange={(event) => {
+                const file = event.target.files[0];
+                console.log( event.target.files[0]); 
+
+                if (file) {
+                  setImage(file);
+                } else {
+                  setImage(null);
+                }
+              }}
+            />
+
             <img
               className=" PostLogo"
               src="assets/PostLogo/gallery.png"
               alt=""
+              onClick={handleClick}
             />
           </span>
         </div>

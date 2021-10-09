@@ -45,6 +45,7 @@ function UploadPost() {
               src="assets/PostLogo/gallery.png"
               alt="Choose from galllery"
             />
+            
             <img
               className="uploadpost-icon"
               src="assets/poll.png"
