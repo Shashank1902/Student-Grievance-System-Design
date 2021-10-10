@@ -3,6 +3,7 @@ import AdminNavbar from '../../Components/Admin/AdminNavbar/AdminNavbar';
 import AdminSidebar from '../../Components/Admin/AdminSidebar/AdminSidebar';
 import './adminPanel.css';
 import { Link } from 'react-router-dom';
+import AdminGrievance from '../../Components/Admin/AdminMiddle/AdminGrievance';
 
 class AdminPanel extends React.Component {
     render() {
@@ -14,6 +15,13 @@ class AdminPanel extends React.Component {
 
             <div>
                 <AdminSidebar></AdminSidebar>
+            </div>
+            <div>
+                <AdminGrievance />
+                <AdminGrievance />
+                <AdminGrievance />
+                <AdminGrievance />
+
             </div>
             </>
             
