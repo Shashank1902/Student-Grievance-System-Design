@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AdminNavbar from '../../Components/AdminNavbar/AdminNavbar';
 import AdminSidebar from '../../Components/AdminSidebar/AdminSidebar';
 import './adminPanel.css';
-
+import { Link } from 'react-router-dom';
 
 class AdminPanel extends React.Component {
     render() {

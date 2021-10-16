@@ -1,53 +1,52 @@
 import React, { useRef } from "react";
-// import { useHistory } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./login.css";
-//import { loginCall } from "../../apiCalls";
-//import { AuthContext } from "../../context/AuthContext";
 
-import { loginUser, useAuthDispatch } from "../../context/ContextIndex";
+import {
+  loginUser,
+  useAuthDispatch,
+  useAuthState,
+} from "../../context/ContextIndex";
 
-const Login = (props) => {
+const Login = () => {
   const email = useRef("null");
   const password = useRef("null");
   let history = useHistory();
 
-  // const { isFetching, dispatch } = useContext(AuthContext);
-
   const dispatch = useAuthDispatch();
-  // const { loading, errorMessage } = useAuthState();
+  const { loading, errorMessage } = useAuthState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userEmail = email.current.value;
     const userPassword = password.current.value;
 
-    // let payload = {userEmail, userPassword}
     try {
-      let response = await loginUser(dispatch, { email: userEmail, password: userPassword }) //loginUser action makes the request and handles all the neccessary state changes
-      if (!response) return
-      history.push('/') //navigate to dashboard on success
+      let response = await loginUser(dispatch, {
+        email: userEmail,
+        password: userPassword,
+      });
+      if (!response) return;
+      history.push("/");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    // loginCall({ email: userEmail, password: userPassword }, dispatch);
   };
 
   return (
     <div className="bigdiv">
-       <div >
-          <img className="loginimg" src=".\assets\images\loginIllus.png" />
-        </div>
+      <div>
+        <img className="loginimg" src=".\assets\images\loginIllus.png" />
+      </div>
       <div className="leftside">
         <div className="embrace-div">
-           <div className="title">
-          <span className="angular">&lt;</span>
-          <span>em</span>
-          <span className="angular">&gt;</span>
-          <span>brace</span>
+          <div className="title-login">
+            <span className="angular-login">&lt;</span>
+            <span>em</span>
+            <span className="angular-login">&gt;</span>
+            <span>brace</span>
+          </div>
         </div>
-        </div>
-       
       </div>
       <div className="login-container">
         <div className="login-box">
@@ -75,12 +74,16 @@ const Login = (props) => {
             </div>
 
             <div className="login-btn-box">
-              <button className="login-btn" type="submit" /*disabled={isFetching}*/>
+              <button
+                className="login-btn"
+                type="submit" /*disabled={isFetching}*/
+              >
                 {/* {isFetching ? "Loging in..." : "Log in"} */}
                 Login
               </button>
             </div>
 
+            <div>{errorMessage ? "User not found!" : null}</div>
             <div className="signup-btn-box">
               <span>
                 Register Here{" "}

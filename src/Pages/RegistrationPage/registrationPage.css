@@ -131,7 +131,7 @@
     display: flex;
     flex-direction: row;
   }
-  .title {
+  .regs-title {
     font-family: 'Roboto Mono', monospace;
     font-weight: bolder;
     font-size: 64px;
@@ -141,7 +141,7 @@
     /* position: absolute; */
   }
   
-  .angular {
+  .regs-angular {
     color: #FF004D;
     margin: 0 0px;
   }

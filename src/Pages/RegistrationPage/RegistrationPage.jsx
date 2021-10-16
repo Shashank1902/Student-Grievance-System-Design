@@ -39,11 +39,11 @@ const RegistrationPage = () => {
 
     try {
       axios
-        .post("http://localhost:8000/register", user)
-        .then((response) => {
-          console.log(response.data.rows[0]);
-        });
-      history.push("/Login")
+      .post("https://sgsapi.herokuapp.com/register", user)
+      .then((response) => {
+        console.log(response);
+      });   
+      history.push("/Login") 
     } catch (error) {
       console.log(error);
     }
@@ -56,10 +56,10 @@ const RegistrationPage = () => {
       </div>
       <div className="leftside">
         <div className="embrace-div">
-          <div className="title">
-            <span className="angular">&lt;</span>
+          <div className="regs-title">
+            <span className="regs-angular">&lt;</span>
             <span>em</span>
-            <span className="angular">&gt;</span>
+            <span className="regs-angular">&gt;</span>
             <span>brace</span>
           </div>
         </div>
