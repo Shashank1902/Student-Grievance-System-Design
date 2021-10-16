@@ -2,14 +2,9 @@ import React from "react";
 import "./admingrievance.css";
 
 function AdminGrievance() {
-  const read = () =>{
+  // const read = () => {};
 
-    
-
-  }
-  
-  
-    return (
+  return (
     <>
       <div className="grievance-container">
         <div className="grievance-wrapper">
@@ -39,20 +34,17 @@ function AdminGrievance() {
               <span>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Dolorem, temporibus architecto ab nihil soluta ea tempora,
-                aspernatur distinctio quam, aliquam obcaecati labore.
-               
-                
-                  Soluta impedit molestias doloremque atque veritatis deserunt.
-                  Quaerat! Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Corrupti distinctio ipsa cupiditate molestiae a quidem
-                  libero quam tenetur ad incidunt. Minima fugit voluptate non
-                  in, cumque odit consectetur delectus amet. Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Minima porro, quidem
-                  consequuntur necessitatibus tempora quasi cumque quaerat
-                  repellendus. Id quis commodi odio provident alias ullam
-                  nesciunt fugiat hic repellendus eligendi.
-                </span>
-              
+                aspernatur distinctio quam, aliquam obcaecati labore. Soluta
+                impedit molestias doloremque atque veritatis deserunt. Quaerat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti distinctio ipsa cupiditate molestiae a quidem libero
+                quam tenetur ad incidunt. Minima fugit voluptate non in, cumque
+                odit consectetur delectus amet. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Minima porro, quidem consequuntur
+                necessitatibus tempora quasi cumque quaerat repellendus. Id quis
+                commodi odio provident alias ullam nesciunt fugiat hic
+                repellendus eligendi.
+              </span>
             </div>
           </div>
 
@@ -61,7 +53,9 @@ function AdminGrievance() {
               <span>Reported on:10 oct 21</span>
             </div>
             <div className="read">
-                <button className="read-btn" type="button" >Read More</button>
+              <button className="read-btn" type="button">
+                Read More
+              </button>
             </div>
           </div>
         </div>

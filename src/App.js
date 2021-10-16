@@ -12,7 +12,7 @@ import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import Help from "./Pages/Help";
 import MentalHealth from "./Pages/MentalHealth";
 import Profile from "./Pages/Profile/Profile";
-import StudentCommunity from "./Pages/StudentCommunity";
+import StudentCommunity from "./Pages/StudentCommunity/StudentCommunity";
 import StudentHome from "./Pages/StudentHome";
 import FeeRelatedIssues from "./Pages/FeeRelatedIssues";
 import LostandFound from "./Pages/LostandFound";
