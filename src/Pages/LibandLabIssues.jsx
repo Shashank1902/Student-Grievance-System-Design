@@ -5,6 +5,50 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
+import Faq from 'react-faq-component';
+
+const data = {
+  title: "FAQ",
+  rows: [
+    {
+      title: "1. How many books will be issued for 5th sem students?",
+      content: "A.	Total 4 books will be issued."
+    },
+    {
+      title: "2. . Will the library function tomorrow on 2nd October 2021, if yes then what will be the timings?",
+      content: "A.	Yes, Timings will be 11am to 05pm."
+    },
+    {
+      title: "3. Can I access the library on 15th OCT, at the noon time? ",
+      content: "A.	Yes, the library will be functional."
+    },
+    {
+      title: "4.Where is the library situated in out institution?",
+      content: "It is situated near the main entrance gate."
+    },
+    {
+      title: "5. After issuing, when the books need to be reissued or returned?",
+      content: "After issuing the book needs to be reissued within 15 days and need to be returned within 6 months from the date of first issue."
+    },
+    {
+      title: "6. Where is the chemistry lab situated?",
+      content: "A.	It is situated near the library, on 1st floor."
+    },{
+      title: "7. Who is the lab attendant of BME lab?",
+      content: "Mr Venkatesh Anand is the lab attendant of BME lab."
+    },{
+      title: "8. How many students can be accommodated in the CL7 lab at once?",
+      content: "Maximum 45 students can access the lab at once."
+    },{
+      title: "9. How many labs are there in our Institution?",
+      content: "5 computer labs, 1 lab for physics, chemistry, civil, Electronics, BME overall 11 labs are there."
+    },{
+      title: "10. What are the precautions need to be followed while accessing the labs?",
+      content: `a) Proper use of instruments of the lab.<br/>
+      b) Safety precautions like gloves, eyeglasses in the lab of chemistry, workshops.<br/>
+      c) Maintaining the same state of the lab items/computers as it were after accessing.`
+    },]
+}
 
 class LibandLabIssues extends React.Component {
   render() {
@@ -12,6 +56,7 @@ class LibandLabIssues extends React.Component {
       <div className="App">
         <TopNavbar />
         <Grievanceform />
+        <Faq data={data} />
         <Chatbot />
         <Footbar />
       </div>
