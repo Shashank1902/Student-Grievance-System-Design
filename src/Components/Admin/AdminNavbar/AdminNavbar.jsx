@@ -5,6 +5,9 @@ import "./adminnavbar.css";
 const AdminNavbar = () => {
   return (
     <>
+    <div className="admin-topbar">
+
+    
       <div className="title-adminPage">
         <span className="angular-adminPage">&lt;</span>
         <span>em</span>
@@ -45,6 +48,7 @@ const AdminNavbar = () => {
             </span>
           </Link>
         </div>
+      </div>
       </div>
     </>
   );

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import AdminNavbar from '../../Components/AdminNavbar/AdminNavbar';
-import AdminSidebar from '../../Components/AdminSidebar/AdminSidebar';
+import AdminNavbar from '../../Components/Admin/AdminNavbar/AdminNavbar';
+import AdminSidebar from '../../Components/Admin/AdminSidebar/AdminSidebar';
+import AdminInfoBoxes from '../../Components/Admin/AdminInfoBoxes/AdminInfoBoxes';
 import './adminPanel.css';
 import { Link } from 'react-router-dom';
+
 
 class AdminPanel extends React.Component {
     render() {
@@ -15,6 +17,11 @@ class AdminPanel extends React.Component {
             <div>
                 <AdminSidebar></AdminSidebar>
             </div>
+            
+            <div>
+                <AdminInfoBoxes></AdminInfoBoxes>
+            </div>
+            
             </>
             
 

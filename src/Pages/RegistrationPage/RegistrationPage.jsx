@@ -51,9 +51,7 @@ const RegistrationPage = () => {
 
   return (
     <div className="big-box">
-      <div >
-        <img className="loginimg" src=".\assets\images\loginIllus.png" />
-      </div>
+     
       <div className="leftside">
         <div className="embrace-div">
           <div className="regs-title">
@@ -62,7 +60,12 @@ const RegistrationPage = () => {
             <span className="regs-angular">&gt;</span>
             <span>brace</span>
           </div>
+          
         </div>
+        <div >
+        <img className="loginimg" src=".\assets\images\loginIllus.png" />
+      </div>
+        
         <div className="regs-box-cont">
           <div className="regs-box">
             <form onSubmit={handleSubmit}>
@@ -122,23 +125,6 @@ const RegistrationPage = () => {
 
               <div className="regs-label-box">
                 <label htmlFor="name" className="regs-label">
-                  Mobile No. :
-                </label>
-              </div>
-
-              <div className="regs-input-box">
-                <input
-                  className="regs-input"
-                  type="text"
-                  name="mobileNo"
-                  required=""
-                  // placeholder="Mobile Number"
-                  ref={mobNo}
-                />
-              </div>
-
-              <div className="regs-label-box">
-                <label htmlFor="name" className="regs-label">
                   Password :
                 </label>
               </div>
@@ -153,58 +139,30 @@ const RegistrationPage = () => {
                 />
               </div>
 
-              <div className="option-box">
-                <select
-                  className="branch-option"
-                  name="branch"
-                  id="branch"
-                  defaultValue="-"
-                  ref={branch}
-                >
-                  <option value="-" disabled>
-                    Branch
-                  </option>
-                  <option value="cse">CSE</option>
-                  <option value="it">IT</option>
-                </select>
-
-                <select
-                  className="sem-option"
-                  name="sem"
-                  id="sem"
-                  defaultValue="-"
-                  ref={sem}
-                >
-                  <option value="-" disabled>
-                    Semester
-                  </option>
-                  <option value="sem1">1</option>
-                  <option value="sem2">2</option>
-                </select>
-              </div>
-
               <div className="regs-btn-box">
                 <button type="submit" className="regs-btn">
                   Submit
                 </button>
-              </div>
+              
 
-              <Link style={{ textDecoration: "none" }} to="/Login">
+               <Link style={{ textDecoration: "none" }} to="/Login">
                 <div className="signin-btn-box">
-                  <div>
+                  <span className="regs-span-signup">
+                    or {" "}
                     <button className="regs-signup-btn" type="submit">
-                      Login
+                      Sign In
                     </button>
-                  </div>
+                  </span>
                   <div>
-                    <img
+                    {/* <img
                       className="signin-logo"
                       src="/assets/Registration-Logo/signin-logo.png"
                       alt=""
-                    />
+                    /> */}
                   </div>
                 </div>
-              </Link>
+               </Link>
+              </div>
             </form>
           </div>
           {/* <div className="">embrace</div> */}
