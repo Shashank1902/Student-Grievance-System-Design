@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./login.css";
 
 import {
@@ -39,7 +40,7 @@ const Login = () => {
         <img className="loginimg" src=".\assets\images\loginIllus.png" />
       </div>
       <div className="leftside">
-        <div className="embrace-div" > 
+        <div className="embrace-div">
           <div className="title-login">
             <span className="angular-login">&lt;</span>
             <span>em</span>
@@ -54,11 +55,11 @@ const Login = () => {
             <h2 className="login-heading">Sign In</h2>
           </div>
           <form onSubmit={handleSubmit}>
-          <div className="regs-label-box">
-                <label htmlFor="name" className="regs-label-login">
-                  Email :
-                </label>
-              </div>
+            <div className="regs-label-box">
+              <label htmlFor="name" className="regs-label-login">
+                Email :
+              </label>
+            </div>
             <div className="login-inputbox">
               <input
                 type="text"
@@ -69,7 +70,7 @@ const Login = () => {
               />
             </div>
             <div className="login-inputbox">
-            <div className="regs-label-box">
+              <div className="regs-label-box">
                 <label htmlFor="name" className="regs-label-login">
                   Password :
                 </label>
@@ -96,10 +97,11 @@ const Login = () => {
             <div>{errorMessage ? "User not found!" : null}</div>
             <div className="signup-btn-box">
               <span>
-               To create an account click{" "}
-                <button className="signup-btn" type="submit">
-                Here!
-                </button>{" "}
+                To create an account click{" "}
+                <Link style={{ textDecoration: "none", color: "red" }} to="/register">
+                  {" "}
+                  Here! 
+                </Link>
               </span>
             </div>
           </form>

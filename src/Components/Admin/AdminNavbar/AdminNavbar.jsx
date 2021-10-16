@@ -5,50 +5,48 @@ import "./adminnavbar.css";
 const AdminNavbar = () => {
   return (
     <>
-    <div className="admin-topbar">
-
-    
-      <div className="title-adminPage">
-        <span className="angular-adminPage">&lt;</span>
-        <span>em</span>
-        <span className="angular-adminPage">&gt;</span>
-        <span>brace</span>
-      </div>
-
-      <div className="admin-container">
-        <div className="admin-container1">
-          <span className="admin-title">Welcome Sharmila!</span>
+      <div className="admin-topbar">
+        <div className="title-adminPage">
+          <span className="angular-adminPage">&lt;</span>
+          <span>em</span>
+          <span className="angular-adminPage">&gt;</span>
+          <span>brace</span>
         </div>
 
-        <div className="admin-container2">
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Profile"
-          >
-            <span className="admin-profile-text">Profile</span>
+        <div className="admin-container">
+          <div className="admin-container1">
+            <span className="admin-title">Welcome Sharmila!</span>
+          </div>
 
-            <span>
-              <img
-                className="admin-icon"
-                src="assets/ProfileIcon2.png"
-                alt="User"
-              />
-            </span>
-          </Link>
+          <div className="admin-container2">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/Profile"
+            >
+              <span className="admin-profile-text">Profile</span>
 
-          <Link style={{ textDecoration: "none", color: "black" }} to="/">
-            <span className="admin-profile-text">Log Out</span>
+              <span>
+                <img
+                  className="admin-icon"
+                  src="assets/ProfileIcon2.png"
+                  alt="User"
+                />
+              </span>
+            </Link>
 
-            <span>
-              <img
-                className="admin-icon"
-                src="assets/LogoutIcon.png"
-                alt="User"
-              />
-            </span>
-          </Link>
+            <Link style={{ textDecoration: "none", color: "black" }} to="/">
+              <span className="admin-profile-text">Log Out</span>
+
+              <span>
+                <img
+                  className="admin-icon"
+                  src="assets/LogoutIcon.png"
+                  alt="User"
+                />
+              </span>
+            </Link>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import "./topnavbar.css";
 import { useAuthState } from "../../context/ContextIndex";
+import { useHistory } from "react-router-dom";
+import { logout, useAuthDispatch } from "../../context/ContextIndex";
 
 function TopNavbar() {
   const user = useAuthState();
+  let history = useHistory();
+  const dispatch = useAuthDispatch();
+  const handleLogout = () => {
+    logout(dispatch);
+    history.push("/login");
+  };
+
 
   return (
     <>
@@ -29,22 +38,26 @@ function TopNavbar() {
               <span className="nav-item">Contact</span>
             </Link>
           </div>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Profile"
-          >
-            <div className="nav-container2">
+          <div className="nav-container2">
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+              to="/Profile"
+            >
+              <span>
+                <img
+                  className="navbar-profile-icon"
+                  src="assets/profileicon.png"
+                  alt="User"
+                />
+              </span>
               <span className="profile-text">
                 {user.userDetails ? user.userDetails.username : "Unknown"}
               </span>
-              <span>
-                <img className="icon" src="assets/profileicon.png" alt="User" />
-              </span>
-            </div>
-
-    
-    
-          </Link>
+            </Link>
+            <span className="navbar-logout-icon" onClick={handleLogout}>
+              <i className="fas fa-sign-out-alt"></i>
+            </span>
+          </div>
         </div>
       </div>
     </>

@@ -81,8 +81,7 @@ function CreatePost() {
 
           <div className="postContainer-2">
             <div className="profile-text">
-              {" "}
-              <span>Sanket Raikwar</span>{" "}
+              <span>{user.userDetails.username}</span>
             </div>
           </div>
         </div>
@@ -100,6 +99,7 @@ function CreatePost() {
           <img
             className="post-img"
             src={preview}
+            alt=""
             // style={{ objectFit: "contain" }}
             onClick={() => {
               setImage(null);
