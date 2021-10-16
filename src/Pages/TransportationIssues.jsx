@@ -5,6 +5,57 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
+// import { Component } from 'react';
+import Faq from 'react-faq-component';
+
+const data = {
+  title: "FAQ",
+  rows: [
+    {
+      title: "1. What type of transport facility is provided to the students for their location?",
+      content: "The college provides Bus Facility to students for various routes, information of which is provided on the college website."
+    },
+    {
+      title: "2. How can the Bus Facility be Availed?",
+      content: "For availing of bus facilities, students must fill a form providing necessary information to the college to get their bus cards printed. For further details, contact the office reception."
+    },
+    {
+      title: "3. How much is the transport fee for 1st-year students?",
+      content: "The Bus fee is ₹12,000 for all the students of the college."
+    },
+    {
+      title: "4. Can the transport fee be deposited in parts?",
+      content: "The bus fee can be deposited in two installments for each semester, i.e., of ₹6,000 each."
+    },
+    {
+      title: "5. What will be the mode of payment for the transport fee?",
+      content: "The transport fee can only be paid in two modes, i.e., cash and/or cheque."
+    },
+    {
+      title: "6. What document will be issued to the students after depositing transport charges?",
+      content: "A bus card, which acts as an identity card would be provided to students which they must carry at all times while traveling on the bus."
+    },
+    {
+      title: "7. Can the transport facility be withdrawn?",
+      content: "No, once availed and paid for, the transport facility cannot be withdrawn unless a relevant excuse is provided."
+    },
+    {
+      title: "8. What would be the arrival and departure timings of the bus?",
+      content: "The Bus timings are dependent on the college timings and hence, may vary accordingly."
+    },
+    {
+      title: "9. Is it required to renew the bus card from time to time?",
+      content: "No, the bus card once issued to the student requires no renewal."
+    },
+    {
+      title: "10. What procedure needs to be followed in case my bus card is lost?",
+      content: "In case of losing the bus card, Students must inform the bus authorities and apply for another bus card by following the same procedures as earlier."
+    },
+    {
+      title: "11. . How can I switch my bus in case of a changed address?",
+      content: "Students would be required to fill another form in case of a changed address and apply for a new bus card."
+    }]
+}
 
 class TransportationIssues extends React.Component {
   render() {
@@ -12,6 +63,7 @@ class TransportationIssues extends React.Component {
       <div className="App">
         <TopNavbar />
         <Grievanceform />
+        <Faq data={data} />
         <Chatbot />
         <Footbar />
       </div>
