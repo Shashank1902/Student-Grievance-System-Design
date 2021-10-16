@@ -5,6 +5,32 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
+import Faq from 'react-faq-component';
+
+const data = {
+  title: "FAQ",
+  rows: [
+    {
+      title: "1. What are the different modes of fee payment?",
+      content: "Fees can be paid through cash, cheque, DD,RTGS, NEFT and UPI."
+    },
+    {
+      title: "2. What should be done in case of lost fee receipt?",
+      content: "In such a case, consult the class incharge or directly make an amendment at the fees counter to get a duplicate receipt."
+    },
+    {
+      title: "3. Is there a procedure to avail fee concession?",
+      content: "For availing any kind of rebeit one can apply for a scholarship, if they fall in requirements stated in the scholarship policies."
+    },
+    {
+      title: "4. How can one reimburse miscellaneous(security) fees at the end of graduation?",
+      content: "By simply showing the receipt of the miscellaneous or security fee one can avail it."
+    },
+    {
+      title: "5. What are the working hours of the fee section?",
+      content: "Monday to Saturday, from morning 11 am to 4pm. (1pm to 2pm lunch hours)"
+    }]
+}
 
 class FeeRelatedIssues extends React.Component {
   render() {
@@ -12,6 +38,7 @@ class FeeRelatedIssues extends React.Component {
       <div className="App">
         <TopNavbar />
         <Grievanceform />
+        <Faq data={data} />
         <Chatbot />
         <Footbar />
       </div>
