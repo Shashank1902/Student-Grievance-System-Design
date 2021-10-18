@@ -1,75 +1,111 @@
-.AdminInfoBar{
-    display:flex;
-    background:#80d4ff;
-    width:100%;
-    height:500px;
-    margin-left:170px ;
-    flex-wrap: wrap;
-    border-color:white;
-    border-style:solid;
-    
-   
+.AdminInfoBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: #4271ce;
+  border: 5px solid #ffffff;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 20px 20px;
+  width: 70%;
+  height: auto;
+  position: absolute;
+  right: 3%;
 }
 
-.InfoBox{
-    width:450px;
-    height:150px;
-    border-radius: 20px;
-    padding:25px;
-    margin:20px;
-    display:flex;
-    justify-content:space-around;
-    border-color:white;
-    border-style:solid;
-    
+.InfoBox {
+  width: 350px;
+  height: 100px;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-color: white;
+  border-style: solid;
 }
 
-.pinkbox{
-    display: flex;
-    background: linear-gradient(98.59deg, #FF7222 6.64%, #FF36BB 97.66%);
-    box-shadow: 0px 0px 5px rgba(115, 7, 7, 0.26);
-    border-radius: 20px;
-    
-    
+.boxcontent {
+  font-size: 24px;
+  font-family: Poppins;
+  text-align: left;
+  width: 60%;
+  color: white;
+  position: relative;
+  z-index: 3;
 }
 
-
-.greenbox{
-    display: flex;
-   background: linear-gradient(97.5deg, #5EC97C 7.01%, #2F7C00 98.76%);
-   box-shadow: 0px 0px 5px rgba(115, 7, 7, 0.26);
-   
+.number {
+  font-size: 56px;
+  font-family: Poppins;
+  color: white;
+  position: relative;
+  z-index: 3;
 }
 
-.bluebox{
-    display: flex;
-    background: linear-gradient(100.83deg, #00B1E2 3.28%, #0070C4 17.64%, #0055B8 32%, #01327D 65.45%, #01327D 82.55%, #0055B8 102.76%);
-    box-shadow: 0px 0px 5px rgba(115, 7, 7, 0.26);
+.pinkbox {
+  background: linear-gradient(98.59deg, #ff7222 6.64%, #ff36bb 97.66%);
+  box-shadow: 0px 0px 5px rgba(115, 7, 7, 0.26);
+  position: relative;
+  overflow: hidden;
 }
 
-
-.yellowbox{
-    display: flex;
-    background: linear-gradient(111.65deg, #FF8A00 37.3%, #EAC400 78.21%);
-    box-shadow: 0px 0px 5px #B7AB15;
-}
-   
-
-.boxcontent{
-    font-size: 40px;
-    font-family: Poppins;
-    text-align: left;
-    width:100%;
-    color: white;
-    
-    
+.pink-bg {
+  width: 500px;
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  right: -52px;
+  filter: opacity(60%);
 }
 
-.number{
-    font-size: 100px;
-    font-family: Poppins;
-    color: white;
-    
+.greenbox {
+  background: linear-gradient(97.5deg, #5ec97c 7.01%, #2f7c00 98.76%);
+  box-shadow: 0px 0px 5px rgba(115, 7, 7, 0.26);
+  position: relative;
 }
 
+.green-bg {
+  width: 290px;
+  position: absolute;
+  z-index: 0;
+  top: -80px;
+  right: -55px;
+  filter: opacity(60%);
+}
 
+.bluebox {
+  background: linear-gradient(
+    100.83deg,
+    #00b1e2 3.28%,
+    #0070c4 17.64%,
+    #0055b8 32%,
+    #01327d 65.45%,
+    #01327d 82.55%,
+    #0055b8 102.76%
+  );
+  box-shadow: 0px 0px 5px rgba(115, 7, 7, 0.26);
+  position: relative;
+  overflow: hidden;
+}
+
+.blue-bg {
+  position: absolute;
+  width: 400px;
+  filter: opacity(60%);
+}
+
+.yellowbox {
+  background: linear-gradient(111.65deg, #ff8a00 37.3%, #eac400 78.21%);
+  box-shadow: 0px 0px 5px #b7ab15;
+  position: relative;
+  overflow: hidden;
+}
+
+.yellow-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  filter: opacity(60%);
+  width: 80%;
+}

@@ -36,9 +36,6 @@ const Login = () => {
 
   return (
     <div className="bigdiv">
-      <div>
-        <img className="loginimg" src=".\assets\images\loginIllus.png" />
-      </div>
       <div className="leftside">
         <div className="embrace-div">
           <div className="title-login">
@@ -47,6 +44,9 @@ const Login = () => {
             <span className="angular-login">&gt;</span>
             <span>brace</span>
           </div>
+        </div>
+        <div className="loginImg-container">
+          <img className="loginimg" src="assets\images\loginIllus.png" alt=""/>
         </div>
       </div>
       <div className="login-container">
@@ -98,9 +98,12 @@ const Login = () => {
             <div className="signup-btn-box">
               <span>
                 To create an account click{" "}
-                <Link style={{ textDecoration: "none", color: "red" }} to="/register">
+                <Link
+                  style={{ textDecoration: "none", color: "red" }}
+                  to="/register"
+                >
                   {" "}
-                  Here! 
+                  Here!
                 </Link>
               </span>
             </div>

@@ -18,7 +18,6 @@ const AdminNavbar = () => {
 
         <div className="admin-topbar-icon-cont">
           <div className="admin-topbar-icon">
-            {/* <span className="admin-profile-text">Profile</span> */}
             <span>
               <img
                 className="admin-icon"
@@ -28,7 +27,6 @@ const AdminNavbar = () => {
             </span>
           </div>
           <div className="admin-topbar-icon">
-            {/* <span className="admin-profile-text">Log Out</span> */}
             <span>
               <img
                 className="admin-icon"

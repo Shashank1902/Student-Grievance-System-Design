@@ -2,8 +2,6 @@ import React from "react";
 import "./admingrievance.css";
 
 function AdminGrievance() {
-  // const read = () => {};
-
   return (
     <>
       <div className="grievance-container">
@@ -13,11 +11,7 @@ function AdminGrievance() {
               <span>Grievance ID:12345</span>
             </div>
             <div className="grievanve-logo">
-              <img
-                className="admin-grievance-logo"
-                src="assets/admin-grievance-bookmark.png"
-                alt=""
-              />
+              <i className="fas fa-bookmark"></i>
               <img
                 className="admin-grievance-logo"
                 src="assets/admin-grievance-search.png"

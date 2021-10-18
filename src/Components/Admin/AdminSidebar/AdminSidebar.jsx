@@ -36,7 +36,7 @@ const AdminSidebar = () => {
 
           <div className="sidebar-option-btn-cont">
             <div className="sidebar-option-btn">Specific Categories</div>
-            <div className="sidebar-option-btn-icon"><i class="fas fa-sort-down"></i></div>
+            <div className="sidebar-option-btn-icon"><i className="fas fa-sort-down"></i></div>
           </div>
 
 

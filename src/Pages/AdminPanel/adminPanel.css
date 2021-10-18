@@ -1,0 +1,15 @@
+.adminpanel-mid-cont {
+    display: flex;
+}
+
+.adminpanel-sidebar-cont {
+   margin-top: 30px;
+}
+
+.adminpanel-grievance-cont {
+    background-color: #F2EDF3;
+    margin-left: 20px;
+    margin-right: -55px;
+    height: calc(100vh - 95px);
+    overflow-y: scroll;
+}

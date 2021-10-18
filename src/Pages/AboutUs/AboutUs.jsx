@@ -1,8 +1,5 @@
 import React from "react";
 import Chatbot from "../../Components/Chat bot/Chatbot";
-import Grievanceform from "../../Components/GrievanceForm/Grievanceform";
-//import HomeContent from "../Components/Home content/Homecontent";
-//import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../../Components/Footbar/Footbar";
 import TopNavbar from "../../Components/TopNavbar/TopNavbar";
 import "./aboutus.css";
@@ -12,7 +9,6 @@ class AboutUs extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
-        {/* <Grievanceform /> */}
         <div className="outside-div">
           <div className="write-up">
             <h1 className="about-title">About Us</h1>

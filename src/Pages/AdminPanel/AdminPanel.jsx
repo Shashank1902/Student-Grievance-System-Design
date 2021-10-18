@@ -12,16 +12,18 @@ const AdminPanel = () => {
         <AdminNavbar />
       </div>
       <div>
-        {/* <AdminInfoBoxes /> */}
+        <AdminInfoBoxes />
       </div>
-      <div>
-        <AdminSidebar />
-      </div>
-      <div>
-        <AdminGrievance />
-        <AdminGrievance />
-        <AdminGrievance />
-        <AdminGrievance />
+      <div className="adminpanel-mid-cont">
+        <div className="adminpanel-sidebar-cont">
+          <AdminSidebar />
+        </div>
+        <div className="adminpanel-grievance-cont">
+          <AdminGrievance />
+          <AdminGrievance />
+          <AdminGrievance />
+          <AdminGrievance />
+        </div>
       </div>
     </>
   );

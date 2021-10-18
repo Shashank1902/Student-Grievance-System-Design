@@ -1,22 +1,55 @@
-.login-container {
+.bigdiv {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  height: 100%;
+}
+
+.leftside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 97.5vh;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.title-login{
+  font-family: "Roboto Mono", monospace;
+  font-weight: bolder;
+  font-size: 124px;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
+.loginImg-container {
+  width: 500px;
+  height: 350px;
+  overflow: hidden;
   position: absolute;
-  /* top: 50%; */
-  top: 400px;
-  left: 70%;
-  transform: translate(-50%, -50%);
+  bottom: 0px;
+}
+
+.loginimg {
+    width: 550px;
+}
+
+.login-container {  
+  width: 50%;
   font-family: "Poppins";
-  
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-box {
-  padding: 40px;
   width: 400px;
-  /* box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2), */
-  /* 0px 10px 33px 4px rgba(86, 19, 170, 0.25); */
-  border-radius: 10px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .login-heading-box {
   margin: 0 30px;
   padding: 0px;
@@ -34,20 +67,34 @@
   
 }
 
+.angular-login {
+  color: #ff004d;
+  margin: 0 0px;
+}
+
+.regs-label-box{
+  margin: 15px 0px 0px 0px;
+}
+
+.regs-label-login{
+  color: #964BF6;
+  margin: 10px 0px;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
 .login-inputbox {
-  position: relative;
-  border: 2px;
   border-radius: 5px;
 }
+
 .login-inputbox input {
   width: 100%;
-  padding: 10px 0px;
-  font-size: 16px;
-  text-align: center;
-  box-shadow:0px 5px 17px rgba(190, 155, 229, 0.507),
-  0px 10px 33px 4px rgba(178, 138, 226, 0.315); ;
-
-  margin-bottom: 30px;
+  padding: 10px 15px;
+  font-size: 18px;
+  box-shadow: 0px 0px 5px rgba(190, 155, 229, 0.25),
+    0px 0px 15px 4px rgba(178, 138, 226, 0.25);
+  margin-bottom: 20px;
   border: none;
   outline: none;
   background: white;
@@ -55,40 +102,40 @@
   border-radius: 10px;
 }
 
-.login-btn-box {
+/* .login-btn-box {
   display: flex;
-  justify-content: center;
-}
+  justify-content: flex-start;
+} */
+
 .login-btn {
+  width: 160px;
   background: transparent;
-  width: 194px;
-  font-size: 19px;
   border: none;
   outline: none;
   color: #fff;
-  background: #964BF6;
+  background: #964bf6;
   padding: 10px 20px;
   cursor: pointer;
-  box-shadow: 0px 0px 40px rgba(86, 19, 170, 0.25);
   border-radius: 25px;
-  /* font-weight: bolder; */
-  
+  margin: 10px 0px 0px;
+  font-weight: 500;
+  font-size: 24px;
 }
+
 .login-btn:disabled {
   cursor: not-allowed;
 }
+
 .signup-btn-box {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  
+  margin: 15px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.signup-btn {
+/* .signup-btn {
   font-weight: bold;
   background: transparent;
   border: none;
-  /* border-bottom: 1px solid #964BF6; */
   outline: none;
   cursor: pointer;
   font-size: 17px;
@@ -96,84 +143,4 @@
   margin: 15px 0 0 0px;
   justify-self: left;
   
-}
-.bigdiv {
-
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  /* overflow-y: hidden; */
-  /* height: 100vh; */
-
-
-  
-}
-.leftside {
-  display: flex;
-  flex-direction: row;
-}
-.title-login{
-  font-family: "Roboto Mono", monospace;
-  font-weight: bolder;
-  font-size: 105px;
-  /* margin-top: 100px; */
-  /* position: relative; */
-  /* margin-top: 100px; */
-  margin-top: 225px;
-  margin-right: 260px;
-
-  /* position: absolute; */
-}
-
-.angular-login {
-  color: #ff004d;
-  margin: 0 0px;
-}
-.embrace-div {
-  height: 100vh; 
-  display: flex;
-  justify-content:center;
-  /* border: 2px solid red; */
-  height: 500px;
-  width: 500px;
-  margin-left: 10%;
-  
- 
-}
-.loginimg {
-  /* height: 100vh; */
-  /* position: absolute; */
-  
-  position: fixed;
-  bottom: -40%;
-  left: -90px;
-  height: 500px;
-  width: 500px;
-
-  transform: matrix(0.99, -0.12, 0.17, 0.99, 0, 0);
-  
-  /* transform: rotate(-10.35deg); */
-}
-
-
-.loginimgbox{
-  /* height: 100vh; */
-  overflow-y: hidden;
-
-}
-
-
-.regs-label-box{
-  margin: 15px 0px 0px 0px;
-  
-}
-.regs-label-login{
-  position: relative;
-  left: 10px;
-  color: #964BF6;
-  margin: 10px 0px;
-  font-weight: bold;
-  font-size: 24px;
-
-  
-}
+} */

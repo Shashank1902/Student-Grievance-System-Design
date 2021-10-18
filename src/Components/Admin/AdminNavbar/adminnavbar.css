@@ -1,7 +1,6 @@
 .admin-topbar {
   height: 80px;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   font-family: "Poppins", sans-serif;
 }
@@ -19,12 +18,10 @@
   margin: 0 0px;
 }
 
-
 .admin-name-container {
-  /* width: 60%; */
   font-size: 36px;
   flex: 3;
-
+  margin-left: 30px;
 }
 
 .admin-topbar-icon-cont {

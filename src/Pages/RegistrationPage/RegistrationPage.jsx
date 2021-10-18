@@ -5,7 +5,6 @@ import axios from "axios";
 import { useHistory } from "react-router";
 
 const RegistrationPage = () => {
-
   const username = useRef("null");
   const instituteId = useRef("null");
   const branch = useRef("null");
@@ -14,7 +13,7 @@ const RegistrationPage = () => {
   const email = useRef("null");
   const password = useRef("null");
 
-  const history = useHistory()
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,140 +34,132 @@ const RegistrationPage = () => {
       mobNo: mob_No,
       email: user_email,
       password: user_password,
-    }
+    };
 
     try {
       axios
-      .post("https://sgsapi.herokuapp.com/register", user)
-      .then((response) => {
-        console.log(response);
-      });   
-      history.push("/Login") 
+        .post("https://sgsapi.herokuapp.com/register", user)
+        .then((response) => {
+          console.log(response);
+        });
+      history.push("/Login");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="big-box">
-     
+    <div className="bigdiv">
       <div className="leftside">
         <div className="embrace-div">
-          <div className="regs-title">
-            <span className="regs-angular">&lt;</span>
+          <div className="title-login">
+            <span className="angular-login">&lt;</span>
             <span>em</span>
-            <span className="regs-angular">&gt;</span>
+            <span className="angular-login">&gt;</span>
             <span>brace</span>
           </div>
-          
+
+          <div className="loginImg-container">
+            <img className="loginimg" src="assets\images\loginIllus.png" alt=""/>
+          </div>
         </div>
-        <div >
-        <img className="loginimg" src=".\assets\images\loginIllus.png" />
       </div>
-        
-        <div className="regs-box-cont">
-          <div className="regs-box">
-            <form onSubmit={handleSubmit}>
-              <div className="regs-heading-box">
-                <span>Sign Up</span>
-              </div>
 
-              <div className="regs-label-box">
-                <label htmlFor="name" className="regs-label">
-                  Name :
-                </label>
-              </div>
+      <div className="regs-box-cont">
+        <div className="regs-box">
+          <form onSubmit={handleSubmit}>
+            <div className="login-heading-box">
+              <h2 className="login-heading">Sign Up</h2>
+            </div>
 
-              <div className="regs-input-box">
-                <input
-                  className="regs-input"
-                  type="text"
-                  name="name"
-                  required=""
-                  // placeholder="Name"
-                  ref={username}
-                />
-              </div>
+            <div className="regs-label-box">
+              <label htmlFor="name" className="regs-label">
+                Name :
+              </label>
+            </div>
 
-              <div className="regs-label-box">
-                <label htmlFor="institute-id" className="regs-label">
-                  Institute ID :
-                </label>
-              </div>
+            <div className="regs-input-box">
+              <input
+                className="regs-input"
+                type="text"
+                name="name"
+                required=""
+                // placeholder="Name"
+                ref={username}
+              />
+            </div>
 
-              <div className="regs-input-box">
-                <input
-                  className="regs-input"
-                  type="text"
-                  name="name"
-                  required=""
-                  // placeholder="Institute ID"
-                  ref={instituteId}
-                />
-              </div>
+            <div className="regs-label-box">
+              <label htmlFor="institute-id" className="regs-label">
+                Institute ID :
+              </label>
+            </div>
 
-              <div className="regs-label-box">
-                <label htmlFor="name" className="regs-label">
-                  Email :
-                </label>
-              </div>
-              <div className="regs-input-box">
-                <input
-                  className="regs-input"
-                  type="text"
-                  name="email"
-                  required=""
-                  // placeholder="Email"
-                  ref={email}
-                />
-              </div>
+            <div className="regs-input-box">
+              <input
+                className="regs-input"
+                type="text"
+                name="name"
+                required=""
+                // placeholder="Institute ID"
+                ref={instituteId}
+              />
+            </div>
 
-              <div className="regs-label-box">
-                <label htmlFor="name" className="regs-label">
-                  Password :
-                </label>
-              </div>
-              <div className="regs-input-box">
-                <input
-                  className="regs-input"
-                  type="password"
-                  name="password"
-                  required=""
-                  // placeholder="Password"
-                  ref={password}
-                />
-              </div>
+            <div className="regs-label-box">
+              <label htmlFor="name" className="regs-label">
+                Email :
+              </label>
+            </div>
+            <div className="regs-input-box">
+              <input
+                className="regs-input"
+                type="text"
+                name="email"
+                required=""
+                // placeholder="Email"
+                ref={email}
+              />
+            </div>
 
-              <div className="regs-btn-box">
-                <button type="submit" className="regs-btn">
-                  Submit
-                </button>
-              
+            <div className="regs-label-box">
+              <label htmlFor="name" className="regs-label">
+                Password :
+              </label>
+            </div>
+            <div className="regs-input-box">
+              <input
+                className="regs-input"
+                type="password"
+                name="password"
+                required=""
+                // placeholder="Password"
+                ref={password}
+              />
+            </div>
 
-               <Link style={{ textDecoration: "none" }} to="/Login">
+            <div className="regs-btn-box">
+              <button type="submit" className="regs-btn">
+                Submit
+              </button>
+
+              <Link style={{ textDecoration: "none", color: "black" }} to="/Login">
                 <div className="signin-btn-box">
-                  <span className="regs-span-signup">
-                    or {" "}
-                    <button className="regs-signup-btn" type="submit">
-                      Sign In 
-                    </button>
-                  </span>
-                  <div>
-                    {/* <img
-                      className="signin-logo"
-                      src="/assets/Registration-Logo/signin-logo.png"
-                      alt=""
-                    /> */}
+                  <div className="regs-span-signup">
+                    <div>or</div>
+                    <div className="regs-signup-btn">Sign In</div>
+                    <div className="sign_in_icon">
+                      <i className="fas fa-sign-in-alt"></i>
+                    </div>
                   </div>
                 </div>
-               </Link>
-              </div>
-            </form>
-          </div>
-          {/* <div className="">embrace</div> */}
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
-     </div> );
+    </div>
+  );
 };
 
-      export default RegistrationPage;
+export default RegistrationPage;

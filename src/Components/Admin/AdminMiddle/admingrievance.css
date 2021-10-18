@@ -1,85 +1,65 @@
-.grievance-container{
-    /* border: 2px solid black; */
-    position: relative;
-    top: 100px;
-    left: 250px;
-    max-width: 100vh;
-    max-height: 100vh;
-    background-color: #F2EDF3;
-    border-radius: 13px;
-    margin-bottom: 30px;
-   
+.grievance-container {
+  font-family: "Poppins";
+  background-color: #fff;
+  padding: 30px;
+  margin: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px rgba(86, 19, 170, 0.2),
+    0px 0px 10px rgba(86, 19, 170, 0.15);
+  background-color: white;
+  width: 60%;
+  height: auto;
+  display: flex;
 }
 
-.grievance-wrapper{
-    filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.25));
-    padding: 10px;
+.grievance-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: grey;
 }
 
-
-.grievance-top{
-    display: flex;
-    justify-content: space-between;
+.grievanve-logo {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: rgb(115, 0, 255);
 }
 
-.grievance-id{
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    font-size: 13px;
-    color: #848484;
+.grievanve-logo img,
+i {
+  cursor: pointer;
 }
 
-.grievanve-logo{
-    display: flex;
-    align-items: center;
-    padding: 15px;
-   
+.grievance-name {
+  margin: 15px 0;
 }
 
-.admin-grievance-logo{
-    margin: 0px 10px;
-    /* width: 20px;
-    height: 20px; */
-    cursor: pointer;
+.more {
+  display: none;
 }
-.grievance-middle{
-    
-}
-
-.grievance-name{
-   padding: 10px 0px 10px 15px;
-    font-weight: 900;
+.grievance-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
-.grievance-desc{
-    padding: 10px 0px 10px 15px;
-    line-height: 2;
+.read {
+  display: flex;
+  align-items: center;
 }
 
-.more{
-    display: none;
-}
-.grievance-bottom{
-   display: flex;
-   justify-content: space-between;
-}
-
-.read{
-    display: flex;
-    align-items: center;
-    padding: 0px 15px 0px 0px;
+.read-btn {
+  border: none;
+  outline: none;
+  color: #848484;
+  cursor: pointer;
 }
 
-.read-btn{
-    border: none;
-    outline: none;
-    color: #848484;
-    cursor: pointer;
-}
-
-.grievance-report-date{
-    font-size: 13px;
-    color: #848484;
-    padding: 13px;
+.grievance-report-date {
+  font-size: 13px;
+  color: #848484;
 }
