@@ -9,7 +9,7 @@ import "./App.css";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 // Importing Routes for students
-import AboutUs from "./Pages/AboutUs";
+import AboutUs from "./Pages/AboutUs/AboutUs";
 import MentalHealth from "./Pages/MentalHealth";
 import Profile from "./Pages/Profile/Profile";
 import StudentCommunity from "./Pages/StudentCommunity/StudentCommunity";

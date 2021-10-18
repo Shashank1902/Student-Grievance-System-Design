@@ -1,0 +1,36 @@
+.outside-div{
+    display: flex;
+    align-self: center;
+    border: 2px none;
+    border-radius: 10px;
+    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+    0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+    height: 500px;
+    width: 700px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.write-up{
+    font-family: 'Poppins', sans-serif ;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+
+
+}
+.about-content{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.about-title{
+    color: rgba(94, 47, 151, 0.2);
+}
+/* #second-para{
+    font-weight: bold;
+} */
