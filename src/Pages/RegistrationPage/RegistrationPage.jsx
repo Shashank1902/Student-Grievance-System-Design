@@ -150,7 +150,7 @@ const RegistrationPage = () => {
                   <span className="regs-span-signup">
                     or {" "}
                     <button className="regs-signup-btn" type="submit">
-                      Sign In
+                      Sign In 
                     </button>
                   </span>
                   <div>

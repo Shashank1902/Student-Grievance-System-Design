@@ -5,13 +5,15 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
+import ContactUs from "../Components/ContactUs/ContactUs";
 
 class Contact extends React.Component {
   render() {
     return (
       <div className="App">
         <TopNavbar />
-        <Grievanceform />
+        {/* <Grievanceform /> */}
+        <ContactUs/>
         <Chatbot />
         <Footbar />
       </div>

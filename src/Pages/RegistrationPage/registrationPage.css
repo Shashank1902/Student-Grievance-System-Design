@@ -5,7 +5,8 @@
 }
 .regs-box{
     position: absolute;
-    top: 40%;
+    /* top: 40%; */
+    top: 330px;
     left: 70%;
     transform: translate(-50%, -50%);
     /* box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
@@ -20,9 +21,8 @@
   
     text-align:center;
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 56px;
     color:#964BF6 ;
-    font-size: 25px;
     /* border-bottom: .5px solid #a644e3; */
     /* margin: 10px 0px; */
 
@@ -30,6 +30,7 @@
 }
 
 .regs-label-box{
+    font-size: 24px;
     margin: 15px 0px 0px 0px;
     
 }
@@ -89,6 +90,7 @@
 .regs-btn-box{
     display: flex;
    justify-content: center;
+   padding-top: 20px;
 }
 
 .regs-btn{
@@ -149,8 +151,9 @@
   .regs-title {
     font-family: 'Roboto Mono', monospace;
     font-weight: bolder;
-    font-size: 80px;
-   margin-top: 100px;
+    font-size: 105px;
+   margin-top: 225px;
+   margin-right: 260px;
   
   
     /* position: absolute; */
