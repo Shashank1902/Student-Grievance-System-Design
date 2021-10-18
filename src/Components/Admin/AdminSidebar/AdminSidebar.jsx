@@ -1,12 +1,48 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import "./adminsidebar.css";
 
 const AdminSidebar = () => {
   return (
     <>
-      <div class="sidebar">
-        <h2>
+      <div className="sidebar">
+        <div className="sidebar-name-details">
+          <div className="sidebar-profile-pic-cont">
+            <img
+              className="sidebar-profile-pic"
+              src="assets/ProfileIcon2.png"
+              alt="User"
+            />
+          </div>
+          <div className="sidebar-name-cont">
+            <div className="sidebar-name">Sharmila</div>
+            <div className="sidebar-desi">Designation</div>
+          </div>
+        </div>
+
+        <div className="dashboard-txt">
+          Dashboard
+          <hr />
+        </div>
+
+        <div className="sidebar-options-cont">
+          <div className="sidebar-option">
+            <div className="sidebar-option-name">Home</div>
+            <div><img className="sidebar-option-icon" src="assets/Home.png" alt="" /></div>
+          </div>
+          <div className="sidebar-option">
+            <div className="sidebar-option-name">Edit profile</div>
+            <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
+          </div>
+
+          <div className="sidebar-option-btn-cont">
+            <div className="sidebar-option-btn">Specific Categories</div>
+            <div className="sidebar-option-btn-icon"><i class="fas fa-sort-down"></i></div>
+          </div>
+
+
+        </div>
+
+        {/* <h2>
           <img src="assets/AdminPanel.png" alt=""></img>Admin Panel
         </h2>
         <ul class="nav">
@@ -61,7 +97,7 @@ const AdminSidebar = () => {
               <span>Library and Lab Issues</span>
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </>
   );
