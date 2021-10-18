@@ -23,7 +23,7 @@ class AboutUs extends React.Component {
               sometimes due to the sheer magnitude
               of operations or even lack of information, you do occasionally face problems.<br/>
               Thus, to facilitate, a base for communication,<br/> &lt;em&gt;brace, a platform to brace all your, academic and
-              non-academic queries. <br/>The objective of this system is,<br/> <b>"Quick undertaking to your problems."</b>
+              non-academic queries. <br/>Our objective is to redress all your queries and provide each student with a support system.
 
              
             </p>
