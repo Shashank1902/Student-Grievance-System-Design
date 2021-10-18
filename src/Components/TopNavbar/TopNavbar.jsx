@@ -31,8 +31,8 @@ function TopNavbar() {
             <Link style={{ textDecoration: "none" }} to="/StudentCommunity">
               <span className="nav-item">StudentCommunity</span>
             </Link>
-            <Link style={{ textDecoration: "none" }} to="/Help">
-              <span className="nav-item">Help</span>
+            <Link style={{ textDecoration: "none" }} to="/AboutUs">
+              <span className="nav-item">About Us</span>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/Contact">
               <span className="nav-item">Contact</span>

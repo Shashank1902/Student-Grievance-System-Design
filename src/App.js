@@ -9,7 +9,7 @@ import "./App.css";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 // Importing Routes for students
-import Help from "./Pages/Help";
+import AboutUs from "./Pages/AboutUs/AboutUs";
 import MentalHealth from "./Pages/MentalHealth";
 import Profile from "./Pages/Profile/Profile";
 import StudentCommunity from "./Pages/StudentCommunity/StudentCommunity";
@@ -76,7 +76,7 @@ function App() {
           />
           <Route path="/LibandLabIssues" exact component={LibandLabIssues} />
           <Route path="/StudentCommunity" exact component={StudentCommunity} />
-          <Route path="/Help" exact component={Help} />
+          <Route path="/AboutUs" exact component={AboutUs} />
           <Route path="/Contact" exact component={Contact} />
           <Route path="/Profile" exact component={Profile} />
           <Route path="/admin" exact component={AdminPanel} />
