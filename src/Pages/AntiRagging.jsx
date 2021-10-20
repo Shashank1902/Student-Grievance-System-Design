@@ -60,8 +60,6 @@ const styles = {
   timingFunc: "ease",
 };
 
-
-
 const config = {
   animate: true,
   arrowIcon: <img src="assets\DropDown.png" alt="dropdown" />,
