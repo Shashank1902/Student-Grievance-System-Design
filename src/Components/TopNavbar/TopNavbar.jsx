@@ -12,8 +12,7 @@ function TopNavbar() {
     logout(dispatch);
     history.push("/login");
   };
-
-
+  
   return (
     <>
       <div>
