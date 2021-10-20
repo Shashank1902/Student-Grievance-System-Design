@@ -10,14 +10,15 @@
   height: auto;
   position: absolute;
   right: 3%;
+  z-index: 100;
 }
 
 .InfoBox {
-  width: 350px;
-  height: 100px;
+  /* width: 350px; */
+  /* height: 100px; */
   border-radius: 20px;
-  padding: 25px;
-  margin: 20px;
+  padding: 4px;
+  margin: 11px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -26,7 +27,7 @@
 }
 
 .boxcontent {
-  font-size: 24px;
+  font-size: 15px;
   font-family: Poppins;
   text-align: left;
   width: 60%;
@@ -36,7 +37,7 @@
 }
 
 .number {
-  font-size: 56px;
+  font-size: 20px;
   font-family: Poppins;
   color: white;
   position: relative;
@@ -51,11 +52,11 @@
 }
 
 .pink-bg {
-  width: 500px;
+  width: 300px;
   position: absolute;
   z-index: 0;
-  top: 0px;
-  right: -52px;
+  top: -40px;
+  right: -45px;
   filter: opacity(60%);
 }
 
@@ -66,12 +67,12 @@
 }
 
 .green-bg {
-  width: 290px;
-  position: absolute;
-  z-index: 0;
-  top: -80px;
-  right: -55px;
-  filter: opacity(60%);
+  width: 115px;
+    position: absolute;
+    z-index: 0;
+    top: -34px;
+    right: -20px;
+    filter: opacity(60%);
 }
 
 .bluebox {
@@ -91,7 +92,7 @@
 
 .blue-bg {
   position: absolute;
-  width: 400px;
+  width: 170px;
   filter: opacity(60%);
 }
 
@@ -107,5 +108,5 @@
   left: 0;
   bottom: 0;
   filter: opacity(60%);
-  width: 80%;
+  width: 100%;
 }
