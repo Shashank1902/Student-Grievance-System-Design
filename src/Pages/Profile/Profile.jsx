@@ -9,27 +9,55 @@ import "./profile.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-import { logout, useAuthDispatch } from "../../context/ContextIndex";
+import {
+  logout,
+  useAuthDispatch,
+  useAuthState,
+} from "../../context/ContextIndex";
 
 const Profile = () => {
   let history = useHistory();
   const dispatch = useAuthDispatch();
+  const user = useAuthState();
 
   const [posts, setPosts] = useState([]);
+  const [grievances, setGrievances] = useState([]);
 
   useEffect(() => {
-    const token = JSON.parse(localStorage.getItem("token"));
-    const loadPost = async () => {
-      const result = await (
-        await axios.get("https://sgsapi.herokuapp.com/post", {
+    const token = user.token;
+
+    const loadPost = () => {
+      axios
+        .get(`http://localhost:8000/userpost/${user.userDetails.user_id}`, {
           headers: { "auth-token": token },
         })
-      ).data;
-      setPosts(result);
+        .then((result) => {
+          setPosts(result.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
+    const loadGrievance = () => {
+      axios
+        .get(
+          `http://localhost:8000/gri/usergrievance/${user.userDetails.user_id}`,
+          {
+            headers: { "auth-token": token },
+          }
+        )
+        .then((result) => {
+          setGrievances(result.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     };
 
     loadPost();
-  }, []);
+    loadGrievance();
+  }, [user]);
 
   const handleLogout = () => {
     logout(dispatch);
@@ -57,12 +85,19 @@ const Profile = () => {
       </div>
       <div className="abc">
         <div className="profilePostContainer">
-          {posts.map((post, i) => (
+        {posts.length > 0 ?
+          posts.map((post, i) => (
             <Post key={post.post_id} post={post} />
-          ))}
+          )) : "Post something to the community first!"
+        }
+          
         </div>
         <div className="grievanceContainer">
-          <Grievance />
+        {grievances.length > 0 ? 
+          grievances.map((grievance, i) => (
+            <Grievance key={grievance.gri_id} grievance={grievance} />
+          )) : "No Grievance reported!"
+        }
         </div>
       </div>
 

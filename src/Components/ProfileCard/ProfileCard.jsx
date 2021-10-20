@@ -20,21 +20,19 @@ function ProfileCard() {
           </p>
 
           <div className="desc-textcontainer">
-            <div className="desc-textcontainer1">
-              <p className="container1-items">
-                {user.userDetails ? user.userDetails.institution_id : "Unknown"}
-              </p>
-              <p className="container2-itmes">
-                {user.userDetails ? user.userDetails.email : "Unknown"}
-              </p>
-              <p className="container1-items">
-                {user.userDetails ? user.userDetails.mob_no : "Unknown"}
-              </p>
-              <span className="container1-items">
-                {user.userDetails ? user.userDetails.branch : "Unknown"} &nbsp;
-                {user.userDetails ? user.userDetails.semester : "Unknown"}
-              </span>
-            </div>
+            <p className="desc-textcontainer-items">
+              {user.userDetails ? user.userDetails.institution_id : "Unknown"}
+            </p>
+            <p className="desc-textcontainer-items">
+              {user.userDetails ? user.userDetails.email : "Unknown"}
+            </p>
+            <p className="desc-textcontainer-items">
+              {user.userDetails ? user.userDetails.mob_no : "Unknown"}
+            </p>
+            <span className="desc-textcontainer-items">
+              {user.userDetails ? user.userDetails.branch : "Unknown"} &nbsp;
+              {user.userDetails ? user.userDetails.semester : "Unknown"}
+            </span>
           </div>
         </div>
 

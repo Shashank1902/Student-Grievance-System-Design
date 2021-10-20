@@ -32,7 +32,6 @@ function Post({ post }) {
   const upvoteHandler = () => {
     setUpVote(isUpVoted ? upvote - 1 : upvote + 1);
     setIsUpVoted(!isUpVoted);
-    // setIsDownVoted(isDownVoted);
     axios
       .put(
         `https://sgsapi.herokuapp.com/post/upvote/${post.post_id}`,
@@ -51,7 +50,6 @@ function Post({ post }) {
   const downvoteHandler = () => {
     setUpVote(isDownVoted ? upvote + 1 : upvote - 1);
     setIsDownVoted(!isDownVoted);
-    // setIsUpVoted(isUpVoted);
     axios
       .put(
         `https://sgsapi.herokuapp.com/post/downvote/${post.post_id}`,
@@ -77,7 +75,7 @@ function Post({ post }) {
               <img className="profile-pic" src="assets/user.png" alt="" />
               <div className="profile-name">
                 <span className="font-weight-bold">
-                  {username ? username : "-"}
+                  {username }
                 </span>
                 <div className="time">
                   <small className="">{format(post.created_on)}</small>
@@ -97,12 +95,10 @@ function Post({ post }) {
             <img className="post-pic" src="assets/postimage.png" alt="" />
           </div>
           <div className="vote-btn-container">
-            {/* <div className="vote-btn" onClick={isUpVoted ? null : upvoteHandler}> */}
             <div className="vote-btn" onClick={upvoteHandler}>
               <i className="fas fa-arrow-alt-circle-up"></i>
             </div>
             <div className="vote">{upvote}</div>
-            {/* <div className="vote-btn" onClick={isDownVoted ? null : downvoteHandler}> */}
             <div className="vote-btn" onClick={downvoteHandler}>
               <i className="fas fa-arrow-alt-circle-down"></i>
             </div>
