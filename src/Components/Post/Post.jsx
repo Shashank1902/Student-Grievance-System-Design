@@ -2,7 +2,9 @@ import axios from "axios";
 import { format } from "timeago.js";
 import { useEffect, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import "./post.css";
+
 
 function Post({ post }) {
   const user = useAuthState();
@@ -66,7 +68,12 @@ function Post({ post }) {
       .catch((err) => {
         console.log(err);
       });
+      
   };
+  
+    // {const [dropdownOpen, setOpen] = useState(false);
+  
+    // const toggle = () => setOpen(!dropdownOpen);
 
   return (
     <div className="post-container">
@@ -86,9 +93,13 @@ function Post({ post }) {
             </div>
             <div className="menu-icon-cont">
               <span className="menu-icon">
-                <button className="icon-btn">
-                  <i className="fas fa-ellipsis-h"></i>
-                </button>
+                <button className="icon-btn"> 
+                 
+                    
+                    <i className="fas fa-ellipsis-h"></i>
+                
+
+                 </button>
               </span>
             </div>
           </div>
