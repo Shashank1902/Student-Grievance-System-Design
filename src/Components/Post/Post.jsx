@@ -84,7 +84,9 @@ function Post({ post }) {
             </div>
             <div className="menu-icon-cont">
               <span className="menu-icon">
-                <i className="fas fa-ellipsis-h"></i>
+                <button className="icon-btn">
+                  <i className="fas fa-ellipsis-h"></i>
+                </button>
               </span>
             </div>
           </div>

@@ -12,15 +12,15 @@ const data = {
   rows: [
     {
       title: "1. How many books will be issued for 5th sem students?",
-      content: "A.	Total 4 books will be issued."
+      content: "Total 4 books will be issued."
     },
     {
       title: "2. . Will the library function tomorrow on 2nd October 2021, if yes then what will be the timings?",
-      content: "A.	Yes, Timings will be 11am to 05pm."
+      content: "Yes, Timings will be 11am to 05pm."
     },
     {
       title: "3. Can I access the library on 15th OCT, at the noon time? ",
-      content: "A.	Yes, the library will be functional."
+      content: "Yes, the library will be functional."
     },
     {
       title: "4.Where is the library situated in out institution?",
@@ -32,7 +32,7 @@ const data = {
     },
     {
       title: "6. Where is the chemistry lab situated?",
-      content: "A.	It is situated near the library, on 1st floor."
+      content: "It is situated near the library, on 1st floor."
     },{
       title: "7. Who is the lab attendant of BME lab?",
       content: "Mr Venkatesh Anand is the lab attendant of BME lab."
@@ -50,13 +50,38 @@ const data = {
     },]
 }
 
+const styles = {
+  bgColor: 'white',
+  titleTextColor: 'black',
+  titleTextSize: '40px',
+  rowTitleColor: 'black',
+  rowTitleTextSize: 'large',
+  rowContentColor: 'black',
+  rowContentTextSize: '15px',
+  rowContentPaddingTop: '10px',
+  rowContentPaddingBottom: '10px',
+  rowContentPaddingLeft: '50px',
+  rowContentPaddingRight: '150px',
+  arrowColor: "purple",
+  transitionDuration: "0.4s",
+  timingFunc: "ease",
+};
+
+const config = {
+  animate: true,
+  arrowIcon: <img src="assets\DropDown.png" alt="dropdown" />,
+
+};
+
 class LibandLabIssues extends React.Component {
   render() {
     return (
       <div className="App">
         <TopNavbar />
         <Grievanceform />
-        <Faq data={data} />
+        <Faq data={data}
+        styles={styles}
+        config={config} />
         <Chatbot />
         <Footbar />
       </div>

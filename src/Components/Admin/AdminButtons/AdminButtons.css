@@ -1,0 +1,44 @@
+.admin-button-container{
+    display: flex;
+    background: #E9D0FD; 
+    width:80%;
+    height:100px;
+    margin-left:250px ;
+    flex-wrap: wrap;
+   
+}
+
+.admin-button1{
+
+    display:flex;
+    width: 217px;
+    height: 20px;
+    background-color:white;
+    border-radius:10px;
+    flex-wrap: wrap;
+    padding:12px;
+    margin:20px;
+    justify-content:space-around;
+    
+}
+
+.btn-content{
+
+    font-size: 18px;
+    font-family: Poppins;
+    text-align: left;
+    color:black;
+    display:flex;
+    letter-spacing: -0.02em;
+}
+
+.admin-btn-icon{
+
+    width: 20px;
+    height: 20px;
+    display:flex;
+    padding: 5px;
+    float:right;
+    align-items: center;
+  
+    }

@@ -95,3 +95,11 @@
   font-weight: 600;
   margin: 0 20px;
 }
+
+.icon-btn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+}

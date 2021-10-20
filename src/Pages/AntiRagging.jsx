@@ -43,13 +43,38 @@ const data = {
     }]
 }
 
+const styles = {
+  bgColor: 'white',
+  titleTextColor: 'black',
+  titleTextSize: '40px',
+  rowTitleColor: 'black',
+  rowTitleTextSize: 'large',
+  rowContentColor: 'black',
+  rowContentTextSize: '15px',
+  rowContentPaddingTop: '10px',
+  rowContentPaddingBottom: '10px',
+  rowContentPaddingLeft: '50px',
+  rowContentPaddingRight: '150px',
+  arrowColor: "purple",
+  transitionDuration: "0.4s",
+  timingFunc: "ease",
+};
+
+const config = {
+  animate: true,
+  arrowIcon: <img src="assets\DropDown.png" alt="dropdown" />,
+
+};
+
 class AntiRagging extends React.Component {
   render() {
     return (
       <div className="App">
         <TopNavbar />
         <Grievanceform />
-        <Faq data={data} />
+        <Faq data={data}
+        styles={styles}
+        config={config} />
         <Chatbot />
         <Footbar />
       </div>
