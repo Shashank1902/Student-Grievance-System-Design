@@ -1,49 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chatbot from "../../Components/Chat bot/Chatbot";
-//import HomeContent from "../Components/Home content/Homecontent";
-//import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../../Components/Footbar/Footbar";
 import TopNavbar from "../../Components/TopNavbar/TopNavbar";
 import ProfileCard from "../../Components/ProfileCard/ProfileCard";
 import Grievance from "../../Components/Grievance/Grievance";
 import Post from "../../Components/Post/Post";
-import "./profile.css"
+import "./profile.css";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import { logout, useAuthDispatch } from "../../context/ContextIndex";
 
 const Profile = () => {
   let history = useHistory();
-  const dispatch = useAuthDispatch()
+  const dispatch = useAuthDispatch();
 
-  const handleLogout= () => {
-    logout(dispatch) 
-    history.push('/login')
-  }
-    return (
-      <div className="App">
-        <TopNavbar />
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const loadPost = async () => {
+      const result = await (
+        await axios.get("https://sgsapi.herokuapp.com/post", {
+          headers: { "auth-token": token },
+        })
+      ).data;
+      setPosts(result);
+    };
+
+    loadPost();
+  }, []);
+
+  const handleLogout = () => {
+    logout(dispatch);
+    history.push("/login");
+  };
+
+  return (
+    <div className="App">
+      <TopNavbar />
+      <div className="profile-middle-cont">
         <div className="xyz">
           <ProfileCard />
         </div>
-        <div>
-          <div className="outer-container">
-            <div className="category">
-              <p className="bttn-item" onClick={handleLogout}>LOGOUT</p>
-              <p className="bttn-item">Selected Grievance</p>
-              <p className="bttn-item">Pending Grievance</p>
-              <p className="bttn-item">Bookmarked Grievance</p>
-            </div>
+        <div className="profile-btn-container">
+          <div className="gri-btn-container">
+            <p className="gri-btn">Solved Grievance</p>
+            <p className="gri-btn">Pending Grievance</p>
+            <p className="gri-btn">Bookmarked Grievance</p>
           </div>
-          <div className="abc">
-            <Post />
-            <Grievance />
+          <div className="logout-btn" onClick={handleLogout}>
+            <p>Sign-out</p>
+            <i className="fas fa-sign-out-alt"></i>
           </div>
         </div>
-        <Chatbot />
-        <Footbar />
       </div>
-    );
-}
+      <div className="abc">
+        <div className="profilePostContainer">
+          {posts.map((post, i) => (
+            <Post key={post.post_id} post={post} />
+          ))}
+        </div>
+        <div className="grievanceContainer">
+          <Grievance />
+        </div>
+      </div>
+
+      <Chatbot />
+      <Footbar />
+    </div>
+  );
+};
 
 export default Profile;

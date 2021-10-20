@@ -16,7 +16,7 @@ function Footbar() {
         </div>
         <div className="footbars">
             <p>
-                Designed And Developed By (Team  &lt;em&gt; Brace, CSE, 2019-23)
+                Designed and developed by team &lt;em&gt;brace, CSE 2019-23
             </p>
         </div>
       </div>

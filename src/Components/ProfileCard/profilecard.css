@@ -1,74 +1,61 @@
-.container-box {
-
+.profile-container-box {
   display: flex;
-
   flex-direction: row;
-
   justify-content: space-between;
-
   width: 800px;
-
-
-
-  border: 2px solid rgb(204, 199, 199);
-
   margin: auto;
   margin-top: 15px;
-  
-
-  box-shadow: 5px 5px 5px rgb(204, 199, 199);
-
+  background-color: #63a4ff;
+  background-image: linear-gradient(315deg, #b7d0f3 0%, #d9f6f8 74%);
+  box-shadow: 0px 0px 15px rgba(204, 199, 199, 0.25);
+  font-family: "Poppins";
+  padding: 20px;
 }
 
-
+.profile-image-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
 
 .profile-img {
-
-  position: absolute;
-
-  width: 160px;
-
-  height: 160px;
-
-  margin-top: 25px;
-
-  margin-left: 40px;
-
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-
+  border: 5px solid rgb(6, 226, 101);
 }
 
-
-
-#cam-placement {
-
- /* margin-bottom:5px; */
-height: 30px;
-width: 30px;
-margin-top: 156px;
-margin-left: 178px;
+.camera-btn {
+  background-color: transparent;
+  /* box-shadow: 0px 0px 5px rgb(204, 199, 199); */
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  align-self: flex-end;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  cursor: pointer;
 }
-
-
-
+/* 
 .circle {
-
   justify-content: flex-end;
-
-}
-
-
-
-
-.image {
-
-  display: flex;
-
-  flex-direction: row;
-
-}
+} */
 
 .edit-icon {
-  margin-right: 15px;
-  margin-top: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.title-text {
+  font-size: 28px;
+}
+
+.logout-btn {
+  width: 60px;
 }

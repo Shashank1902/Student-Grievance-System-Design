@@ -1,7 +1,16 @@
+.admin-topbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
 .title-adminPage {
+  flex: 0.9;
+  width: auto;
   font-family: "Roboto Mono", monospace;
-  font-weight: bold;
-  font-size: 64px;
+  font-size: 50px;
+  font-weight: 500;
 }
 
 .angular-adminPage {
@@ -9,50 +18,29 @@
   margin: 0 0px;
 }
 
+.admin-name-container {
+  font-size: 36px;
+  flex: 3;
+  margin-left: 30px;
+}
 
-.admin-container {
-  /* width: 100%; */
+.admin-topbar-icon-cont {
+  flex: 0.5;
   display: flex;
   justify-content: space-between;
-  /* font-size: 18px; */
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
-  padding: 10px;
-}
-
-.admin-container1 {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  /* width: 50%; */
-  /* align-self: center; */
 }
 
-.admin-title {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 23px;
-  line-height: 25px;
-  /* identical to box height, or 64% */
-  letter-spacing: -0.02em;
-  color: #000000;
-}
-
-.admin-container2 {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* width: 10%; */
+.admin-topbar-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .admin-icon {
-  vertical-align: middle;
-  /* display: flex; */
   margin: 6px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  width: 60px;
+  cursor: pointer;
 }
 
 .admin-profile-text {
