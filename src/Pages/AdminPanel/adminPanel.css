@@ -1,15 +1,62 @@
+.admin_topnavbar {
+  position: relative;
+  z-index: 100;
+}
+
 .adminpanel-mid-cont {
-    display: flex;
+  display: flex;
 }
 
 .adminpanel-sidebar-cont {
-   margin-top: 30px;
+  margin-top: 30px;
+}
+
+.adminInfo-container {
+  position: relative;
+  top: -415px;
+  z-index: 50;
+  transition: 0.5s ease-in-out;
+}
+
+.adminInfo-btn {
+  position: absolute;
+  bottom: -440px;
+  right: 36.5%;
+  width: 50px;
+  height: 40px;
+  background: #4271ce;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 0% 0% 50% 50%;
+  border-bottom: white solid 5px;
+  border-left: white solid 5px;
+  border-right: white solid 5px;
+  cursor: pointer;
+}
+
+.adminInfo-btn-img {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: #fff;
+  transition: 0.1s ease;
+  transform-origin: center;
+  transform: rotate(0deg);
+}
+.adminInfo-btn-img-rotated {
+  margin-top: 10px;
+  transform: rotate(180deg);
+}
+
+.adminpanel-grievance-wrapper {
+  background-color: #f2edf3;
+  margin-left: 20px;
+  margin-right: -55px;
+  height: calc(100vh - 80px);
+  margin-bottom: -10px;
+  /* overflow-y: scroll; */
 }
 
 .adminpanel-grievance-cont {
-    background-color: #F2EDF3;
-    margin-left: 20px;
-    margin-right: -55px;
-    height: calc(100vh - 95px);
-    overflow-y: scroll;
+  height: calc(100vh - 205px);
+  overflow-y: scroll;
 }

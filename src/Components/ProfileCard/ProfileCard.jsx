@@ -9,9 +9,9 @@ function ProfileCard() {
       <div className="profile-container-box">
         <div className="profile-image-cont">
           <img className="profile-img" src="assets/user.png" alt="" />
-          <button className="camera-btn">
+          {/* <button className="camera-btn">
             <i className="fas fa-camera"></i>
-          </button>
+          </button> */}
         </div>
 
         <div className="text-container">

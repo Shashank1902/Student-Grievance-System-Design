@@ -12,11 +12,11 @@
 }
 
 .form-top-inputs-cont .inputContainer {
-    width: 46%;
+  width: 46%;
 }
 
 .inputContainer {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .inputLabel1,
@@ -78,6 +78,11 @@
   height: 36px;
   color: #000000;
   margin-left: 10px;
+}
+
+.submit-msg {
+  margin: 0px auto;
+  color: red;
 }
 
 .buttonContainer {

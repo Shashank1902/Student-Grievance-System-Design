@@ -28,7 +28,7 @@ const Profile = () => {
 
     const loadPost = () => {
       axios
-        .get(`http://localhost:8000/userpost/${user.userDetails.user_id}`, {
+        .get(`https://sgsapi.herokuapp.com/userpost/${user.userDetails.user_id}`, {
           headers: { "auth-token": token },
         })
         .then((result) => {
@@ -42,7 +42,7 @@ const Profile = () => {
     const loadGrievance = () => {
       axios
         .get(
-          `http://localhost:8000/gri/usergrievance/${user.userDetails.user_id}`,
+          `https://sgsapi.herokuapp.com/gri/usergrievance/${user.userDetails.user_id}`,
           {
             headers: { "auth-token": token },
           }

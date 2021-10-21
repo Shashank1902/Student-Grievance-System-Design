@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./grievanceform.css";
 import axios from "axios";
 
@@ -13,6 +13,8 @@ function Grievanceform() {
   const grievanceText = useRef("null");
   const isAnonymous = useRef("null");
   const suggestion = useRef("null");
+
+  const [submitMsg, setSubmitMsg] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,9 +40,11 @@ function Grievanceform() {
       )
       .then((result) => {
         console.log(result);
+        setSubmitMsg(result.data);
       })
       .catch((err) => {
         console.log(err);
+        setSubmitMsg("Sorry! some error occurred, please try again!");
       });
   };
 
@@ -137,6 +141,9 @@ function Grievanceform() {
             </button>
           </label>
         </div>
+        <label className="submit-msg" htmlFor="Your_suggestion">
+          {submitMsg ? "Grievance reported successfully!" : null}
+        </label>
       </form>
     </>
   );
