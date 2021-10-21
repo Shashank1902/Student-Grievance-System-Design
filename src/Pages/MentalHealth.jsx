@@ -6,6 +6,7 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 import Faq from 'react-faq-component';
+import "./categorysection.css"
 
 const data = {
   title: "FAQ",
@@ -60,10 +61,19 @@ class MentalHealth extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
+        <div>
+          <h2 className="category-title">Mental Health Support</h2>
+          <p className="category-writeup">
+            This section could help you in your state of distress, for we are here to help you thrive, and not just survive!<br/>
+            We understand the importance of a healthy mind and therefore we are here to hear you!
+            Considering your reported query, we’ll provide you with the necessary one-to-one assistance.
+
+          </p>
+        </div>
         <Grievanceform />
         <Faq data={data}
-        styles={styles}
-        config={config} />
+          styles={styles}
+          config={config} />
         <Chatbot />
         <Footbar />
       </div>
