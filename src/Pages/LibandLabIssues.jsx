@@ -84,7 +84,7 @@ class LibandLabIssues extends React.Component {
           <p className="category-writeup">
             In this section, you can post enquires regarding the institution’s library and labs.
             For instance, library related enquiries could include, issue of a new library card, library timings, exchange or return of any book or any other related queries.
-            For lab, you can post regarding lab timings, lab functionality rules and norms laid down by the institution.
+            For lab, you can post to enquire about lab timings, lab functionality rules and norms laid down by the institution.
             The solutions to your query shall be reverted.
 
           </p>
