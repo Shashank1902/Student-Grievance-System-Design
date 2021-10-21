@@ -7,6 +7,7 @@ import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 // import { Component } from 'react';
 import Faq from 'react-faq-component';
+import "./categorysection.css"
 
 const data = {
   title: "FAQ",
@@ -85,10 +86,19 @@ class TransportationIssues extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
+        <div>
+          <h2 className="category-title">Transportation Issues</h2>
+          <p className="category-writeup">
+            In this section, you can post queries regarding the transportation facilities provided by the institution.
+            For instance, if you want to know about the bus timings, the routes covered or provide feedback  regarding the bus facility, it can be posted here.
+            Considering your reported grievance/query, the administration would resolve the matter accordingly.
+
+          </p>
+        </div>
         <Grievanceform />
-        <Faq data={data} 
-        styles={styles}
-        config={config} />
+        <Faq data={data}
+          styles={styles}
+          config={config} />
         <Chatbot />
         <Footbar />
       </div>

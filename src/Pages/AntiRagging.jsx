@@ -6,6 +6,7 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 import Faq from 'react-faq-component';
+import "./categorysection.css"
 
 const data = {
   title: "FAQ",
@@ -71,10 +72,18 @@ class AntiRagging extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
+        <div>
+          <h2 className="category-title">Anti Ragging</h2>
+          <p className="category-writeup">
+            Ragging has ruined countless innocent lives and careers.<br/> In order to eradicate it, this platform provides you with all the support to report your or any such observed incidence in your institution.<br/>
+            Taking into account, your grievance, the administration will take necessary actions and provide you with the required support
+
+          </p>
+        </div>
         <Grievanceform />
         <Faq data={data}
-        styles={styles}
-        config={config} />
+          styles={styles}
+          config={config} />
         <Chatbot />
         <Footbar />
       </div>
