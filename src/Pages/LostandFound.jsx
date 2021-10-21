@@ -6,6 +6,7 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 import Faq from 'react-faq-component';
+import "./categorysection.css"
 
 const data = {
   title: "FAQ",
@@ -59,6 +60,14 @@ class LostandFound extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
+        <div>
+        <h2 className="category-title">Lost and Found</h2>
+        <p className="category-writeup">
+        In this section, you can post queries regarding any lost and/or found item in the college premises. Provide the description of the item lost or found to ensure it reaches the rightful owner.
+Considering your reported enquiry/query, the administration would get back to you.
+
+        </p>
+        </div>
         <Grievanceform />
         <Faq data={data}
         styles={styles}

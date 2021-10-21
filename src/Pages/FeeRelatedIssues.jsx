@@ -6,6 +6,7 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 import Faq from 'react-faq-component';
+import "./categorysection.css"
 
 const data = {
   title: "FAQ",
@@ -60,10 +61,19 @@ class FeeRelatedIssues extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
+        <div>
+          <h2 className="category-title">Fee Related Issues</h2>
+          <p className="category-writeup">
+            In this section, you can post your fee related queries.
+            For instance, if you want to know your recent transactions with the college, inquire about the college fee structure, the due amount or any other.
+            Considering your query, it will be resolved accordingly and appropriate steps shall be taken.
+
+          </p>
+        </div>
         <Grievanceform />
         <Faq data={data}
-        styles={styles}
-        config={config} />
+          styles={styles}
+          config={config} />
         <Chatbot />
         <Footbar />
       </div>

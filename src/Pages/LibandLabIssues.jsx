@@ -6,6 +6,7 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
 import Faq from 'react-faq-component';
+import "./categorysection.css"
 
 const data = {
   title: "FAQ",
@@ -33,16 +34,16 @@ const data = {
     {
       title: "6. Where is the chemistry lab situated?",
       content: "It is situated near the library, on 1st floor."
-    },{
+    }, {
       title: "7. Who is the lab attendant of BME lab?",
       content: "Mr Venkatesh Anand is the lab attendant of BME lab."
-    },{
+    }, {
       title: "8. How many students can be accommodated in the CL7 lab at once?",
       content: "Maximum 45 students can access the lab at once."
-    },{
+    }, {
       title: "9. How many labs are there in our Institution?",
       content: "5 computer labs, 1 lab for physics, chemistry, civil, Electronics, BME overall 11 labs are there."
-    },{
+    }, {
       title: "10. What are the precautions need to be followed while accessing the labs?",
       content: `a) Proper use of instruments of the lab.<br/>
       b) Safety precautions like gloves, eyeglasses in the lab of chemistry, workshops.<br/>
@@ -78,10 +79,20 @@ class LibandLabIssues extends React.Component {
     return (
       <div className="App">
         <TopNavbar />
+        <div>
+          <h2 className="category-title">Library and Lab Issues</h2>
+          <p className="category-writeup">
+            In this section, you can post enquires regarding the institution’s library and labs.
+            For instance, library related enquiries could include, issue of a new library card, library timings, exchange or return of any book or any other related queries.
+            For lab, you can post to enquire about lab timings, lab functionality rules and norms laid down by the institution.
+            The solutions to your query shall be reverted.
+
+          </p>
+        </div>
         <Grievanceform />
         <Faq data={data}
-        styles={styles}
-        config={config} />
+          styles={styles}
+          config={config} />
         <Chatbot />
         <Footbar />
       </div>
