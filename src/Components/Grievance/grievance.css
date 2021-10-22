@@ -19,6 +19,10 @@
   color: grey;
 }
 
+.content {
+  width: 100%;
+}
+
 .bookmark {
   justify-items: right;
   right: 0;

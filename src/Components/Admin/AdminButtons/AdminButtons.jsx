@@ -1,45 +1,60 @@
 import React from "react";
 import "./AdminButtons.css";
-import {Link} from "react-router-dom";
-
 
 function AdminButtons() {
+  return (
+    <>
+      <div className="admin-button-container">
+        <select
+          className="admin-sel-button"
+          name="Search by type"
+          defaultValue="-"
+        >
+          <option value="-" disabled>
+            Search by type
+          </option>
+          <option value="Academic">Academic</option>
+          <option value="Non Academic">Non Academic</option>
+        </select>
 
-    return(
-         <>
-            <div className="admin-button-container">
-              <div className="admin-button1">
-                  <span className="btn-content">Search by type</span>
-                  <img className="admin-btn-icon" 
-                  src="assets/Button-dropdown.png"
-                  alt=""></img>
-              </div>
+        <div className="admin-button1">
+          <select
+            className="admin-sel-button"
+            name="Search by type"
+            defaultValue="-"
+          >
+            <option value="-" disabled>
+              Search by category
+            </option>
+            <option value="Academic">Academic</option>
+            <option value="Non Academic">Non Academic</option>
+          </select>
+        </div>
 
-              <div className="admin-button1">
-                  <span className="btn-content">Search by category</span>
-                  <img  className="admin-btn-icon" 
-                   src="assets/Button-dropdown.png"
-                   alt=""></img> 
-              </div>
-              
-              <div className="admin-button1">
-                  <span className="btn-content">Search by ID</span>
-                  <img  className="admin-btn-icon" 
-                   src="assets/Button-searchbutton.png"
-                   alt=""></img> 
-              </div>
+        <form className="admin-input-button-cont">
+          <input className="admin-input-button" type="text" placeholder="Search by id" />
+          <button className="admin-input-btn-icon">
+            <img
+              className="admin-btn-icon"
+              src="assets/Button-searchbutton.png"
+              alt=""
+            ></img>
+          </button>
+        </form>
 
-              <div className="admin-button1">
-                  <span className="btn-content">Search by keyword</span>
-                  <img  className="admin-btn-icon" 
-                        src="assets/Button-searchbutton.png"
-                        alt=""></img> 
-              </div>
-            </div>
-         
-         
-         </>
-        );
-};
+        <form className="admin-input-button-cont">
+          <input className="admin-input-button" type="text" placeholder="Search by keyword" />
+          <button className="admin-input-btn-icon">
+            <img
+              className="admin-btn-icon"
+              src="assets/Button-searchbutton.png"
+              alt=""
+            ></img>
+          </button>
+        </form>
+      </div>
+    </>
+  );
+}
 
 export default AdminButtons;

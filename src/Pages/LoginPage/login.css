@@ -108,13 +108,13 @@
 } */
 
 .login-btn {
-  width: 160px;
+  width: auto;
   background: transparent;
   border: none;
   outline: none;
   color: #fff;
   background: #964bf6;
-  padding: 10px 20px;
+  padding: 10px 30px;
   cursor: pointer;
   border-radius: 25px;
   margin: 10px 0px 0px;

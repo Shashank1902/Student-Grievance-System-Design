@@ -1,4 +1,6 @@
 .admin-topbar {
+  background-color: #fff;
+  margin-top: -10px;
   height: 80px;
   display: flex;
   align-items: center;
