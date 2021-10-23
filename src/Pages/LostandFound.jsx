@@ -5,8 +5,8 @@ import Grievanceform from "../Components/GrievanceForm/Grievanceform";
 //import Categorysection from "../Components/CategorySection/Categorysection";
 import Footbar from "../Components/Footbar/Footbar";
 import TopNavbar from "../Components/TopNavbar/TopNavbar";
-import Faq from 'react-faq-component';
-import "./categorysection.css"
+import Faq from "react-faq-component";
+import "./categorysection.css";
 
 const data = {
   title: "FAQ",
@@ -16,34 +16,38 @@ const data = {
       content: `If you lost property on the  Campus, please contect your class incharge to check if it has been turned in.<br/>
       If you believe you lost an item in a library or a building with a front desk, we encourage you to go to that front desk and see if it has been turned in.<br/>
       All items turned into Campus Safety as "lost property" will be kept for 90 days.  After that time items are donated to various charities or destroyed.  
-      `
+      `,
     },
     {
       title: "2. How do I acquire my lost item?",
-      content: "Come to our Exam cell office and describe your lost item as best you can and the time that you lost it. We will search through our inventory and inform you if we have your lost item. You’re required to show a picture ID and sign the item out."
+      content:
+        "Come to our Exam cell office and describe your lost item as best you can and the time that you lost it. We will search through our inventory and inform you if we have your lost item. You’re required to show a picture ID and sign the item out.",
     },
     {
       title: "3. When do you usually receive lost items?",
-      content: "We usually receive the previous’ days lost items on campus before 9 a.m. each morning."
+      content:
+        "We usually receive the previous’ days lost items on campus before 9 a.m. each morning.",
     },
     {
       title: "4. I lost my ID. What should I do?",
-      content: "You should immediately report the loss of a card so that it can be deactivated to prevent any unauthorized use of the card. this can be done by going to the Campus Card office."
-    }]
-}
+      content:
+        "You should immediately report the loss of a card so that it can be deactivated to prevent any unauthorized use of the card. this can be done by going to the Campus Card office.",
+    },
+  ],
+};
 
 const styles = {
-  bgColor: 'white',
-  titleTextColor: 'black',
-  titleTextSize: '40px',
-  rowTitleColor: 'black',
-  rowTitleTextSize: 'large',
-  rowContentColor: 'black',
-  rowContentTextSize: '15px',
-  rowContentPaddingTop: '10px',
-  rowContentPaddingBottom: '10px',
-  rowContentPaddingLeft: '50px',
-  rowContentPaddingRight: '150px',
+  bgColor: "white",
+  titleTextColor: "black",
+  titleTextSize: "40px",
+  rowTitleColor: "black",
+  rowTitleTextSize: "large",
+  rowContentColor: "black",
+  rowContentTextSize: "15px",
+  rowContentPaddingTop: "10px",
+  rowContentPaddingBottom: "10px",
+  rowContentPaddingLeft: "50px",
+  rowContentPaddingRight: "150px",
   arrowColor: "purple",
   transitionDuration: "0.4s",
   timingFunc: "ease",
@@ -52,7 +56,6 @@ const styles = {
 const config = {
   animate: true,
   arrowIcon: <img src="assets\DropDown.png" alt="dropdown" />,
-
 };
 
 class LostandFound extends React.Component {
@@ -61,17 +64,22 @@ class LostandFound extends React.Component {
       <div className="App">
         <TopNavbar />
         <div>
-        <h2 className="category-title">Lost and Found</h2>
-        <p className="category-writeup">
-        In this section, you can post queries regarding any lost and/or found item in the college premises. Provide the description of the item lost or found to ensure it reaches the rightful owner.
-Considering your reported enquiry/query, the administration would get back to you.
-
-        </p>
+          <h2 className="category-title">Lost and Found</h2>
+          <p className="category-writeup">
+            In this section, you can post queries regarding any lost and/or
+            found item in the college premises. Provide the description of the
+            item lost or found to ensure it reaches the rightful owner.
+            Considering your reported enquiry/query, the administration would
+            get back to you.
+          </p>
         </div>
         <Grievanceform />
-        <Faq data={data}
-        styles={styles}
-        config={config} />
+        <div className="category-faq">
+          <Faq 
+          data={data} 
+          styles={styles} 
+          config={config} />
+        </div>
         <Chatbot />
         <Footbar />
       </div>
