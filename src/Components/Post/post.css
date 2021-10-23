@@ -168,6 +168,12 @@ font-family: 'Poppins';}
 
 }
 
+.overlay-profile {
+  position: relative;
+   /* right: 10px; */
+  /* top: 460px;  */
+}
+
 .profileoverlay-image-cont {
   display: flex;
   flex-direction: row;
@@ -199,7 +205,8 @@ font-family: 'Poppins';}
 
 .overlay-profile-hidden{
   display: none;
-  /* position: absolute; */
+  position: absolute;
+  z-index: 100;
 }
 
 .overlay-cross-btn{

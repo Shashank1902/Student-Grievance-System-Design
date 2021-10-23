@@ -2,7 +2,6 @@ import axios from "axios";
 import { format } from "timeago.js";
 import { useEffect, useRef, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import "./post.css";
 
 
@@ -142,7 +141,7 @@ function Post({ post }) {
             <div className="menu-icon-cont">
               <span className="meatball-icon">
                 <button className="icon-btn" ref={postmenubtn}>
-                  <i className="fas fa-ellipsis-h"></i>
+                  <i className="fas fa-ellipsis-h meatball-box"></i>
                 </button>
               </span>
               <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
