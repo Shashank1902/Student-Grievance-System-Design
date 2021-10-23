@@ -71,6 +71,7 @@ class MentalHealth extends React.Component {
           </p>
         </div>
         <Grievanceform />
+        
         <Faq data={data}
           styles={styles}
           config={config} />
