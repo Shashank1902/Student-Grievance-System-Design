@@ -6,6 +6,7 @@ import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reac
 import "./post.css";
 
 
+
 function Post({ post }) {
   const user = useAuthState();
 
@@ -19,6 +20,9 @@ function Post({ post }) {
   const token = JSON.parse(localStorage.getItem("token"));
   const postmenubox = useRef("null");
   const postmenubtn = useRef("null");
+  const clickableoverlayprofile = useRef("null");
+  const postprofileoverlay = useRef("null");
+  const overlayclosebtn = useRef("null");
 
   useEffect(() => {
     axios
@@ -34,6 +38,14 @@ function Post({ post }) {
 
     postmenubtn.current.addEventListener("click", () => {
       postmenubox.current.classList.toggle("postmenubox-hidden");
+    });
+
+    clickableoverlayprofile.current.addEventListener("click", () => {
+      postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
+    });
+
+    overlayclosebtn.current.addEventListener("click", () => {
+      postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
     });
   }, []);
 
@@ -72,26 +84,60 @@ function Post({ post }) {
       .catch((err) => {
         console.log(err);
       });
-      
+
   };
-  
-    // {const [dropdownOpen, setOpen] = useState(false);
-  
-    // const toggle = () => setOpen(!dropdownOpen);
+
+  // {const [dropdownOpen, setOpen] = useState(false);
+
+  // const toggle = () => setOpen(!dropdownOpen);
 
   return (
     <div className="post-container">
       <div className="post-card" id="post-card1">
-        <div className="container-inner">
+        <div className="container-inner" >
           <div className="profile-outer">
-            <div className="profile-card">
+            <div className="profile-card" ref={clickableoverlayprofile} >
               <img className="profile-pic" src="assets/user.png" alt="" />
               <div className="profile-name">
                 <span className="font-weight-bold">{username}</span>
                 <div className="time">
                   <small className="">{format(post.created_on)}</small>
                 </div>
+
               </div>
+            </div>
+            <div className="overlay-profile overlay-profile-hidden" ref={postprofileoverlay} >
+              <div className="profileoverlay-container-box">
+                <div className="profileoverlay-image-cont">
+                  <img className="profileoverlay-img" src="assets/user.png" alt="" />
+                </div>
+
+                <div className="overlay-text-container">
+                  <p className="overlay-title-text">
+                    {user.userDetails ? user.userDetails.username : "Unknown"}
+                  </p>
+
+                  <div className="overlay-desc-textcontainer">
+                    <p className="overlay-desc-textcontainer-items">
+                      {user.userDetails ? user.userDetails.institution_id : "Unknown"}
+                    </p>
+                    <p className="overlay-desc-textcontainer-items">
+                      {user.userDetails ? user.userDetails.email : "Unknown"}
+                    </p>
+
+                    <span className="overlay-desc-textcontainer-items">
+                      {user.userDetails ? user.userDetails.branch : "Unknown"} &nbsp;
+                      {user.userDetails ? user.userDetails.semester : "Unknown"}
+                    </span>
+
+                  </div>
+
+                </div>
+                <button className="overlay-cross-btn" ref={overlayclosebtn}>
+                  <i class="fa fa-window-close" aria-hidden="true"></i>
+                </button>
+              </div>
+
             </div>
             <div className="menu-icon-cont">
               <span className="meatball-icon">
@@ -104,7 +150,7 @@ function Post({ post }) {
                   <i className="fa fa-flag menubox-icon"></i>
                   <button className="menubox-text">Report</button>
                 </div>
-                <div className="menubox-inner">
+                <div className="menubox-inner" >
                   <i className="fa fa-eye menubox-icon"></i>
                   <button className="menubox-text">View Profile</button>
                 </div>
