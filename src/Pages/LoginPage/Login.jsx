@@ -87,10 +87,10 @@ const Login = () => {
             <div className="login-btn-box">
               <button
                 className="login-btn"
-                type="submit" /*disabled={isFetching}*/
+                type="submit" disabled={loading}
               >
-                {/* {isFetching ? "Loging in..." : "Log in"} */}
-                Sign In
+                {loading ? "Signing in..." : "Sign in"}
+                {/* Sign In */}
               </button>
             </div>
 

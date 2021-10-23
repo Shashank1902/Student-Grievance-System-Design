@@ -2,12 +2,12 @@
   font-family: "Poppins";
   background-color: #fff;
   padding: 30px;
-  margin: 20px 30px;
+  margin: 10px 30px;
   border-radius: 15px;
   box-shadow: 0px 0px 5px rgba(86, 19, 170, 0.2),
     0px 0px 10px rgba(86, 19, 170, 0.15);
   background-color: white;
-  width: 60%;
+  width: 70%;
   height: auto;
   display: flex;
 }
