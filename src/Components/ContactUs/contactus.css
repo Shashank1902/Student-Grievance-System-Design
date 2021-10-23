@@ -10,14 +10,14 @@
     font-weight: 500;
   }
   
-  .row {
+  .box-row {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin: 60px 0;
   }
   
-  .item{
+  .row-item{
     width: 250px;
     height: 200px;
     box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),

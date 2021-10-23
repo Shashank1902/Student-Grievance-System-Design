@@ -71,10 +71,11 @@ class MentalHealth extends React.Component {
           </p>
         </div>
         <Grievanceform />
-        
+        <div className="category-faq">
         <Faq data={data}
           styles={styles}
           config={config} />
+          </div>
         <Chatbot />
         <Footbar />
       </div>

@@ -6,8 +6,8 @@ function ContactUs() {
       <div className="contactSection">
         <h1 className="contact-heading">We are happy to hear you, here is how you can contact us</h1>
 
-        <div className="row">
-          <div className="item">
+        <div className="box-row">
+          <div className="row-item">
           <img
               className="contactLogo"
               src="assets/address2.png"
@@ -21,7 +21,7 @@ function ContactUs() {
             </div>
             
           </div>
-          <div className="item">
+          <div className="row-item">
             <img
               className="contactLogo"
               src="assets/contact2.png"
@@ -36,8 +36,8 @@ function ContactUs() {
           </div>
         </div>
 
-        <div className="row">
-          <div className="item">
+        <div className="box-row">
+          <div className="row-item">
             <img
               className="contactLogo"
               src="assets/email2.png"
@@ -50,7 +50,7 @@ function ContactUs() {
             
           </div>
             
-          <div className="item">
+          <div className="row-item">
             <img
               className="contactLogo"
               src="assets/website2.png"

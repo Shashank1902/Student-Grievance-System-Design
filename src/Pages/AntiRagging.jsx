@@ -90,7 +90,10 @@ class AntiRagging extends React.Component {
         </div>
         <Grievanceform />
         <div className="category-faq">
-          <Faq data={data} styles={styles} config={config} />
+          <Faq 
+          data={data} 
+          styles={styles} 
+          config={config} />
         </div>
         <Chatbot />
         <Footbar />
