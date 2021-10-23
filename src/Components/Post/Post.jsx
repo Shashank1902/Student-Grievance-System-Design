@@ -1,6 +1,6 @@
 import axios from "axios";
 import { format } from "timeago.js";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import "./post.css";
@@ -17,6 +17,8 @@ function Post({ post }) {
   const [isDownVoted, setIsDownVoted] = useState(false);
 
   const token = JSON.parse(localStorage.getItem("token"));
+  const postmenubox = useRef("null");
+  const postmenubtn = useRef("null");
 
   useEffect(() => {
     axios
@@ -29,7 +31,11 @@ function Post({ post }) {
       .catch((err) => {
         console.log(err);
       });
-  });
+
+    postmenubtn.current.addEventListener("click", () => {
+      postmenubox.current.classList.toggle("postmenubox-hidden");
+    });
+  }, []);
 
   const upvoteHandler = () => {
     setUpVote(isUpVoted ? upvote - 1 : upvote + 1);
@@ -81,24 +87,28 @@ function Post({ post }) {
             <div className="profile-card">
               <img className="profile-pic" src="assets/user.png" alt="" />
               <div className="profile-name">
-                <span className="font-weight-bold">
-                  {username }
-                </span>
+                <span className="font-weight-bold">{username}</span>
                 <div className="time">
                   <small className="">{format(post.created_on)}</small>
                 </div>
               </div>
             </div>
             <div className="menu-icon-cont">
-              <span className="menu-icon">
-                <button className="icon-btn"> 
-                 
-                    
-                    <i className="fas fa-ellipsis-h"></i>
-                
-
-                 </button>
+              <span className="meatball-icon">
+                <button className="icon-btn" ref={postmenubtn}>
+                  <i className="fas fa-ellipsis-h"></i>
+                </button>
               </span>
+              <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
+                <div className="menubox-inner">
+                  <i className="fa fa-flag menubox-icon"></i>
+                  <button className="menubox-text">Report</button>
+                </div>
+                <div className="menubox-inner">
+                  <i className="fa fa-eye menubox-icon"></i>
+                  <button className="menubox-text">View Profile</button>
+                </div>
+              </div>
             </div>
           </div>
           <div className="caption">
