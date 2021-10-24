@@ -147,13 +147,7 @@ font-family: 'Poppins';}
   /* text-align: center; */
 }
 /* //profile overlay */
-.overlay-profile{
-  
- 
-/* mask-position: right; */
-  /* width: 400px; */
 
-}
 .profileoverlay-container-box {
   display: flex;
   flex-direction: row;

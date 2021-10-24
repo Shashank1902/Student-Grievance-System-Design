@@ -17,6 +17,7 @@ function Footbar() {
           </Link>
         </div>
         <div className="foot">
+        
           <p>Contact Developer</p>
           <p>Report</p>
           <p>Feedback</p>

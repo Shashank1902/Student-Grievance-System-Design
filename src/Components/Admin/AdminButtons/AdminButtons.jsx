@@ -13,7 +13,7 @@ function AdminButtons() {
           <option value="-" disabled>
             Search by type
           </option>
-          <option value="Academic">Academic</option>
+          <option  className="admin-dropdown-option" value="Academic">Academic</option>
           <option value="Non Academic">Non Academic</option>
         </select>
 
