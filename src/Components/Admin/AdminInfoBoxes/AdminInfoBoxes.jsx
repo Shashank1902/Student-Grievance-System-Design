@@ -4,7 +4,7 @@ import "./AdminInfoBoxes.css";
 function AdminInfoBoxes() {
   return (
     <>
-      <div className="AdminInfoBar">
+      <div className="AdminInfoBar ">
         <div className="pinkbox InfoBox">
           <div className="boxcontent">
             <span>Grievances reported till date</span>

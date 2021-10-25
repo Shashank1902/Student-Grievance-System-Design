@@ -12,6 +12,8 @@ const AdminPanel = () => {
   const adminInfoCont = useRef("null");
   const adminInfoBtn = useRef("null");
   const adminInfoBtnImg = useRef("null");
+ 
+
 
   
 
@@ -33,6 +35,9 @@ const AdminPanel = () => {
 
   return (
     <>
+      
+
+      
       <div className="admin_topnavbar">
         <AdminNavbar />
       </div>
@@ -64,6 +69,7 @@ const AdminPanel = () => {
           
         </div>
       </div>
+      
     </>
   );
 };

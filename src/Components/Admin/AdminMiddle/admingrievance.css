@@ -10,8 +10,6 @@
   width: 70%;
   height: auto;
   display: flex;
-  position: relative;
-  top: 100px;
 }
 
 .grievance-top {
@@ -74,8 +72,8 @@ i {
   padding: 30px;
   margin: 10px 30px;
   border-radius: 15px;
-  box-shadow: 0px 0px 5px rgba(86, 19, 170, 0.2),
-    0px 0px 10px rgba(86, 19, 170, 0.15);
+  box-shadow: 5px 5px 5px rgba(86, 19, 170, 0.2),
+    5px 5px 10px rgba(86, 19, 170, 0.15);
   background-color: white;
   width: 50%;
   height: 70%;
@@ -287,8 +285,14 @@ i {
   height: 30px;
   position: absolute;
   top: 105px;
-  right: 230px;
+  right: 300px;
   background-color: #fff;
   border-radius: 50%;
   z-index: 1000;
 }
+
+.blur-effect{
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+

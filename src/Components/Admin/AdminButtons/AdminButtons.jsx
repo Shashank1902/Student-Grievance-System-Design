@@ -4,7 +4,7 @@ import "./AdminButtons.css";
 function AdminButtons() {
   return (
     <>
-      <div className="admin-button-container">
+      <div className="admin-button-container ">
         <select
           className="admin-sel-button"
           name="Search by type"

@@ -5,15 +5,26 @@ function AdminGrievance() {
     const showMoreBtn = useRef("null");
     const showLessBtn = useRef("null")
     const adminOverlayContainer = useRef("null");
+    const grievanceMainConatiner = useRef("null");
+    
 
     useEffect(() => {
       showMoreBtn.current.addEventListener("click", () => {
         adminOverlayContainer.current.classList.remove("hidden");
         showLessBtn.current.classList.remove("hidden");
+        grievanceMainConatiner.current.classList.add("blur-effect")
+        document.querySelector(".admin-button-container ").classList.add("blur-effect")
+        document.querySelector(".rightpanel-container").classList.add("blur-effect")
+        
+        
       });
       showLessBtn.current.addEventListener("click", () => {
         adminOverlayContainer.current.classList.add("hidden");
+        document.querySelector(".admin-button-container ").classList.remove("blur-effect")
         showLessBtn.current.classList.add("hidden");
+        grievanceMainConatiner.current.classList.remove("blur-effect")
+        document.querySelector(".admin-button-container ").classList.remove("blur-effect")
+        document.querySelector(".rightpanel-container").classList.remove("blur-effect")
       });
 
 
@@ -23,7 +34,7 @@ function AdminGrievance() {
   return (
     <>
     
-      <div className="grievance-container">
+      <div className="grievance-container " ref={grievanceMainConatiner}>
         <div className="grievance-wrapper">
           <div className="grievance-top">
             <div className="grievance-id">
@@ -77,6 +88,11 @@ function AdminGrievance() {
           </div>
         </div>
       </div>
+
+
+     {/* overlay------------ */}
+
+
       <img className="admin-overlay-cross hidden" src="assets/admin-overlay-cross.png" alt="" ref ={showLessBtn} />
       <div className="adminGrievanceOverlay hidden" ref={adminOverlayContainer}>
         
