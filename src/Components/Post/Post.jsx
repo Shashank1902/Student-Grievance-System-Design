@@ -26,7 +26,7 @@ function Post({ post }) {
   const reportbox = useRef("null");
   const reportboxreport = useRef("null");
   const reportboxcancel = useRef("null");
-  const viewprofileoverlay = useState("null")
+  const viewprofileoverlay = useState("null");
 
   useEffect(() => {
     axios
