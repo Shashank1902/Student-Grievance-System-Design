@@ -15,6 +15,7 @@ import {
   useAuthState,
 } from "../../context/ContextIndex";
 import StudentGrevanceOverlay from "../../Components/StudentGrievanceOverlay/StudentGrevanceOverlay";
+import StudentProfileUpdate from "../../Components/StudentProfileUpdate/StudentProfileUpdate";
 
 const Profile = () => {
   let history = useHistory();
@@ -28,6 +29,11 @@ const Profile = () => {
   const stdGrievanceOverlayCrossBtn = useRef("null");
   const stdGrievanceOverlayHandler = useRef("null");
   const stdProfile = useRef("null");
+  const overlay = useRef("null");
+  const footbar = useRef("null");
+  const stdShowLessBtn = useRef("null");
+  const stdOverlayContainer = useRef("null");
+
 
   useEffect(() => {
     const token = user.token;
@@ -70,12 +76,14 @@ const Profile = () => {
     stdGrievanceOverlayHandler.current.addEventListener("click" , ()=>{
       stdOverlayConatiner.current.classList.remove("hidden");
       stdGrievanceOverlayCrossBtn.current.classList.remove("hidden");
-      stdProfile.current.classList.add("blur-effect");
+      overlay.current.classList.remove("hidden");
+      footbar.current.classList.add("hidden");
     });
     stdGrievanceOverlayCrossBtn.current.addEventListener("click" , ()=>{
       stdOverlayConatiner.current.classList.add("hidden");
       stdGrievanceOverlayCrossBtn.current.classList.add("hidden");
-      stdProfile.current.classList.remove("blur-effect");
+      footbar.current.classList.remove("hidden");
+      overlay.current.classList.add("hidden");
     });
 
 
@@ -90,6 +98,8 @@ const Profile = () => {
 
   return (
     <>
+    
+    <div className="overlay hidden" ref={overlay}></div>
     <div className="stdOverlayConatiner hidden" ref={stdOverlayConatiner}>
         <StudentGrevanceOverlay />
       </div>
@@ -136,7 +146,9 @@ const Profile = () => {
       </div>
 
       <Chatbot />
-      <Footbar />
+      <div ref={footbar} className="">
+          <Footbar />
+        </div>
     </div>
     </>
   );
