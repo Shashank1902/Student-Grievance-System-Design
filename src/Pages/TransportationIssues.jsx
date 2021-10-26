@@ -24,8 +24,10 @@ const data = {
         "For availing of bus facilities, students must fill a form providing necessary information to the college to get their bus cards printed. For further details, contact the office reception.",
     },
     {
-      title: "3. How much is the transport fee for 1st-year students?",
-      content: "The Bus fee is ₹12,000 for all the students of the college.",
+      // title: "3. How much is the transport fee for 1st-year students?",
+      // content: "The Bus fee is ₹12,000 for all the students of the college.",
+      title: "3. Can the transport facility be withdrawn?",
+    content: "No, once availed and paid for, the transport facility cannot be withdrawn unless a relevant excuse is provided.",
     },
     {
       title: "4. Can the transport fee be deposited in parts?",
@@ -43,32 +45,32 @@ const data = {
       content:
         "A bus card, which acts as an identity card would be provided to students which they must carry at all times while traveling on the bus.",
     },
-    {
-      title: "7. Can the transport facility be withdrawn?",
-      content:
-        "No, once availed and paid for, the transport facility cannot be withdrawn unless a relevant excuse is provided.",
-    },
-    {
-      title: "8. What would be the arrival and departure timings of the bus?",
-      content:
-        "The Bus timings are dependent on the college timings and hence, may vary accordingly.",
-    },
-    {
-      title: "9. Is it required to renew the bus card from time to time?",
-      content:
-        "No, the bus card once issued to the student requires no renewal.",
-    },
-    {
-      title:
-        "10. What procedure needs to be followed in case my bus card is lost?",
-      content:
-        "In case of losing the bus card, Students must inform the bus authorities and apply for another bus card by following the same procedures as earlier.",
-    },
-    {
-      title: "11. . How can I switch my bus in case of a changed address?",
-      content:
-        "Students would be required to fill another form in case of a changed address and apply for a new bus card.",
-    },
+    // {
+    //   title: "7. Can the transport facility be withdrawn?",
+    //   content:
+    //     "No, once availed and paid for, the transport facility cannot be withdrawn unless a relevant excuse is provided.",
+    // },
+    // {
+    //   title: "8. What would be the arrival and departure timings of the bus?",
+    //   content:
+    //     "The Bus timings are dependent on the college timings and hence, may vary accordingly.",
+    // },
+    // {
+    //   title: "9. Is it required to renew the bus card from time to time?",
+    //   content:
+    //     "No, the bus card once issued to the student requires no renewal.",
+    // },
+    // {
+    //   title:
+    //     "10. What procedure needs to be followed in case my bus card is lost?",
+    //   content:
+    //     "In case of losing the bus card, Students must inform the bus authorities and apply for another bus card by following the same procedures as earlier.",
+    // },
+    // {
+    //   title: "11. . How can I switch my bus in case of a changed address?",
+    //   content:
+    //     "Students would be required to fill another form in case of a changed address and apply for a new bus card.",
+    // },
   ],
 };
 

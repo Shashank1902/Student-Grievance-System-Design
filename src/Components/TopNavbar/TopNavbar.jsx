@@ -17,10 +17,12 @@ function TopNavbar() {
     <>
       <div>
         <div className="title">
+        <Link style={{ textDecoration: "none", color: "black"}} to="/">
           <span className="angular">&lt;</span>
           <span>em</span>
           <span className="angular">&gt;</span>
           <span>brace</span>
+          </Link>
         </div>
         <div className="flex-container">
           <div className="nav-container1">

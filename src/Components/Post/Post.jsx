@@ -1,5 +1,5 @@
 import axios from "axios";
-import { format } from "timeago.js";
+import { cancel, format } from "timeago.js";
 import { useEffect, useRef, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
 import "./post.css";
@@ -18,9 +18,15 @@ function Post({ post }) {
   const token = JSON.parse(localStorage.getItem("token"));
   const postmenubox = useRef("null");
   const postmenubtn = useRef("null");
-  const clickableoverlayprofile = useRef("null");
+  const imgclickableoverlayprofile = useRef("null");
+  const nameclickableoverlayprofile = useRef("null");
   const postprofileoverlay = useRef("null");
   const overlayclosebtn = useRef("null");
+  const reportbtn = useRef("null");
+  const reportbox = useRef("null");
+  const reportboxreport = useRef("null");
+  const reportboxcancel = useRef("null");
+  const viewprofileoverlay = useState("null")
 
   useEffect(() => {
     axios
@@ -38,12 +44,34 @@ function Post({ post }) {
       postmenubox.current.classList.toggle("postmenubox-hidden");
     });
 
-    clickableoverlayprofile.current.addEventListener("click", () => {
+    imgclickableoverlayprofile.current.addEventListener("click", () => {
+      postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
+    });
+
+    nameclickableoverlayprofile.current.addEventListener("click", () => {
       postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
     });
 
     overlayclosebtn.current.addEventListener("click", () => {
       postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
+    });
+
+    viewprofileoverlay.current.addEventListener("click", () => {
+      postprofileoverlay.current.classList.remove("overlay-profile-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
+    });
+
+    reportbtn.current.addEventListener("click", () => {
+      reportbox.current.classList.remove("report-cont-hidden");
+    });
+    reportboxcancel.current.addEventListener("click", () => {
+      reportbox.current.classList.add("report-cont-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
+    });
+    reportboxreport.current.addEventListener("click", () => {
+      reportbox.current.classList.add("report-cont-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
     });
   }, []);
 
@@ -93,19 +121,51 @@ function Post({ post }) {
       <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
         <div className="menubox-inner">
           <i className="fa fa-flag menubox-icon"></i>
-          <button className="menubox-text">Report</button>
+          <button className="menubox-text" ref={reportbtn}>Report</button>
+        </div>
+        <div className="report-cont report-cont-hidden" ref={reportbox}>
+          <form>
+            <label className="report-cont-title">Report Post</label>
+            <div className="report-items">
+              {" "}
+              <input type="radio" value="report-option-1"  id="one" name="report-radio" />
+              <label htmlFor="one">False information</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-2" id="two" name="report-radio" />
+              <label htmlFor="two">Hateful or abusive post</label>{" "}
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-3" id="three" name="report-radio" />
+              <label htmlFor="three">Spam or misleading</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-4" id="four" name="report-radio" />
+              <label htmlFor="four">Bullying or harassment </label>
+            </div>
+          </form>
+          <div className="report-cancel-btn">
+            <button className="cancel-selection-btn" ref={reportboxcancel}>Cancel</button>
+            <button className="cancel-selection-btn" ref={reportboxreport}>Report</button>
+          </div>
         </div>
         <div className="menubox-inner">
           <i className="fa fa-eye menubox-icon"></i>
-          <button className="menubox-text">View Profile</button>
+          <button className="menubox-text" ref={viewprofileoverlay}>View Profile</button>
         </div>
       </div>
+
       <div className="post-card" id="post-card1">
         <div className="container-inner">
           <div className="profile-outer">
-            <div className="profile-card" ref={clickableoverlayprofile}>
-              <img className="profile-pic" src="assets/user.png" alt="" />
-              <div className="profile-name">
+            <div className="profile-card">
+              <img
+                className="profile-pic"
+                ref={imgclickableoverlayprofile}
+                src="assets/user.png"
+                alt=""
+              />
+              <div className="profile-name" ref={nameclickableoverlayprofile}>
                 <span className="font-weight-bold">{username}</span>
                 <div className="time">
                   <small className="">{format(post.created_on)}</small>
@@ -116,10 +176,10 @@ function Post({ post }) {
               className="overlay-profile overlay-profile-hidden"
               ref={postprofileoverlay}
             >
-              <ProfileOverlay/>
-                <button className="overlay-cross-btn" ref={overlayclosebtn}>
-                  <i class="fa fa-window-close" aria-hidden="true"></i>
-                </button>
+              <ProfileOverlay />
+              <button className="overlay-cross-btn" ref={overlayclosebtn}>
+                <i className="fa fa-window-close" aria-hidden="true"></i>
+              </button>
             </div>
             <div className="menu-icon-cont">
               <span className="meatball-icon">
@@ -129,6 +189,7 @@ function Post({ post }) {
               </span>
             </div>
           </div>
+
           <div className="caption">
             <p>{post.post_desc}</p>
           </div>
@@ -145,7 +206,34 @@ function Post({ post }) {
             </div>
           </div>
         </div>
+        {/* <div className="report-cont report-cont-hidden" ref={reportbox}>
+          <form>
+            <label className="report-cont-title">Report Post</label>
+            <div className="report-items">
+              {" "}
+              <input type="radio" value="report-option-1"  id="one" name="report-radio" />
+              <label htmlFor="one">False information</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-2" id="two" name="report-radio" />
+              <label htmlFor="two">Hateful or abusive post</label>{" "}
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-3" id="three" name="report-radio" />
+              <label htmlFor="three">Spam or misleading</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-4" id="four" name="report-radio" />
+              <label htmlFor="four">Bullying or harassment </label>
+            </div>
+          </form>
+          <div className="report-cancel-btn">
+            <button className="cancel-selection-btn" ref={reportboxcancel}>Cancel</button>
+            <button className="cancel-selection-btn" ref={reportboxreport}>Report</button>
+          </div>
+        </div> */}
       </div>
+
       {/*         
         <div className="post-card" id="post-card2">
           <div className="container-inner">

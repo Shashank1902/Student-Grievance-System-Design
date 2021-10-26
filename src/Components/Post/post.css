@@ -116,9 +116,8 @@
  /* position: relative; */
  position: absolute;
  right: 10px;
- 
  top: 50px;
- 
+ /* position: relative; */
  
 }
 
@@ -146,6 +145,7 @@ font-family: 'Poppins';}
   height: 40px;
   width: 140px;
   padding-top: 10px;
+  /* position: absolute; */
   /* text-align: center; */
 }
 /* //profile overlay */
@@ -220,6 +220,53 @@ cursor:pointer;
 overflow: hidden;
 font-family: 'Poppins';
 align-self: flex-start;
+ 
+}
+/* report content box */
+.report-cont{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+ box-shadow: 0px 0px 10px rgba(80, 80, 82, 0.5);
+ height: 210px;
+ width: 250px;
+ /* transform: translate(-300px,100px); */
+ /* overflow: overlay; */
+ /* position: relative; */
+ 
+}
+.report-items{
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+.report-cont-title{
+  height: 50px;
+  font-size: 20px;
+  color: black;
+  display: flex;
+justify-content: center;
+}
+.report-cont-hidden{
+  display: none;
+}
+.report-cancel-btn{
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  height: 20px;
+  border-top: 1px solid rgb(209, 206, 206);
+  /* margin: auto; */
+  padding-top: 6px;
+}
+.cancel-selection-btn{
+background-color: Transparent;
+background-repeat:no-repeat;
+border: none;
+cursor:pointer;
+overflow: hidden;
+font-family: 'Poppins'; 
 
+font-size: 15px;
   
 }
