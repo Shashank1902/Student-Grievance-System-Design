@@ -1,5 +1,5 @@
 import axios from "axios";
-import { format } from "timeago.js";
+import { cancel, format } from "timeago.js";
 import { useEffect, useRef, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
 import "./post.css";
@@ -22,6 +22,8 @@ function Post({ post }) {
   const nameclickableoverlayprofile = useRef("null");
   const postprofileoverlay = useRef("null");
   const overlayclosebtn = useRef("null");
+  const reportbtn = useRef("null");
+  const reportbox = useRef("null");
 
   useEffect(() => {
     axios
@@ -49,6 +51,10 @@ function Post({ post }) {
 
     overlayclosebtn.current.addEventListener("click", () => {
       postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
+    });
+
+    reportbtn.current.addEventListener("click", () => {
+      reportbox.current.classList.toggle("report-cont-hidden");
     });
   }, []);
 
@@ -98,13 +104,15 @@ function Post({ post }) {
       <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
         <div className="menubox-inner">
           <i className="fa fa-flag menubox-icon"></i>
-          <button className="menubox-text">Report</button>
+          <button className="menubox-text" ref={reportbtn}>Report Post</button>
         </div>
+
         <div className="menubox-inner">
           <i className="fa fa-eye menubox-icon"></i>
           <button className="menubox-text">View Profile</button>
         </div>
       </div>
+
       <div className="post-card" id="post-card1">
         <div className="container-inner">
           <div className="profile-outer">
@@ -132,10 +140,10 @@ function Post({ post }) {
                   <i className="fas fa-ellipsis-h meatball-box"></i>
                 </button>
               </span>
-              
+
             </div>
           </div>
-          
+
           <div className="caption">
             <p>{post.post_desc}</p>
           </div>
@@ -152,7 +160,23 @@ function Post({ post }) {
             </div>
           </div>
         </div>
+        <div className="report-cont report-cont-hidden" ref={reportbox}>
+          <form>
+            <label className="report-cont-title" >Report Post</label>
+            <div className="report-items"> <input type="radio" value="report-option-1" name="report-radio" /><label>False information</label></div>
+            <div className="report-items"><input type="radio" value="report-option-2" name="report-radio" /><label>Hateful or abusive post</label> </div>
+            <div className="report-items"><input type="radio" value="report-option-3" name="report-radio" /><label >Spam or misleading</label></div>
+            <div className="report-items"><input type="radio" value="report-option-4" name="report-radio" /><label >Bullying or harassment </label></div>
+
+
+          </form>
+          <div className="report-cancel-btn">
+            <button className="cancel-selection-btn">Cancel</button>
+            <button className="cancel-selection-btn">Report</button>
+          </div>
+        </div>
       </div>
+
       {/*         
         <div className="post-card" id="post-card2">
           <div className="container-inner">
