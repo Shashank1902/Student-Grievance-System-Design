@@ -64,3 +64,15 @@
   margin-top: 20px;
   flex: 2;
 }
+
+
+.stdGrievanceOverlayCrossBtn{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 100px;
+  right: 375px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1000;
+}

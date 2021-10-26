@@ -1,0 +1,114 @@
+.studentGrievanceOverlay {
+  font-family: "Poppins";
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(86, 19, 170, 0.2),
+    5px 5px 10px rgba(86, 19, 170, 0.15);
+  width: 50%;
+  height: 70%;
+  
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  overflow-y: scroll;
+}
+
+.stdGrievanceWrapper {
+    padding: 50px;
+}
+
+.stdGrievanceOverlayTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.stdOverlayGrievanceId {
+  font-size: 14px;
+  color: grey;
+  
+}
+
+.stdGrievanceOverlayIcon {
+  font-size: 23px;
+  color: rgb(115, 0, 255);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.stdGrievanceOverlayMiddle{
+    padding-bottom: 10px;
+}
+
+.stdGrievanceOverlayHeading{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.stdGrievanceOverlayInfoBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0px;
+    font-size: 15px;
+    color: #848484;
+  }
+  
+  .stdGrievanceOverlayInfoLeft {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stdGrievanceOverlayInfoRight {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stdGrievanceOverlayDesc{
+    display: flex;
+    flex-direction: column;
+  }
+  
+.stdGrievanceOverlayReplyContainer{
+    background-color: #eae4ff;
+  border-radius: 10px;
+}
+
+  .stdGrievanceOverlayReplyWapper{
+      padding: 20px;
+  }
+ .stdGrievanceOverlayReplyBox{
+     display: flex;
+     flex-direction: column;
+ }
+ .stdGrievanceOverlayReplyHeading{
+    font-size: 17px;
+    font-weight: 450;
+    padding-bottom: 5px;
+ }
+
+ .stdGrievanceOverlayReplyInput{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    -webkit-box-shadow: -1px 6px 6px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 6px 6px 2px rgba(0, 0, 0, 0.22);
+ }
+
+ .stdGrievanceOverlayReplyInput:focus{
+     outline: none;
+ }
+
+ .stdGrievanceOverlayReplyInput input::placeholder {
+    font-size: 16px;
+    color: black;
+    font-weight: 450;
+  }
+
+
+

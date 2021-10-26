@@ -168,7 +168,6 @@ i {
 .grievance-overlay-bottom-rply-container {
   font-size: 20px;
   font-weight: 500;
-  /* margin: 100px; */
   padding-bottom: 50px;
 }
 
@@ -292,7 +291,11 @@ i {
 }
 
 .blur-effect{
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.noScroll{
+  overflow-y: hidden;
 }
 
