@@ -26,18 +26,16 @@ function ProfileOverlay() {
             <p className="overlay-desc-textcontainer-items">
               {user.userDetails ? user.userDetails.email : "Unknown"}
             </p>
-           
+
             <span className="overlay-desc-textcontainer-items">
               {user.userDetails ? user.userDetails.branch : "Unknown"} &nbsp;
               {user.userDetails ? user.userDetails.semester : "Unknown"}
             </span>
           </div>
         </div>
-
         {/* <div className="overlay-edit-icon">
           <i className="fas fa-edit"></i>
           {/* <img className="edit-icon" src="assets/editicon3.png" alt="" />{" "} */}
-         
       </div>
     </>
   );

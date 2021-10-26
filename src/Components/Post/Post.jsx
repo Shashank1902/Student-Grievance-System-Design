@@ -18,7 +18,8 @@ function Post({ post }) {
   const token = JSON.parse(localStorage.getItem("token"));
   const postmenubox = useRef("null");
   const postmenubtn = useRef("null");
-  const clickableoverlayprofile = useRef("null");
+  const imgclickableoverlayprofile = useRef("null");
+  const nameclickableoverlayprofile = useRef("null");
   const postprofileoverlay = useRef("null");
   const overlayclosebtn = useRef("null");
 
@@ -38,7 +39,11 @@ function Post({ post }) {
       postmenubox.current.classList.toggle("postmenubox-hidden");
     });
 
-    clickableoverlayprofile.current.addEventListener("click", () => {
+    imgclickableoverlayprofile.current.addEventListener("click", () => {
+      postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
+    });
+
+    nameclickableoverlayprofile.current.addEventListener("click", () => {
       postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
     });
 
@@ -103,9 +108,9 @@ function Post({ post }) {
       <div className="post-card" id="post-card1">
         <div className="container-inner">
           <div className="profile-outer">
-            <div className="profile-card" ref={clickableoverlayprofile}>
-              <img className="profile-pic" src="assets/user.png" alt="" />
-              <div className="profile-name">
+            <div className="profile-card" >
+              <img className="profile-pic" ref={imgclickableoverlayprofile} src="assets/user.png" alt="" />
+              <div className="profile-name" ref={nameclickableoverlayprofile}>
                 <span className="font-weight-bold">{username}</span>
                 <div className="time">
                   <small className="">{format(post.created_on)}</small>
@@ -116,10 +121,10 @@ function Post({ post }) {
               className="overlay-profile overlay-profile-hidden"
               ref={postprofileoverlay}
             >
-              <ProfileOverlay/>
-                <button className="overlay-cross-btn" ref={overlayclosebtn}>
-                  <i class="fa fa-window-close" aria-hidden="true"></i>
-                </button>
+              <ProfileOverlay />
+              <button className="overlay-cross-btn" ref={overlayclosebtn}>
+                <i className="fa fa-window-close" aria-hidden="true"></i>
+              </button>
             </div>
             <div className="menu-icon-cont">
               <span className="meatball-icon">
@@ -127,8 +132,10 @@ function Post({ post }) {
                   <i className="fas fa-ellipsis-h meatball-box"></i>
                 </button>
               </span>
+              
             </div>
           </div>
+          
           <div className="caption">
             <p>{post.post_desc}</p>
           </div>
