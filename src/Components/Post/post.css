@@ -145,6 +145,7 @@ font-family: 'Poppins';}
   height: 40px;
   width: 140px;
   padding-top: 10px;
+  /* position: absolute; */
   /* text-align: center; */
 }
 /* //profile overlay */
@@ -229,6 +230,10 @@ align-self: flex-start;
  box-shadow: 0px 0px 10px rgba(80, 80, 82, 0.5);
  height: 210px;
  width: 250px;
+ /* transform: translate(-300px,100px); */
+ /* overflow: overlay; */
+ /* position: relative; */
+ 
 }
 .report-items{
   align-items: center;

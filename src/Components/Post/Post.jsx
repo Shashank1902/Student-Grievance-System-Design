@@ -26,6 +26,7 @@ function Post({ post }) {
   const reportbox = useRef("null");
   const reportboxreport = useRef("null");
   const reportboxcancel = useRef("null");
+  const viewprofileoverlay = useState("null")
 
   useEffect(() => {
     axios
@@ -53,6 +54,12 @@ function Post({ post }) {
 
     overlayclosebtn.current.addEventListener("click", () => {
       postprofileoverlay.current.classList.toggle("overlay-profile-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
+    });
+
+    viewprofileoverlay.current.addEventListener("click", () => {
+      postprofileoverlay.current.classList.remove("overlay-profile-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
     });
 
     reportbtn.current.addEventListener("click", () => {
@@ -60,9 +67,11 @@ function Post({ post }) {
     });
     reportboxcancel.current.addEventListener("click", () => {
       reportbox.current.classList.add("report-cont-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
     });
     reportboxreport.current.addEventListener("click", () => {
       reportbox.current.classList.add("report-cont-hidden");
+      postmenubox.current.classList.add("postmenubox-hidden");
     });
   }, []);
 
@@ -112,9 +121,7 @@ function Post({ post }) {
       <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
         <div className="menubox-inner">
           <i className="fa fa-flag menubox-icon"></i>
-          <button className="menubox-text" ref={reportbtn}>
-            Report Post
-          </button>
+          <button className="menubox-text" ref={reportbtn}>Report</button>
         </div>
         <div className="report-cont report-cont-hidden" ref={reportbox}>
           <form>
@@ -142,10 +149,9 @@ function Post({ post }) {
             <button className="cancel-selection-btn" ref={reportboxreport}>Report</button>
           </div>
         </div>
-
         <div className="menubox-inner">
           <i className="fa fa-eye menubox-icon"></i>
-          <button className="menubox-text">View Profile</button>
+          <button className="menubox-text" ref={viewprofileoverlay}>View Profile</button>
         </div>
       </div>
 
