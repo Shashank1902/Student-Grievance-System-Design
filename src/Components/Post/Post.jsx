@@ -24,6 +24,8 @@ function Post({ post }) {
   const overlayclosebtn = useRef("null");
   const reportbtn = useRef("null");
   const reportbox = useRef("null");
+  const reportboxreport = useRef("null");
+  const reportboxcancel = useRef("null");
 
   useEffect(() => {
     axios
@@ -54,7 +56,13 @@ function Post({ post }) {
     });
 
     reportbtn.current.addEventListener("click", () => {
-      reportbox.current.classList.toggle("report-cont-hidden");
+      reportbox.current.classList.remove("report-cont-hidden");
+    });
+    reportboxcancel.current.addEventListener("click", () => {
+      reportbox.current.classList.add("report-cont-hidden");
+    });
+    reportboxreport.current.addEventListener("click", () => {
+      reportbox.current.classList.add("report-cont-hidden");
     });
   }, []);
 
@@ -104,7 +112,35 @@ function Post({ post }) {
       <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
         <div className="menubox-inner">
           <i className="fa fa-flag menubox-icon"></i>
-          <button className="menubox-text" ref={reportbtn}>Report Post</button>
+          <button className="menubox-text" ref={reportbtn}>
+            Report Post
+          </button>
+        </div>
+        <div className="report-cont report-cont-hidden" ref={reportbox}>
+          <form>
+            <label className="report-cont-title">Report Post</label>
+            <div className="report-items">
+              {" "}
+              <input type="radio" value="report-option-1"  id="one" name="report-radio" />
+              <label htmlFor="one">False information</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-2" id="two" name="report-radio" />
+              <label htmlFor="two">Hateful or abusive post</label>{" "}
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-3" id="three" name="report-radio" />
+              <label htmlFor="three">Spam or misleading</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-4" id="four" name="report-radio" />
+              <label htmlFor="four">Bullying or harassment </label>
+            </div>
+          </form>
+          <div className="report-cancel-btn">
+            <button className="cancel-selection-btn" ref={reportboxcancel}>Cancel</button>
+            <button className="cancel-selection-btn" ref={reportboxreport}>Report</button>
+          </div>
         </div>
 
         <div className="menubox-inner">
@@ -116,8 +152,13 @@ function Post({ post }) {
       <div className="post-card" id="post-card1">
         <div className="container-inner">
           <div className="profile-outer">
-            <div className="profile-card" >
-              <img className="profile-pic" ref={imgclickableoverlayprofile} src="assets/user.png" alt="" />
+            <div className="profile-card">
+              <img
+                className="profile-pic"
+                ref={imgclickableoverlayprofile}
+                src="assets/user.png"
+                alt=""
+              />
               <div className="profile-name" ref={nameclickableoverlayprofile}>
                 <span className="font-weight-bold">{username}</span>
                 <div className="time">
@@ -140,7 +181,6 @@ function Post({ post }) {
                   <i className="fas fa-ellipsis-h meatball-box"></i>
                 </button>
               </span>
-
             </div>
           </div>
 
@@ -160,21 +200,32 @@ function Post({ post }) {
             </div>
           </div>
         </div>
-        <div className="report-cont report-cont-hidden" ref={reportbox}>
+        {/* <div className="report-cont report-cont-hidden" ref={reportbox}>
           <form>
-            <label className="report-cont-title" >Report Post</label>
-            <div className="report-items"> <input type="radio" value="report-option-1" name="report-radio" /><label>False information</label></div>
-            <div className="report-items"><input type="radio" value="report-option-2" name="report-radio" /><label>Hateful or abusive post</label> </div>
-            <div className="report-items"><input type="radio" value="report-option-3" name="report-radio" /><label >Spam or misleading</label></div>
-            <div className="report-items"><input type="radio" value="report-option-4" name="report-radio" /><label >Bullying or harassment </label></div>
-
-
+            <label className="report-cont-title">Report Post</label>
+            <div className="report-items">
+              {" "}
+              <input type="radio" value="report-option-1"  id="one" name="report-radio" />
+              <label htmlFor="one">False information</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-2" id="two" name="report-radio" />
+              <label htmlFor="two">Hateful or abusive post</label>{" "}
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-3" id="three" name="report-radio" />
+              <label htmlFor="three">Spam or misleading</label>
+            </div>
+            <div className="report-items">
+              <input type="radio" value="report-option-4" id="four" name="report-radio" />
+              <label htmlFor="four">Bullying or harassment </label>
+            </div>
           </form>
           <div className="report-cancel-btn">
-            <button className="cancel-selection-btn">Cancel</button>
-            <button className="cancel-selection-btn">Report</button>
+            <button className="cancel-selection-btn" ref={reportboxcancel}>Cancel</button>
+            <button className="cancel-selection-btn" ref={reportboxreport}>Report</button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/*         
