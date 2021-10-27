@@ -39,6 +39,16 @@ const AdminSidebar = () => {
             <div className="sidebar-option-btn-icon"><i className="fas fa-sort-down"></i></div>
           </div>
 
+          <div className="specific-categories-box">
+            <div className="specific-cat-cont">Fee Related</div>
+            <div className="specific-cat-cont">Mental Health</div>
+            <div className="specific-cat-cont">Transportation</div>
+            <div className="specific-cat-cont">Anti Ragging</div>
+            <div className="specific-cat-cont">Lost and Found</div>
+            <div className="specific-cat-cont">Library and Lab</div>
+            
+          </div>
+
 
         </div>
 
