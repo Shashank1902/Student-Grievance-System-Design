@@ -15,7 +15,7 @@ const AdminSidebar = () => {
           </div>
           <div className="sidebar-name-cont">
             <div className="sidebar-name">Sharmila</div>
-            <div className="sidebar-desi">Designation</div>
+            <div className="sidebar-desi">Designation - Professor</div>
           </div>
         </div>
 
@@ -30,7 +30,12 @@ const AdminSidebar = () => {
             <div><img className="sidebar-option-icon" src="assets/Home.png" alt="" /></div>
           </div>
           <div className="sidebar-option">
-            <div className="sidebar-option-name">Edit profile</div>
+            <div className="sidebar-option-name">Edit Profile</div>
+            <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
+          </div>
+
+          <div className="sidebar-option">
+            <div className="sidebar-option-name">Add Admin</div>
             <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
           </div>
 
