@@ -147,6 +147,7 @@ function Post({ post }) {
           <i className="fa fa-eye menubox-icon"></i>
           <button className="menubox-text">View Profile</button>
         </div>
+        
       </div>
 
       <div className="post-card" id="post-card1">
