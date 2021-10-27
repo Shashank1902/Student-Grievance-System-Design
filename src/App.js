@@ -25,6 +25,7 @@ import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 
 import { useAuthState } from "./context/ContextIndex";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
+import StudentProfileUpdate from "./Components/StudentProfileUpdate/StudentProfileUpdate";
 
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
           <Route path="/Contact" exact component={Contact} />
           <Route path="/Profile" exact component={Profile} />
           <Route path="/admin" exact component={AdminPanel} />
+          <Route path="/EditProfile" exact component={StudentProfileUpdate} />
 
           
 

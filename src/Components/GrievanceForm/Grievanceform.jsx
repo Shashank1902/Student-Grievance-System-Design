@@ -13,6 +13,28 @@ function Grievanceform() {
   const grievanceText = useRef("null");
   const isAnonymous = useRef("null");
   const suggestion = useRef("null");
+  
+  const [selected, setSelected] = useState("");
+
+  const changeSelectOptionHandler = (event) => {
+    setSelected(event.target.value);
+  };
+
+  const academic = ["Fee", "Library and Lab", "Examination", "Faculty", "Training and Placement", "Scholarship",];
+  const nonacademic = ["Mental Health", "Anti-Ragging", "Transportation", "Club Activities", "Lost and Found Items", "Parking Issues", "Maintenance", "Sanitation", "Hostel Facilities", "Canteen", "Sports and NCC"];
+
+  let somevar = null;
+  let categoryoptions = null;
+
+  if (selected === "Academic") {
+    somevar = academic;
+  }else if (selected === "Non Academic") {
+    somevar = nonacademic;
+  }
+
+  if (somevar) {
+    categoryoptions = somevar.map((el) => <option key={el}>{el}</option>);
+  }
 
   const [submitMsg, setSubmitMsg] = useState("");
 
@@ -63,8 +85,9 @@ function Grievanceform() {
               id="Type_of_Complaint"
               defaultValue="-"
               ref={grievanceType}
+              onChange={changeSelectOptionHandler}
             >
-              <option value="-" disabled>
+              <option value="-" disabled selected>
                 Select Grievance Type
               </option>
               <option value="Academic">Academic</option>
@@ -83,12 +106,14 @@ function Grievanceform() {
               id="Category"
               defaultValue="-"
               ref={grievanceCat}
+              // size="1"
             >
-              <option value="-" disabled>
+              <option value="-" disabled selected className="categor-options">
                 Select Grievance Category
               </option>
-              <option value="Category1">Category1</option>
-              <option value="Category2">Category2</option>
+              {/* <option value="Category1">Category1</option>
+              <option value="Category2">Category2</option> */}
+              {categoryoptions}
             </select>
           </div>
         </div>

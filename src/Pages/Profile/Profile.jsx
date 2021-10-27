@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import Chatbot from "../../Components/Chat bot/Chatbot";
 import Footbar from "../../Components/Footbar/Footbar";
 import TopNavbar from "../../Components/TopNavbar/TopNavbar";
@@ -14,6 +14,8 @@ import {
   useAuthDispatch,
   useAuthState,
 } from "../../context/ContextIndex";
+import StudentGrevanceOverlay from "../../Components/StudentGrievanceOverlay/StudentGrevanceOverlay";
+import StudentProfileUpdate from "../../Components/StudentProfileUpdate/StudentProfileUpdate";
 
 const Profile = () => {
   let history = useHistory();
@@ -23,14 +25,27 @@ const Profile = () => {
   const [posts, setPosts] = useState([]);
   const [grievances, setGrievances] = useState([]);
 
+  const stdOverlayConatiner = useRef("null");
+  const stdGrievanceOverlayCrossBtn = useRef("null");
+  const stdGrievanceOverlayHandler = useRef("null");
+  const stdProfile = useRef("null");
+  const overlay = useRef("null");
+  const footbar = useRef("null");
+  const stdShowLessBtn = useRef("null");
+  const stdOverlayContainer = useRef("null");
+
+
   useEffect(() => {
     const token = user.token;
 
     const loadPost = () => {
       axios
-        .get(`https://sgsapi.herokuapp.com/userpost/${user.userDetails.user_id}`, {
-          headers: { "auth-token": token },
-        })
+        .get(
+          `https://sgsapi.herokuapp.com/userpost/${user.userDetails.user_id}`,
+          {
+            headers: { "auth-token": token },
+          }
+        )
         .then((result) => {
           setPosts(result.data);
         })
@@ -57,6 +72,23 @@ const Profile = () => {
 
     loadPost();
     loadGrievance();
+
+    stdGrievanceOverlayHandler.current.addEventListener("click" , ()=>{
+      stdOverlayConatiner.current.classList.remove("hidden");
+      stdGrievanceOverlayCrossBtn.current.classList.remove("hidden");
+      overlay.current.classList.remove("hidden");
+      footbar.current.classList.add("hidden");
+    });
+    stdGrievanceOverlayCrossBtn.current.addEventListener("click" , ()=>{
+      stdOverlayConatiner.current.classList.add("hidden");
+      stdGrievanceOverlayCrossBtn.current.classList.add("hidden");
+      footbar.current.classList.remove("hidden");
+      overlay.current.classList.add("hidden");
+    });
+
+
+
+
   }, [user]);
 
   const handleLogout = () => {
@@ -65,7 +97,20 @@ const Profile = () => {
   };
 
   return (
-    <div className="App">
+    <>
+    
+    <div className="overlay hidden" ref={overlay}></div>
+    <div className="stdOverlayConatiner hidden" ref={stdOverlayConatiner}>
+        <StudentGrevanceOverlay />
+      </div>
+      <img
+      ref={stdGrievanceOverlayCrossBtn}
+        className="stdGrievanceOverlayCrossBtn hidden"
+        src="assets/admin-overlay-cross.png"
+        alt=""
+      />
+    <div className="stdProfile" ref={stdProfile}>
+
       <TopNavbar />
       <div className="profile-middle-cont">
         <div className="xyz">
@@ -83,27 +128,29 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      
+    
       <div className="abc">
         <div className="profilePostContainer">
-        {posts.length > 0 ?
-          posts.map((post, i) => (
-            <Post key={post.post_id} post={post} />
-          )) : "Post something to the community first!"
-        }
-          
+          {posts.length > 0
+            ? posts.map((post, i) => <Post key={post.post_id} post={post} />)
+            : "Post something to the community first!"}
         </div>
-        <div className="grievanceContainer">
-        {grievances.length > 0 ? 
-          grievances.map((grievance, i) => (
-            <Grievance key={grievance.gri_id} grievance={grievance} />
-          )) : "No Grievance reported!"
-        }
+        <div className="grievanceContainer" ref={stdGrievanceOverlayHandler}>
+          {grievances.length > 0
+            ? grievances.map((grievance, i) => (
+                <Grievance key={grievance.gri_id} grievance={grievance} />
+              ))
+            : "No Grievance reported!"}
         </div>
       </div>
 
       <Chatbot />
-      <Footbar />
+      <div ref={footbar} className="">
+          <Footbar />
+        </div>
     </div>
+    </>
   );
 };
 

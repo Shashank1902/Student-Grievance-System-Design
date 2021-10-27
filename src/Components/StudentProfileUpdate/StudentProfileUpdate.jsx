@@ -1,63 +1,107 @@
-import React from 'react';
-import './studentprofileupdate.css';
+import React from "react";
+import "./studentprofileupdate.css";
 
 export default function StudentProfileUpdate() {
-    return (
-        <div>
-            <form class="edit-profile-form">
-                <p className="title-of-form">Edit Profile</p>
+  return (
+    <>
+      <div className="stdEditProfile">
+        <div className="stdEditProfileWrapper">
+          <div className="stdProfileImgBox">
+            <img className="stdEditProfileImg" src="assets/user.png" alt="" />
+          </div>
+          <hr className="stdProfileHr" />
 
-                <div className="inputContainer3">
-                    <div className="inputContainer3">
-                        <label className="label-for-input">Name:</label> 
-                        <textarea className="input-for-form" type="text"
-                        id="Your_name"
-                        name="Your name"
-                        placeholder="Type Your Name"
-                        ref={yourName}></textarea>
-                    </div>
-                    
-                    <label className="label-for-input">Enrollment:</label> 
-                    <textarea className="input-for-form" type="text"
-                    id="Your_enrollment"
-                    name="Your enrollment"
-                    placeholder="Type Your Enrollment"
-                    ref={enrollment}></textarea>
+          <form className="edit-profile-form">
+            <div className="title-of-form">
+              <span>Edit Profile</span>
+            </div>
+            <div className="stdEditProfileInputContainer">
+              <div className="stdEditProfileInputBox">
+                <div className="stdEditProfilHeading">
+                  <label className="label-for-input">Name:</label>
+                </div>
+                <div className="stdProfileEditInputbox">
+                  <input
+                    className="input-for-form"
+                    type="text"
+                    placeholder="Type Your Name"
+                  />
+                </div>
+              </div>
 
-                    <label className="label-for-input"> Email:</label>
-                    <textarea className="input-for-form" type="text"
-                    id="Your_email"
-                    name="Your email"
+              <div className="stdEditProfileInputBox">
+              <div className="stdEditProfilHeading">
+                  <label className="label-for-input">Enrollment No:</label>
+                </div>
+                <div className="stdProfileEditInputbox">
+                  <input
+                    className="input-for-form"
+                    type="text"
+                    placeholder="Type Your Enrollment No"
+                  />
+                </div>
+              </div>
+
+              <div className="stdEditProfileInputBox">
+              <div className="stdEditProfilHeading">
+                  <label className="label-for-input">Mobile No:</label>
+                </div>
+                <div className="stdProfileEditInputbox">
+                  <input
+                    className="input-for-form"
+                    type="text"
+                    placeholder="Type Your Mobile No"
+                  />
+                </div>
+              </div>
+              <div className="stdEditProfileInputBox">
+              <div className="stdEditProfilHeading">
+                  <label className="label-for-input">Email:</label>
+                </div>
+                <div className="stdProfileEditInputbox">
+                  <input
+                    className="input-for-form"
+                    type="text"
                     placeholder="Type Your Email"
-                    ref={emailId}></textarea>
+                  />
+                </div>
+              </div>
 
-                    <label className="label-for-input">Branch:</label> 
-                    <textarea className="input-for-form" type="text"
-                    id="Your_branch"
-                    name="Your branch"
+              <div className="stdEditProfileInputBox">
+              <div className="stdEditProfilHeading">
+                  <label className="label-for-input">Branch:</label>
+                </div>
+                <div className="stdProfileEditInputbox">
+                  <input
+                    className="input-for-form"
+                    type="text"
                     placeholder="Type Your Branch"
-                    ref={yourBranch}></textarea>
+                  />
+                </div>
+              </div>
 
-                    <label className="label-for-input"> Semester:</label>
-                    <textarea className="input-for-form" type="text"
-                    id="Your_semester"
-                    name="Your semester"
+              <div className="stdEditProfileInputBox">
+              <div className="stdEditProfilHeading">
+                  <label className="label-for-input">Semester:</label>
+                </div>
+                <div className="stdProfileEditInputbox">
+                  <input
+                    className="input-for-form"
+                    type="text"
                     placeholder="Type Your Semester"
-                    ref={yourSem}></textarea>
+                  />
                 </div>
+              </div>
+            </div>
 
-                <div className="container-of-button">
-                <label htmlFor="submit">
-                    <button className="button-for-submit" id="submit" type="submit">
-                    Submit
-                    </button>
-                </label>
-                </div>
-
-    </form>
-
-
-
+            <div className="container-of-button">
+              <button className="button-for-submit" id="submit" type="submit">
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-    )
+      </div>
+    </>
+  );
 }

@@ -1,11 +1,44 @@
 import "./profilecard.css";
 import { useAuthState } from "../../context/ContextIndex";
+import {useRef,useEffect} from 'react'
+import StudentProfileUpdate from "../StudentProfileUpdate/StudentProfileUpdate";
 
 function ProfileCard() {
   const user = useAuthState();
 
+  const overlay = useRef("null");
+  const footbar = useRef("null");
+  const stdCrossBtn = useRef("null");
+  const stdEditOverlayContainer = useRef("null");
+  const stdProfileOverlayOpnBtn = useRef("null");
+
+  useEffect(() => {
+  
+
+    stdProfileOverlayOpnBtn.current.addEventListener("click" , ()=>{
+      stdEditOverlayContainer.current.classList.remove("hidden");
+      stdCrossBtn.current.classList.remove("hidden");
+      overlay.current.classList.remove("hidden");
+      
+    });
+    stdCrossBtn.current.addEventListener("click" , ()=>{
+      stdEditOverlayContainer.current.classList.add("hidden");
+      stdCrossBtn.current.classList.add("hidden");
+    
+      overlay.current.classList.add("hidden");
+    });
+
+
+
+
+  }, []);
   return (
     <>
+     <div className="overlay hidden" ref={overlay}></div>
+    <img className="std-overlay-cross hidden" src="assets/admin-overlay-cross.png" alt="" ref ={stdCrossBtn} />
+      <div className="hidden" ref={stdEditOverlayContainer}>
+      <StudentProfileUpdate/>
+      </div>
       <div className="profile-container-box">
         <div className="profile-image-cont">
           <img className="profile-img" src="assets/user.png" alt="" />
@@ -36,7 +69,7 @@ function ProfileCard() {
           </div>
         </div>
 
-        <div className="edit-icon">
+        <div className="edit-icon" ref={stdProfileOverlayOpnBtn}>
           <i className="fas fa-edit"></i>
           {/* <img className="edit-icon" src="assets/editicon3.png" alt="" />{" "} */}
         </div>
