@@ -64,7 +64,7 @@ const Login = () => {
               <input
                 type="text"
                 name="username"
-                required="true"
+                required={true}
                 // placeholder="Username"
                 ref={email}
               />
@@ -78,7 +78,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                required="true"
+                required={true}
                 // placeholder="Password"
                 ref={password}
               />

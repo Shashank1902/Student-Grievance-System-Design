@@ -88,7 +88,7 @@ function Grievanceform() {
               ref={grievanceType}
               onChange={changeSelectOptionHandler}
             >
-              <option value="-" disabled selected>
+              <option value="-" disabled>
                 Select Grievance Type
               </option>
               <option value="Academic">Academic</option>
@@ -110,7 +110,7 @@ function Grievanceform() {
               ref={grievanceCat}
               // size="1"
             >
-              <option value="-" disabled selected className="category-options" >
+              <option value="-" disabled className="category-options" >
                 Select Grievance Category
               </option>
               {/* <option value="Category1">Category1</option>
@@ -133,7 +133,7 @@ function Grievanceform() {
             id="Your_grievance"
             name="Your grievance"
             placeholder="Type Your Grievance"
-            required="true"
+            required={true}
             ref={grievanceText}
           ></textarea>
         </div>
