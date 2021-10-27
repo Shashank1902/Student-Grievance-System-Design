@@ -1,7 +1,18 @@
 import React from "react";
 import "./adminnavbar.css";
+import { useHistory } from "react-router-dom";
+import { logoutAdmin, useAuthDispatch } from "../../../context/ContextIndex";
 
-const AdminNavbar = () => {
+const AdminNavbar = ({admin}) => {
+
+  let history = useHistory();
+  const dispatch = useAuthDispatch();
+  const handleLogout = () => {
+    logoutAdmin(dispatch);
+    history.push("/admin/login");
+  };
+  
+
   return (
     <>
       <div className="admin-topbar">
@@ -13,7 +24,7 @@ const AdminNavbar = () => {
         </div>
 
         <div className="admin-name-container">
-          <div className="admin-name">Welcome, Sharmila Charles</div>
+          <div className="admin-name">Welcome, {admin ? admin.admin_name : null}</div>
         </div>
 
         <div className="admin-topbar-icon-cont">
@@ -21,16 +32,16 @@ const AdminNavbar = () => {
             <span>
               <img
                 className="admin-icon"
-                src="assets/ProfileIcon2.png"
+                src="/assets/ProfileIcon2.png"
                 alt="User"
               />
             </span>
           </div>
-          <div className="admin-topbar-icon">
+          <div className="admin-topbar-icon" onClick={handleLogout}>
             <span>
               <img
                 className="admin-icon"
-                src="assets/LogoutIcon.png"
+                src="/assets/LogoutIcon.png"
                 alt="Logout"
               />
             </span>

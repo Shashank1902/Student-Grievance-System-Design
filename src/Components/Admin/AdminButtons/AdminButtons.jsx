@@ -36,7 +36,7 @@ function AdminButtons() {
           <button className="admin-input-btn-icon">
             <img
               className="admin-btn-icon"
-              src="assets/Button-searchbutton.png"
+              src="/assets/Button-searchbutton.png"
               alt=""
             ></img>
           </button>
@@ -47,7 +47,7 @@ function AdminButtons() {
           <button className="admin-input-btn-icon">
             <img
               className="admin-btn-icon"
-              src="assets/Button-searchbutton.png"
+              src="/assets/Button-searchbutton.png"
               alt=""
             ></img>
           </button>

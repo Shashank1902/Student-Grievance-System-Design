@@ -9,7 +9,7 @@ const AdminSidebar = () => {
           <div className="sidebar-profile-pic-cont">
             <img
               className="sidebar-profile-pic"
-              src="assets/ProfileIcon2.png"
+              src="/assets/ProfileIcon2.png"
               alt="User"
             />
           </div>
@@ -27,11 +27,11 @@ const AdminSidebar = () => {
         <div className="sidebar-options-cont">
           <div className="sidebar-option">
             <div className="sidebar-option-name">Home</div>
-            <div><img className="sidebar-option-icon" src="assets/Home.png" alt="" /></div>
+            <div><img className="sidebar-option-icon" src="/assets/Home.png" alt="" /></div>
           </div>
           <div className="sidebar-option">
             <div className="sidebar-option-name">Edit profile</div>
-            <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
+            <div><img className="sidebar-option-icon" src="/assets/Edit Profile.png" alt="" /></div>
           </div>
 
           <div className="sidebar-option-btn-cont">
@@ -45,7 +45,7 @@ const AdminSidebar = () => {
         {/* <h2>
           <img src="assets/AdminPanel.png" alt=""></img>Admin Panel
         </h2>
-        <ul class="nav">
+        <ul className="nav">
           <li>
             <a href="/">
               <img src="assets/Home.png" alt=""></img>

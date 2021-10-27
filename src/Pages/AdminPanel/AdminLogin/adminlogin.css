@@ -1,0 +1,114 @@
+.admin-login-cont {
+  width: 100vw;
+  height: 100vh;
+  margin: -10px -60px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.admin-login-title-cont {
+  display: flex;
+  justify-content: center;
+  margin-top: -100px;
+  margin-bottom: 20px;
+}
+
+.admin-login-title {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bolder;
+  font-size: 86px;
+}
+
+.admin-login-form-container {
+  width: 400px;
+  font-family: "Poppins";
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.admin-login-box {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-login-heading-box {
+  margin: 0 30px;
+  padding: 0px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.admin-login-heading {
+  margin: 12px;
+  color: #964bf6;
+  font-weight: 500;
+  text-align: center;
+  font-size: 30px;
+}
+
+.angular-login {
+  color: #ff004d;
+  margin: 0 0px;
+}
+
+.admin-regs-label-box {
+  margin: 15px 0px 0px 0px;
+}
+
+.admin-regs-label-login {
+  color: #964bf6;
+  margin: 10px 0px;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.admin-login-inputbox {
+  border-radius: 5px;
+}
+
+.admin-login-inputbox input {
+  width: 90%;
+  padding: 5px 15px;
+  font-size: 16px;
+  color: #421e72;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  background: #fff;
+  border: 2px solid #964bf6;
+  border-radius: 10px;
+}
+
+.admin-login-btn-box {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-login-btn {
+  width: auto;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #964bf6;
+  background: #ece1fa;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 25px;
+  border: 2px solid #964bf6;
+  margin: 10px 0px 0px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.admin-login-btn:disabled {
+  cursor: not-allowed;
+}

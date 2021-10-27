@@ -57,6 +57,7 @@
 }
 
 .adminpanel-grievance-cont {
+  width: calc(100vw - 359px);
   height: calc(100vh - 205px);
   overflow-y: scroll;
 }

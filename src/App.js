@@ -24,46 +24,27 @@ import Login from "./Pages/LoginPage/Login";
 import RegistrationPage from "./Pages/RegistrationPage/RegistrationPage";
 
 import { useAuthState } from "./context/ContextIndex";
-import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 
+import { AdminAuthProvider } from "./context/AuthContext";
+import AdminDashboard from "./AdminDashboard";
 
 function App() {
   const user = useAuthState();
-  // console.log(user);
 
   return (
     <div className="app">
-      {/* <AuthProvider> */}
       <Router>
         <ScrollToTop />
         <Switch>
           {/* /////////// Routes for students ////////////// */}
           <Route exact path="/">
-            {
-              /*localStorage.getItem("currentUser")*/ user.userDetails ? (
-                <StudentHome />
-              ) : (
-                <Login />
-              )
-            }
+            {user.userDetails ? <StudentHome /> : <Login />}
           </Route>
           <Route path="/Login">
-            {
-              /*localStorage.getItem("userId")*/ user.userDetails ? (
-                <Redirect to="/" />
-              ) : (
-                <Login />
-              )
-            }
+            {user.userDetails ? <Redirect to="/" /> : <Login />}
           </Route>
           <Route path="/Register">
-            {
-              /*localStorage.getItem("currentUser")*/ user.userDetails ? (
-                <Redirect to="/" />
-              ) : (
-                <RegistrationPage />
-              )
-            }
+            {user.userDetails ? <Redirect to="/" /> : <RegistrationPage />}
           </Route>
           <Route path="/MentalHealth" exact component={MentalHealth} />
           <Route path="/FeeRelatedIssues" exact component={FeeRelatedIssues} />
@@ -79,15 +60,16 @@ function App() {
           <Route path="/AboutUs" exact component={AboutUs} />
           <Route path="/Contact" exact component={Contact} />
           <Route path="/Profile" exact component={Profile} />
-          <Route path="/admin" exact component={AdminPanel} />
-
-          
-
-          
-
         </Switch>
       </Router>
-      {/* </AuthProvider> */}
+
+      <AdminAuthProvider>
+        <Router>
+          <Switch>
+            <Route path="/admin" component={AdminDashboard} />
+          </Switch>
+        </Router>
+      </AdminAuthProvider>
     </div>
   );
 }

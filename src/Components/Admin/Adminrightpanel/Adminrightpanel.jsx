@@ -8,7 +8,7 @@ function Adminrightpanel() {
         <div className="right-buttons">
           <img
             className="admin-rightimages"
-            src="assets/Bookmark_icon.png"
+            src="/assets/Bookmark_icon.png"
             alt=""
           ></img>
           <div className="admin-text">
@@ -24,7 +24,7 @@ function Adminrightpanel() {
         <div className="right-buttons">
           <img
             className="admin-rightimages"
-            src="assets/review icon.png"
+            src="/assets/review icon.png"
             alt=""
           ></img>
           <div className="admin-text">
