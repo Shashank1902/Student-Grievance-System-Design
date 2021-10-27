@@ -50,12 +50,15 @@
   margin: 10px 0;
   resize: none;
   font-size: 16px;
+  
+ 
 }
 
 .form-top-inputs {
   height: 35px;
   width: 100%;
   padding: 0 10px;
+  
 }
 
 .checkboxContainer {
@@ -105,4 +108,22 @@
   font-size: 24px;
   color: #ffffff;
   cursor: pointer;
+}
+
+
+.categor-options {
+  /* height: 10px;
+max-height: 10px;
+overflow-y: scroll;
+overflow: auto; */
+}
+
+#Category {
+  /* min-height:90px;  */
+    /* overflow-y :auto; 
+    overflow-x:hidden;  */
+    /* position:absolute; */
+    /* width:300px; */
+    /* display: contents; */
+    /* overflow: auto; */
 }
