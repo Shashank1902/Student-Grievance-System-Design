@@ -1,23 +1,26 @@
 .outside-div{
     display: flex;
-    align-self: center;
+    /* align-self: left; */
+    flex-direction: row;
+    justify-content: space-between;
     border: 2px none;
     border-radius: 10px;
-    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
-    0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+    /* box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+    0px 10px 33px 4px rgba(86, 19, 170, 0.25); */
     height: 500px;
-    width: 700px;
-    margin: auto;
+    width: 100%;
+    /* margin: auto; */
     margin-bottom: 30px;
-    margin-top: 30px;
+    margin-top: 10px;
 
 }
 
 .write-up{
     font-family: 'Poppins', sans-serif ;
-    text-align: center;
+    text-align: left;
     padding: 15px;
     font-size: 20px;
+    
 
 
 }
@@ -29,8 +32,15 @@
     margin-inline-end: 0px;
 }
 .about-title{
-    color: rgba(94, 47, 151, 0.2);
+    color: black;
 }
 /* #second-para{
     font-weight: bold;
 } */
+
+.about-img{
+align-self: flex-end;
+}
+.about-in-img{
+
+}

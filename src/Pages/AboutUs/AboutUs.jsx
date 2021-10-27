@@ -28,8 +28,9 @@ class AboutUs extends React.Component {
             </p> */}
 
           </div>
-
+          <div className="about-img"><img src="./assets/aboutus.jpg"  className="about-in-img" /></div>
         </div>
+        
         <Chatbot />
         <Footbar />
       </div>
