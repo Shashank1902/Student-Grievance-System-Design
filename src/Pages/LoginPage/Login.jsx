@@ -50,7 +50,7 @@ const Login = () => {
         </div>
       </div>
       <div className="login-container">
-        <div className="login-box">
+        <div className="login-box" >
           <div className="login-heading-box">
             <h2 className="login-heading">Sign In</h2>
           </div>
@@ -64,7 +64,7 @@ const Login = () => {
               <input
                 type="text"
                 name="username"
-                required=""
+                required="true"
                 // placeholder="Username"
                 ref={email}
               />
@@ -78,7 +78,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                required=""
+                required="true"
                 // placeholder="Password"
                 ref={password}
               />

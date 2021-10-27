@@ -83,7 +83,7 @@ const RegistrationPage = () => {
                 className="regs-input"
                 type="text"
                 name="name"
-                required=""
+                required="true"
                 // placeholder="Name"
                 ref={username}
               />
@@ -100,7 +100,7 @@ const RegistrationPage = () => {
                 className="regs-input"
                 type="text"
                 name="name"
-                required=""
+                required="true"
                 // placeholder="Institute ID"
                 ref={instituteId}
               />
@@ -116,7 +116,7 @@ const RegistrationPage = () => {
                 className="regs-input"
                 type="text"
                 name="email"
-                required=""
+                required="true"
                 // placeholder="Email"
                 ref={email}
               />
@@ -132,7 +132,8 @@ const RegistrationPage = () => {
                 className="regs-input"
                 type="password"
                 name="password"
-                required=""
+                required="true"
+                maxLength="8" 
                 // placeholder="Password"
                 ref={password}
               />
