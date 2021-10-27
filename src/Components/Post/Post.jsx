@@ -153,6 +153,7 @@ function Post({ post }) {
           <i className="fa fa-eye menubox-icon"></i>
           <button className="menubox-text" ref={viewprofileoverlay}>View Profile</button>
         </div>
+        
       </div>
 
       <div className="post-card" id="post-card1">
