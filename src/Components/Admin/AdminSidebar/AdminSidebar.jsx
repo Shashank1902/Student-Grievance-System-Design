@@ -1,7 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
+import StudentProfileUpdate from "../../StudentProfileUpdate/StudentProfileUpdate";
+import EditAdmin from "../AdminEditProfile/EditAdmin";
 import "./adminsidebar.css";
 
 const AdminSidebar = () => {
+  const [update,setUpdate] = useState(false);
   return (
     <>
       <div className="sidebar">
@@ -29,9 +32,14 @@ const AdminSidebar = () => {
             <div className="sidebar-option-name">Home</div>
             <div><img className="sidebar-option-icon" src="assets/Home.png" alt="" /></div>
           </div>
-          <div className="sidebar-option">
+          <div className="sidebar-option" onClick={()=>setUpdate(!update)}>
             <div className="sidebar-option-name">Edit Profile</div>
             <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
+          </div>
+          <div className="edit-call">
+            {
+              update ? <EditAdmin /> :null 
+            }
           </div>
 
           <div className="sidebar-option">
