@@ -6,13 +6,14 @@ import AdminButtons from "../../Components/Admin/AdminButtons/AdminButtons";
 import Adminrightpanel from "../../Components/Admin/Adminrightpanel/Adminrightpanel";
 import AdminGrievance from "../../Components/Admin/AdminMiddle/AdminGrievance";
 import "./adminPanel.css";
+import AdminProfileOverlay from "../../Components/Admin/AdminProfileOverlay/AdminProfileOverlay";
 
 
 const AdminPanel = () => {
   const adminInfoCont = useRef("null");
   const adminInfoBtn = useRef("null");
   const adminInfoBtnImg = useRef("null");
- 
+  
 
 
   
@@ -49,7 +50,8 @@ const AdminPanel = () => {
           </div>
         </div>
       </div>
-
+      
+        
       <div className="adminpanel-mid-cont">
         <div className="adminpanel-sidebar-cont">
           <AdminSidebar />
