@@ -27,7 +27,7 @@ function AdminProfileOverlay() {
               <div className="new-admin-image-container">
               <img
               className="new-admin-profile-img"
-              src="assets/admin-profile-image.png"
+              src="assets/newadmin3.png"
               alt=""
             />
               </div>
@@ -40,7 +40,7 @@ function AdminProfileOverlay() {
               <div className="new-admin-image-container">
               <img
               className="new-admin-profile-img"
-              src="assets/admin-profile-image.png"
+              src="assets/newadmin3.png"
               alt=""
             />
               </div>
@@ -55,7 +55,7 @@ function AdminProfileOverlay() {
               <div className="new-admin-image-container">
               <img
               className="new-admin-profile-img"
-              src="assets/admin-profile-image.png"
+              src="assets/newadmin3.png"
               alt=""
             />
               </div>
@@ -68,7 +68,7 @@ function AdminProfileOverlay() {
               <div className="new-admin-image-container">
               <img
               className="new-admin-profile-img"
-              src="assets/admin-profile-image.png"
+              src="assets/newadmin3.png"
               alt=""
             />
               </div>
