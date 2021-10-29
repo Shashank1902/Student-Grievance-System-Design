@@ -1,4 +1,4 @@
-import './admingrievanceoverlay.css'
+import "./admingrievanceoverlay.css";
 
 export default function AdminGrievanceOverlay() {
   return (
@@ -47,7 +47,7 @@ export default function AdminGrievanceOverlay() {
             </div>
             <div className="grievance-overlay-desc-box">
               <span className="grievance-overlay-desc-heading">
-               Suggestions:
+                Suggestions:
               </span>
               <span>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -88,20 +88,24 @@ export default function AdminGrievanceOverlay() {
                     <span className="grievance-overlay-rply-box-heading">
                       Admin:
                     </span>
-                    <input
-                      placeholder="Reply"
-                      className="grievance-overlay-rply-box-input"
-                      type="text"
-                    />
+                    <div className="adminmessage-container"></div>
 
                     <span className="grievance-overlay-rply-box-heading">
                       Student Name:
                     </span>
-                    <input
-                      placeholder="Reply"
-                      className="grievance-overlay-rply-box-input"
-                      type="text"
-                    />
+
+                    <div className="admin-input-container">
+                      <input
+                        id="inputMsgForm"
+                        className="admin-message-input"
+                        type="text"
+                        placeholder="Type your message here"
+                      />
+
+                      <button className="admin-submit-button" type="submit">
+                        <i className="fas fa-angle-double-right"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

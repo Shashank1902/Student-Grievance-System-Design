@@ -41,44 +41,60 @@ export default function StudentGrevanceOverlay() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </span>
             </div>
-          </div>
-          <div className="stdGrievanceOverlayBottom">
-            <div className="stdGrievanceOverlayReportDate">
-              <span>Repored on : 20 min ago</span>
-            </div>
-            <div className="stdGrievanceOverlayReportStatus">
-              <span>Status: Pending</span>
-            </div>
-            <div>
-              <span className="stdGrievanceOverlayHeading">
-                Reply Something:
+            <div className="stdGrievanceOverlayDesc">
+              <span className="stdGrievanceOverlayHeading">Suggestions:</span>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorem, temporibus architecto ab nihil soluta ea tempora,
+                aspernatur distinctio quam, aliquam obcaecati labore. Soluta
+                impedit molestias doloremque atque veritatis deserunt. Quaerat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </span>
             </div>
+          </div>
+          <div className="stdOverlaybottom">
+            <div className="stdOverlayreportDate">
+              <span>Reported on:10 oct 21</span>
+            </div>
+            <div className="stdOverlayreportStatus">
+              <span>Status : Pending</span>
+            </div>
+          </div>
+          <div className="std-overlay-reply-container">
+              <div className="std-overlay-reply-heading-box">
+                <span className="std-overlay-reply-heading">
+                  Reply Something:
+                </span>
+              </div>
 
-            <div className="stdGrievanceOverlayReplyContainer">
-              <div className="stdGrievanceOverlayReplyWapper">
-                <div className="stdGrievanceOverlayReplyBox">
-                  <span className="stdGrievanceOverlayReplyHeading">
-                    Admin:
-                  </span>
-                  <input
-                    placeholder="Reply"
-                    className="stdGrievanceOverlayReplyInput"
-                    type="text"
-                  />
+              <div className="std-overlay-reply-input-container">
+                <div className="std-overlay-reply-wrapper">
+                  <div className="std-overlay-rply-box">
+                    <span className="std-overlay-rply-box-heading">
+                      Admin:
+                    </span>
+                    <div className="stdmessage-container"></div>
 
-                  <span className="stdGrievanceOverlayReplyHeading">
-                    Student Name:
-                  </span>
-                  <input
-                    placeholder="Reply"
-                    className="stdGrievanceOverlayReplyInput"
-                    type="text"
-                  />
+                    <span className="std-overlay-rply-box-heading">
+                      Student Name:
+                    </span>
+
+                    <div className="std-input-container">
+                      <input
+                        id="inputMsgForm"
+                        className="std-message-input"
+                        type="text"
+                        placeholder="Type your message here"
+                      />
+
+                      <button className="std-submit-button" type="submit">
+                        <i className="fas fa-angle-double-right"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </>

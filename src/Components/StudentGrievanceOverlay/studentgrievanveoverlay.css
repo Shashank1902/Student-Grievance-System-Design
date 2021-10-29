@@ -6,7 +6,8 @@
       5px 5px 10px rgba(86, 19, 170, 0.15),5px 5px 10px rgba(86, 19, 170, 0.15),5px 5px 10px rgba(86, 19, 170, 0.15);
   width: 50%;
   height: 70%;
-  
+  padding: 30px;
+  margin: 10px 30px;
   position: absolute;
   z-index: 100;
   top: 50%;
@@ -16,7 +17,7 @@
 }
 
 .stdGrievanceWrapper {
-    padding: 50px;
+    padding: 20px;
 }
 
 .stdGrievanceOverlayTop {
@@ -70,6 +71,7 @@
   .stdGrievanceOverlayDesc{
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
   }
   
 .stdGrievanceOverlayReplyContainer{
@@ -110,5 +112,132 @@
     font-weight: 450;
   }
 
+
+  .stdOverlaybottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .stdOverlayreportStatus ,.stdOverlayreportDate{
+    font-size: 13px;
+    color: #848484;
+  }
+
+  .std-overlay-reply-heading-box {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .std-overlay-reply-heading{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .std-overlay-reply-input-container {
+    background-color: #eae4ff;
+    border-radius: 10px;
+    
+  }
+  
+  .std-overlay-reply-wrapper {
+    padding: 20px;
+  }
+  
+  .std-overlay-rply-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .std-overlay-rply-box-heading {
+    font-size: 17px;
+    font-weight: 450;
+    margin-bottom: 10px;
+    position: relative;
+    left: 10px;
+  }
+  
+  .std-overlay-rply-box-input {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    -webkit-box-shadow: -1px 6px 6px 2px rgba(0, 0, 0, 0.22);
+    box-shadow: -1px 6px 6px 2px rgba(0, 0, 0, 0.22);
+  }
+  
+  .std-overlay-rply-box-input:focus {
+    outline: none;
+  }
+  
+  .std-overlay-rply-box input::placeholder {
+    font-size: 16px;
+    color: black;
+    font-weight: 450;
+  }
+  
+  
+  
+  
+  
+  .stdmessage-container{
+    width: 100%;
+    height: 150px;
+    margin: 10px 0;
+    margin-top: 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    overflow-y: scroll;
+    scroll-snap-align: end;
+    scroll-behavior: smooth;
+    background-color: #fff;
+  }
+  
+  .std-input-container{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+  }
+
+  .std-message-input{
+    width: 90%;
+    height: 95%;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px 0px 0px 15px;
+    outline: none;
+    padding-left: 15px;
+  }
+
+  .std-submit-button{
+    height: 100%;
+    width: 35px;
+    background: #330074;
+    border: none;
+    border-radius: 0px 15px 15px 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  .std-submit-button i {
+    margin-left: 1px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+}
+  
+  
 
 
