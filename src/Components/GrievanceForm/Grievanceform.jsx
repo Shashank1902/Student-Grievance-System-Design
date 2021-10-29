@@ -13,6 +13,29 @@ function Grievanceform() {
   const grievanceText = useRef("null");
   const isAnonymous = useRef("null");
   const suggestion = useRef("null");
+  
+  const [selected, setSelected] = useState("");
+
+  const changeSelectOptionHandler = (event) => {
+    setSelected(event.target.value);
+  };
+
+  const academic = ["Fee", "Library and Lab", "Examination", "Faculty", "Training and Placement", "Scholarship", "Other"];
+  const nonacademic = ["Mental Health", "Anti-Ragging", "Transportation", "Club Activities", "Lost and Found Items", "Parking Issues", "Maintenance", "Sanitation", "Hostel Facilities", "Canteen", "Sports and NCC", "Other"];
+
+  let somevar = null;
+  let categoryoptions = null;
+
+  if (selected === "Academic") {
+    somevar = academic;
+  }else if (selected === "Non Academic") {
+    somevar = nonacademic;
+  }
+
+
+  if (somevar) {
+    categoryoptions = somevar.map((el) => <option key={el}>{el}</option>);
+  }
 
   const [submitMsg, setSubmitMsg] = useState("");
 
@@ -63,12 +86,14 @@ function Grievanceform() {
               id="Type_of_Complaint"
               defaultValue="-"
               ref={grievanceType}
+              onChange={changeSelectOptionHandler}
             >
               <option value="-" disabled>
                 Select Grievance Type
               </option>
               <option value="Academic">Academic</option>
               <option value="Non Academic">Non Academic</option>
+              
             </select>
           </div>
 
@@ -80,15 +105,20 @@ function Grievanceform() {
               className="form-inputs form-top-inputs"
               name="Category"
               placeholder="Select Category"
-              id="Category"
+              id="scroll-Category"
               defaultValue="-"
               ref={grievanceCat}
+              // size="1"
             >
-              <option value="-" disabled>
+              <option value="-" disabled className="category-options" >
                 Select Grievance Category
               </option>
-              <option value="Category1">Category1</option>
-              <option value="Category2">Category2</option>
+              {/* <option value="Category1">Category1</option>
+              <option value="Category2">Category2</option> */}
+              {/* <div className="category-options"> */}
+                {categoryoptions}
+                {/* </div> */}
+              
             </select>
           </div>
         </div>
@@ -103,6 +133,7 @@ function Grievanceform() {
             id="Your_grievance"
             name="Your grievance"
             placeholder="Type Your Grievance"
+            required={true}
             ref={grievanceText}
           ></textarea>
         </div>

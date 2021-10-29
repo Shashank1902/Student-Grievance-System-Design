@@ -44,11 +44,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .sidebar-option-name{
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .sidebar-option-icon {
@@ -70,4 +70,27 @@
 
 .sidebar-option-btn-icon {
     margin-bottom: 5px;
+}
+
+.specific-categories-box{
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.specific-cat-cont{
+    font-family: "Poppins";
+    font-size: 16px;
+    margin-bottom: 5px;
+    width: 70%;
+    height: 25px;
+    border-radius: 7px;
+    padding-left: 5px;  
+}
+
+.specific-cat-cont:hover{
+    background: #D385FE;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    /* border: solid 2px red; */
 }

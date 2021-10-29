@@ -1,7 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
+import StudentProfileUpdate from "../../StudentProfileUpdate/StudentProfileUpdate";
+import EditAdmin from "../AdminEditProfile/EditAdmin";
 import "./adminsidebar.css";
 
 const AdminSidebar = () => {
+  const [update,setUpdate] = useState(false);
   return (
     <>
       <div className="sidebar">
@@ -15,7 +18,7 @@ const AdminSidebar = () => {
           </div>
           <div className="sidebar-name-cont">
             <div className="sidebar-name">Sharmila</div>
-            <div className="sidebar-desi">Designation</div>
+            <div className="sidebar-desi">Designation - Professor</div>
           </div>
         </div>
 
@@ -29,14 +32,34 @@ const AdminSidebar = () => {
             <div className="sidebar-option-name">Home</div>
             <div><img className="sidebar-option-icon" src="assets/Home.png" alt="" /></div>
           </div>
+          <div className="sidebar-option" onClick={()=>setUpdate(!update)}>
+            <div className="sidebar-option-name">Edit Profile</div>
+            <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
+          </div>
+          <div className="edit-call">
+            {
+              update ? <EditAdmin /> :null 
+            }
+          </div>
+
           <div className="sidebar-option">
-            <div className="sidebar-option-name">Edit profile</div>
+            <div className="sidebar-option-name">Add Admin</div>
             <div><img className="sidebar-option-icon" src="assets/Edit Profile.png" alt="" /></div>
           </div>
 
           <div className="sidebar-option-btn-cont">
             <div className="sidebar-option-btn">Specific Categories</div>
             <div className="sidebar-option-btn-icon"><i className="fas fa-sort-down"></i></div>
+          </div>
+
+          <div className="specific-categories-box">
+            <div className="specific-cat-cont">Fee Related</div>
+            <div className="specific-cat-cont">Mental Health</div>
+            <div className="specific-cat-cont">Transportation</div>
+            <div className="specific-cat-cont">Anti Ragging</div>
+            <div className="specific-cat-cont">Lost and Found</div>
+            <div className="specific-cat-cont">Library and Lab</div>
+            
           </div>
 
 

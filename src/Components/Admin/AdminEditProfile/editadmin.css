@@ -1,0 +1,97 @@
+.edit-admin-outer{
+    
+    width: 40%;
+    height: 70%;
+    padding: 10px;
+    border: none;
+    background: #ffffff;
+    box-shadow:  5px 5px 5px rgba(86, 19, 170, 0.2),
+    5px 5px 10px rgba(86, 19, 170, 0.15),5px 5px 10px rgba(86, 19, 170, 0.15),5px 5px 10px rgba(86, 19, 170, 0.15);;
+    border-radius: 15px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left: 61%;
+    top: 61%;
+    transform: translate(-50%,-50%);
+    overflow-y: scroll;
+    z-index: 100;
+   
+}
+.edit-admin-inner{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   margin: auto;
+   
+
+}
+.edit-admin-profile{
+  flex-direction: row;
+}
+.edit-admin-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgb(6, 226, 101);
+    display: flex;
+    align-items: center;
+}
+
+.edit-admin-title{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+.edit-admin-form{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top:20px;
+    text-align: left;
+    margin-left: 10px;
+}
+.edit-admin-label{
+    
+    color: black;
+    text-align: left;
+}
+.edit-admin-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.edit-admin-input{
+    width: 500px;
+    padding: 10px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(86, 19, 170, 0.25),
+        0px 0px 35px rgba(86, 19, 170, 0.15);
+    border-radius: 15px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+}
+.edit-admin-submit{
+    background: rgba(77, 0, 175, 0.71);
+    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+        0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+    border-radius: 30px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    /* padding: 20px; */
+    outline: none;
+    font-weight: 500;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+   
+}
+.edit-admin-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
