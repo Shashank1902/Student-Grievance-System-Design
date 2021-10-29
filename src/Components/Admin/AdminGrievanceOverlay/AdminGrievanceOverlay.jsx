@@ -45,6 +45,18 @@ export default function AdminGrievanceOverlay() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
               </span>
             </div>
+            <div className="grievance-overlay-desc-box">
+              <span className="grievance-overlay-desc-heading">
+               Suggestions:
+              </span>
+              <span>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorem, temporibus architecto ab nihil soluta ea tempora,
+                aspernatur distinctio quam, aliquam obcaecati labore. Soluta
+                impedit molestias doloremque atque veritatis deserunt. Quaerat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+            </div>
           </div>
 
           <div className="grievance-overlay-bottom">

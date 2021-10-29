@@ -8,6 +8,9 @@ export default function StudentProfileUpdate() {
         <div className="stdEditProfileWrapper">
           <div className="stdProfileImgBox">
             <img className="stdEditProfileImg" src="assets/user.png" alt="" />
+            <button className="stdUploadBtn">
+            <i className="fas fa-camera "></i>
+          </button>
           </div>
           <hr className="stdProfileHr" />
 
@@ -15,6 +18,7 @@ export default function StudentProfileUpdate() {
             <div className="title-of-form">
               <span>Edit Profile</span>
             </div>
+              
             <div className="stdEditProfileInputContainer">
               <div className="stdEditProfileInputBox">
                 <div className="stdEditProfilHeading">
