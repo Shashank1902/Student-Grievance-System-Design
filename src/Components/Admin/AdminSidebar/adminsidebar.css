@@ -39,21 +39,44 @@
     margin-top: 0;
 }
 
+
 .sidebar-option {
     width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin: 5px 0;
+    border-bottom: 1px solid rgb(201, 195, 195);
+    padding-top: 2px;
+    padding-bottom: 1px;
 }
+
+/* .sidebar-option:hover {
+    border: 3px red;
+    border-radius: 8px;
+    border-style: dotted;
+    border-bottom-color: crimson;
+} */
 
 .sidebar-option-name{
     font-size: 20px;
 }
 
+.sidebar-option-name:hover {
+    cursor: pointer;
+}
+
 .sidebar-option-icon {
     width: 20px;
     height: 21px;
+}
+
+.sidebar-option-icon:hover {
+    cursor: pointer;
+}
+
+.addadmincrossbutton:hover{
+    cursor: pointer;
 }
 
 .sidebar-option-btn-cont {
@@ -63,7 +86,7 @@
     justify-content: space-around;
     align-items: center;
     background: linear-gradient(90deg, #D587FE 0%, #9C55FD 100%);
-    border-radius: 5px;
+    border-radius: 9px;
     font-size: 20px;
     color: white;
 }
@@ -74,7 +97,7 @@
 
 .specific-categories-box{
     justify-content: space-between;
-    padding-top: 18px;
+    padding-top: 10px;
     padding-bottom: 18px;
 }
 
@@ -93,4 +116,22 @@
     color: rgb(255, 255, 255);
     cursor: pointer;
     /* border: solid 2px red; */
+}
+
+.addadmincrossbutton {
+
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 100px;
+    right: 375px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+
+}
+
+.addadmin-option-icon{
+    color: #9A6ED2;
+    font-size: 19px;
 }

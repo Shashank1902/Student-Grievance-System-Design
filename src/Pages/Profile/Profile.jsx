@@ -17,6 +17,8 @@ import {
 import StudentGrevanceOverlay from "../../Components/StudentGrievanceOverlay/StudentGrevanceOverlay";
 import StudentProfileUpdate from "../../Components/StudentProfileUpdate/StudentProfileUpdate";
 
+import AddAdmin from "../../Components/Admin/AddAdmin/AddAdmin";
+
 const Profile = () => {
   let history = useHistory();
   const dispatch = useAuthDispatch();

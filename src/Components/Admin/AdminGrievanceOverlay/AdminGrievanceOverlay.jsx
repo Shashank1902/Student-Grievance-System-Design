@@ -26,7 +26,7 @@ export default function AdminGrievanceOverlay() {
             <div className="grievance-overlay-info-box">
               <div className="grievance-overlay-info-left">
                 <span>Institute Id :23263898273</span>
-                <span>Contect No :23263898273</span>
+                <span>Contact No :23263898273</span>
               </div>
               <div className="grievance-overlay-info-right">
                 <span>Email :abc@gmail.com</span>
@@ -38,11 +38,7 @@ export default function AdminGrievanceOverlay() {
                 Grievance Reported:
               </span>
               <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolorem, temporibus architecto ab nihil soluta ea tempora,
-                aspernatur distinctio quam, aliquam obcaecati labore. Soluta
-                impedit molestias doloremque atque veritatis deserunt. Quaerat!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                I am a student of CSE branch Gyan Ganga Institute, i have lost my fees receipt for the third sem, how to get a receipt copy of that.
               </span>
             </div>
             <div className="grievance-overlay-desc-box">
@@ -50,11 +46,7 @@ export default function AdminGrievanceOverlay() {
                 Suggestions:
               </span>
               <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolorem, temporibus architecto ab nihil soluta ea tempora,
-                aspernatur distinctio quam, aliquam obcaecati labore. Soluta
-                impedit molestias doloremque atque veritatis deserunt. Quaerat!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Go to office at the fees counter and request a copy of the receipt from the on duty accountant, a copy of the receipt will be provided on spot.
               </span>
             </div>
           </div>

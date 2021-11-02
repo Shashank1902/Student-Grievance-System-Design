@@ -27,6 +27,8 @@ import { useAuthState } from "./context/ContextIndex";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
 import StudentProfileUpdate from "./Components/StudentProfileUpdate/StudentProfileUpdate";
 
+import AddAdmin from "./Components/Admin/AddAdmin/AddAdmin";
+
 
 function App() {
   const user = useAuthState();
@@ -82,6 +84,8 @@ function App() {
           <Route path="/Profile" exact component={Profile} />
           <Route path="/admin" exact component={AdminPanel} />
           <Route path="/EditProfile" exact component={StudentProfileUpdate} />
+
+          <Route path="/AddAdmin" exact component={AddAdmin} />
 
           
 
