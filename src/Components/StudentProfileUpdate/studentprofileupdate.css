@@ -1,0 +1,122 @@
+.stdEditProfile{
+    /* background-color: rgba(228, 210, 250, 0.2); */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(86, 19, 170, 0.2),
+      5px 5px 10px rgba(86, 19, 170, 0.15),5px 5px 10px rgba(86, 19, 170, 0.15),5px 5px 10px rgba(86, 19, 170, 0.15);
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow-y: scroll;
+    z-index: 1000;
+  
+}
+
+.stdEditProfileWrapper{
+    padding: 20px;
+    
+}
+.stdProfileImgBox{
+    /* position: relative; */
+    display: flex;
+    /* align-items: center;  */
+    justify-content: center;
+}
+.stdEditProfileImg{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid rgb(6, 226, 101);
+    /* position: absolute; */
+    /* position: relative;
+    top: 100px;
+    left: 500px; */
+    display: flex;
+    align-items: center;
+    
+}
+
+.edit-profile-form{
+    font-family: "Poppins", sans-serif;
+   
+
+}
+
+.title-of-form{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stdEditProfileInputContainer{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.stdEditProfileInputBox{
+    display: flex;
+    flex-direction: column;
+}
+
+.label-for-input{
+    font-size: 20px;
+    color: black;
+    margin-left: 15px;
+}
+
+.stdEditProfilHeading{
+    position: relative;
+    left: 120px;
+    padding: 10px;
+}
+
+.stdProfileEditInputbox{
+    display: flex;
+    justify-content: center;
+}
+
+.input-for-form{
+    width: 60%;
+    padding: 10px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px rgba(86, 19, 170, 0.25),
+        0px 0px 35px rgba(86, 19, 170, 0.15);
+    border-radius: 15px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    
+    
+}
+.input-for-form:focus{
+    outline: none;
+}
+
+.container-of-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.button-for-submit{
+    background: rgba(77, 0, 175, 0.71);
+    box-shadow: 0px 5px 17px rgba(86, 19, 170, 0.2),
+        0px 10px 33px 4px rgba(86, 19, 170, 0.25);
+    border-radius: 30px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    /* padding: 20px; */
+    outline: none;
+    font-weight: 500;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+}

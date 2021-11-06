@@ -1,15 +1,34 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { format } from "timeago.js";
+import AdminGrievanceOverlay from "../AdminGrievanceOverlay/AdminGrievanceOverlay";
 import "./admingrievance.css";
 
+import axios from "axios";
+import { useAuthState } from "../../../context/ContextIndex";
+
 function AdminGrievance({ grievance }) {
-  const showMoreBtn = useRef("null");
+  // const showMoreBtn = useRef("null");
   const showLessBtn = useRef("null");
   const adminOverlayContainer = useRef("null");
   const grievanceMainConatiner = useRef("null");
+  const overlay = useRef("null");
 
+  const [user, setUser] = useState({});
+  const admin = useAuthState();
   useEffect(() => {
-    showMoreBtn.current.addEventListener("click", () => {
+    axios
+      .get(`http://localhost:8000/user/${grievance.user_id}`, {
+        headers: { "admin-auth-token": admin.adminToken },
+      })
+      .then((result) => {
+        // console.log(result);
+        setUser(result.data);
+      })
+      .catch((err) => {
+        // console.log(err);
+      });
+
+    grievanceMainConatiner.current.addEventListener("click", () => {
       adminOverlayContainer.current.classList.remove("hidden");
       showLessBtn.current.classList.remove("hidden");
       grievanceMainConatiner.current.classList.add("blur-effect");
@@ -36,13 +55,16 @@ function AdminGrievance({ grievance }) {
     });
   }, []);
 
+
+
   return (
     <>
+      <div className="overlay hidden" ref={overlay}></div>
       <div className="grievance-container " ref={grievanceMainConatiner}>
         <div className="grievance-wrapper">
           <div className="grievance-top">
             <div className="grievance-id">
-              <span>Grievance ID:{grievance.gri_id}</span>
+              <span>Grievance ID: {grievance.gri_id}</span>
             </div>
             <div className="grievanve-logo">
               <i className="fas fa-bookmark"></i>
@@ -56,7 +78,7 @@ function AdminGrievance({ grievance }) {
 
           <div className="grievance-middle">
             <div className="grievance-name">
-              <span>Name : {grievance.reported_by}</span>
+              <span>Name: {grievance.reported_by}</span>
             </div>
             <div className="grievance-desc">
               <span>{grievance.gri_text}</span>
@@ -67,10 +89,13 @@ function AdminGrievance({ grievance }) {
             <div className="grievance-report-date">
               <span>Reported on: {format(grievance.created_on)}</span>
             </div>
-            <div className="read">
+            {/* <div className="read">
               <button ref={showMoreBtn} className="read-btn" type="button">
                 Read More
               </button>
+            </div> */}
+            <div className="grievance-overlay-status">
+              <span>Status : {grievance.is_solved ? "Solved" : "Pending"}</span>
             </div>
           </div>
         </div>
@@ -84,99 +109,8 @@ function AdminGrievance({ grievance }) {
         alt=""
         ref={showLessBtn}
       />
-      <div className="adminGrievanceOverlay hidden" ref={adminOverlayContainer}>
-        <div className="adminGrievanceOverlayWrapper">
-          <div className="grievance-overlay-top">
-            <div className="grievance-overlay-id">
-              <span>Grievance ID:12345</span>
-            </div>
-            <div className="grievanve-overlay-logo">
-              <i className="admin-grievance-overlay-bookmark fas fa-bookmark"></i>
-              <img
-                className="admin-grievance-overlay-search"
-                src="/assets/admin-grievance-search.png"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div className="grievance-overlay-middle">
-            <div className="grievance-overlay-name">
-              <span>Name : Sanket Raikwar</span>
-            </div>
-            <div className="grievance-overlay-info-box">
-              <div className="grievance-overlay-info-left">
-                <span>Institute Id :23263898273</span>
-                <span>Contect No :23263898273</span>
-              </div>
-              <div className="grievance-overlay-info-right">
-                <span>Email :abc@gmail.com</span>
-                <span>Branch : CSE</span>
-              </div>
-            </div>
-            <div className="grievance-overlay-desc-box">
-              <span className="grievance-overlay-desc-heading">
-                Grievance Reported:
-              </span>
-              <span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolorem, temporibus architecto ab nihil soluta ea tempora,
-                aspernatur distinctio quam, aliquam obcaecati labore. Soluta
-                impedit molestias doloremque atque veritatis deserunt. Quaerat!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </span>
-            </div>
-          </div>
-
-          <div className="grievance-overlay-bottom">
-            <div className="grievance-overlay-report-date">
-              <span>Reported on:10 oct 21</span>
-            </div>
-            <div className="grievance-overlay-status">
-              <span>Status : Pending</span>
-            </div>
-          </div>
-          <div className="grievance-overlay-bottom-rply-container">
-            <div className="grievance-overlay-mark-box">
-              <label className="grievance-overlay-mark-container">
-                Mark Solved:
-                <input type="checkbox" />
-                <span className="grievance-overlay-checkmark"></span>
-              </label>
-            </div>
-            <div className="grievance-overlay-reply-container">
-              <div className="grievance-overlay-reply-heading-box">
-                <span className="grievance-overlay-reply-heading">
-                  Reply Something:
-                </span>
-              </div>
-
-              <div className="grievance-overlay-reply-input-container">
-                <div className="grievance-overlay-reply-wrapper">
-                  <div className="grievance-overlay-rply-box">
-                    <span className="grievance-overlay-rply-box-heading">
-                      Admin:
-                    </span>
-                    <input
-                      placeholder="Reply"
-                      className="grievance-overlay-rply-box-input"
-                      type="text"
-                    />
-
-                    <span className="grievance-overlay-rply-box-heading">
-                      Student Name:
-                    </span>
-                    <input
-                      placeholder="Reply"
-                      className="grievance-overlay-rply-box-input"
-                      type="text"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="hidden" ref={adminOverlayContainer}>
+        <AdminGrievanceOverlay grievance={grievance} user={user}/>
       </div>
     </>
   );
