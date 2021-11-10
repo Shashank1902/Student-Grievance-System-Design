@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import AddAdmin from "../AddAdmin/AddAdmin";
+import EditAdmin from "../AdminEditProfile/EditAdmin";
 import "./adminsidebar.css";
 import { useAuthState } from "../../../context/ContextIndex";
 
 const AdminSidebar = () => {
   const admin = useAuthState();
+  const [update, setUpdate] = useState(false);
+  const addadmincontainer = useRef("null");
+  const addadmincrossbutton = useRef("null");
+  const addadminbutton = useRef("null");
+  const overlay = useRef("null");
+
+  useEffect(() => {
+    addadminbutton.current.addEventListener("click", () => {
+      addadmincontainer.current.classList.remove("hidden");
+      addadmincrossbutton.current.classList.remove("hidden");
+      overlay.current.classList.remove("hidden");
+    });
+    addadmincrossbutton.current.addEventListener("click", () => {
+      addadmincontainer.current.classList.add("hidden");
+      addadmincrossbutton.current.classList.add("hidden");
+      overlay.current.classList.add("hidden");
+    });
+  }, []);
+
   return (
     <>
       <div className="sidebar">
@@ -39,7 +60,7 @@ const AdminSidebar = () => {
               />
             </div>
           </div>
-          <div className="sidebar-option">
+          <div className="sidebar-option" onClick={() => setUpdate(!update)}>
             <div className="sidebar-option-name">Edit Profile</div>
             <div>
               <img
@@ -49,17 +70,24 @@ const AdminSidebar = () => {
               />
             </div>
           </div>
+          <div className="edit-call">{update ? <EditAdmin /> : null}</div>
 
-          <div className="sidebar-option">
+          <div className="sidebar-option" ref={addadminbutton}>
             <div className="sidebar-option-name">Add Admin</div>
-            <div>
-              <img
-                className="sidebar-option-icon"
-                src="/assets/Edit Profile.png"
-                alt=""
-              />
+            <div className="addadmin-option-icon">
+              <i className="fas fa-user-plus"></i>
             </div>
           </div>
+          <div className="overlay hidden" ref={overlay}></div>
+          <div className="hidden" ref={addadmincontainer}>
+            <AddAdmin></AddAdmin>
+          </div>
+          <img
+            ref={addadmincrossbutton}
+            className="addadmincrossbutton hidden"
+            src="/assets/admin-overlay-cross.png"
+            alt=""
+          />
 
           <div className="sidebar-option-btn-cont">
             <div className="sidebar-option-btn">Specific Categories</div>

@@ -17,11 +17,10 @@ function AdminGrievance({ grievance }) {
   const admin = useAuthState();
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/user/${grievance.user_id}`, {
+      .get(`https://sgsapi.herokuapp.com/user/${grievance.user_id}`, {
         headers: { "admin-auth-token": admin.adminToken },
       })
       .then((result) => {
-        // console.log(result);
         setUser(result.data);
       })
       .catch((err) => {
@@ -53,9 +52,7 @@ function AdminGrievance({ grievance }) {
         .querySelector(".rightpanel-container")
         .classList.remove("blur-effect");
     });
-  }, []);
-
-
+  }, [admin.adminToken, grievance.user_id]);
 
   return (
     <>
@@ -89,11 +86,6 @@ function AdminGrievance({ grievance }) {
             <div className="grievance-report-date">
               <span>Reported on: {format(grievance.created_on)}</span>
             </div>
-            {/* <div className="read">
-              <button ref={showMoreBtn} className="read-btn" type="button">
-                Read More
-              </button>
-            </div> */}
             <div className="grievance-overlay-status">
               <span>Status : {grievance.is_solved ? "Solved" : "Pending"}</span>
             </div>
@@ -110,7 +102,7 @@ function AdminGrievance({ grievance }) {
         ref={showLessBtn}
       />
       <div className="hidden" ref={adminOverlayContainer}>
-        <AdminGrievanceOverlay grievance={grievance} user={user}/>
+        <AdminGrievanceOverlay grievance={grievance} user={user} />
       </div>
     </>
   );

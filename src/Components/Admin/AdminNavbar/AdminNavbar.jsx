@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./adminnavbar.css";
 import { useHistory } from "react-router-dom";
 import { logoutAdmin, useAuthDispatch } from "../../../context/ContextIndex";
+import AdminProfileOverlay from "../AdminProfileOverlay/AdminProfileOverlay";
 
-const AdminNavbar = ({admin}) => {
-
+const AdminNavbar = ({ admin }) => {
   let history = useHistory();
   const dispatch = useAuthDispatch();
   const handleLogout = () => {
     logoutAdmin(dispatch);
     history.push("/admin/login");
   };
-  
+
+  const [show, setShow] = useState(false);
 
   return (
     <>
@@ -24,7 +25,9 @@ const AdminNavbar = ({admin}) => {
         </div>
 
         <div className="admin-name-container">
-          <div className="admin-name">Welcome, {admin ? admin.admin_name : null}</div>
+          <div className="admin-name">
+            Welcome, {admin ? admin.admin_name : null}
+          </div>
         </div>
 
         <div className="admin-topbar-icon-cont">
@@ -34,8 +37,10 @@ const AdminNavbar = ({admin}) => {
                 className="admin-icon"
                 src="/assets/ProfileIcon2.png"
                 alt="User"
+                onClick={() => setShow(!show)}
               />
             </span>
+            <div>{show ? <AdminProfileOverlay /> : null}</div>
           </div>
           <div className="admin-topbar-icon" onClick={handleLogout}>
             <span>

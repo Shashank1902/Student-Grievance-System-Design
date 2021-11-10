@@ -1,5 +1,5 @@
 import axios from "axios";
-import { cancel, format } from "timeago.js";
+import { format } from "timeago.js";
 import { useEffect, useRef, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
 import "./post.css";
@@ -15,7 +15,8 @@ function Post({ post }) {
   const [isUpVoted, setIsUpVoted] = useState(false);
   const [isDownVoted, setIsDownVoted] = useState(false);
 
-  const token = JSON.parse(localStorage.getItem("token"));
+  const token = user.token;
+  // const mountedRef = useRef(true);
   const postmenubox = useRef("null");
   const postmenubtn = useRef("null");
   const imgclickableoverlayprofile = useRef("null");
@@ -26,18 +27,25 @@ function Post({ post }) {
   const reportbox = useRef("null");
   const reportboxreport = useRef("null");
   const reportboxcancel = useRef("null");
-  const viewprofileoverlay = useState("null");
+  const viewprofileoverlay = useRef("null");
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     axios
-      .get(`https://sgsapi.herokuapp.com/user/${post.user_id}`, {
+      .get(`https://sgsapi.herokuapp.com/studentuser/${post.user_id}`, {
         headers: { "auth-token": token },
+        cancelToken: source.token,
       })
       .then((result) => {
         setUsername(result.data.username);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        // console.log(err);
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
       });
 
     postmenubtn.current.addEventListener("click", () => {
@@ -73,7 +81,12 @@ function Post({ post }) {
       reportbox.current.classList.add("report-cont-hidden");
       postmenubox.current.classList.add("postmenubox-hidden");
     });
-  }, []);
+
+    // return () => {mountedRef.current = false};
+    return () => {
+      source.cancel();
+    };
+  }, [token, post.user_id]);
 
   const upvoteHandler = () => {
     setUpVote(isUpVoted ? upvote - 1 : upvote + 1);
@@ -121,39 +134,66 @@ function Post({ post }) {
       <div className="post-menubox postmenubox-hidden" ref={postmenubox}>
         <div className="menubox-inner">
           <i className="fa fa-flag menubox-icon"></i>
-          <button className="menubox-text" ref={reportbtn}>Report</button>
+          <button className="menubox-text" ref={reportbtn}>
+            Report
+          </button>
         </div>
         <div className="report-cont report-cont-hidden" ref={reportbox}>
           <form>
             <label className="report-cont-title">Report Post</label>
             <div className="report-items">
               {" "}
-              <input type="radio" value="report-option-1"  id="one" name="report-radio" />
+              <input
+                type="radio"
+                value="report-option-1"
+                id="one"
+                name="report-radio"
+              />
               <label htmlFor="one">False information</label>
             </div>
             <div className="report-items">
-              <input type="radio" value="report-option-2" id="two" name="report-radio" />
+              <input
+                type="radio"
+                value="report-option-2"
+                id="two"
+                name="report-radio"
+              />
               <label htmlFor="two">Hateful or abusive post</label>{" "}
             </div>
             <div className="report-items">
-              <input type="radio" value="report-option-3" id="three" name="report-radio" />
+              <input
+                type="radio"
+                value="report-option-3"
+                id="three"
+                name="report-radio"
+              />
               <label htmlFor="three">Spam or misleading</label>
             </div>
             <div className="report-items">
-              <input type="radio" value="report-option-4" id="four" name="report-radio" />
+              <input
+                type="radio"
+                value="report-option-4"
+                id="four"
+                name="report-radio"
+              />
               <label htmlFor="four">Bullying or harassment </label>
             </div>
           </form>
           <div className="report-cancel-btn">
-            <button className="cancel-selection-btn" ref={reportboxcancel}>Cancel</button>
-            <button className="cancel-selection-btn" ref={reportboxreport}>Report</button>
+            <button className="cancel-selection-btn" ref={reportboxcancel}>
+              Cancel
+            </button>
+            <button className="cancel-selection-btn" ref={reportboxreport}>
+              Report
+            </button>
           </div>
         </div>
         <div className="menubox-inner">
           <i className="fa fa-eye menubox-icon"></i>
-          <button className="menubox-text" ref={viewprofileoverlay}>View Profile</button>
+          <button className="menubox-text" ref={viewprofileoverlay}>
+            View Profile
+          </button>
         </div>
-        
       </div>
 
       <div className="post-card" id="post-card1">
@@ -177,7 +217,7 @@ function Post({ post }) {
               className="overlay-profile overlay-profile-hidden"
               ref={postprofileoverlay}
             >
-              <ProfileOverlay />
+              <ProfileOverlay userId={post.user_id}/>
               <button className="overlay-cross-btn" ref={overlayclosebtn}>
                 <i className="fa fa-window-close" aria-hidden="true"></i>
               </button>

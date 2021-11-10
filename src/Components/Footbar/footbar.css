@@ -1,5 +1,5 @@
 .foot-container {
-  width: 100vw;
+  width: calc(100vw - 5px);
   background-color: #814ac6;
   font-family: "Poppins", sans-serif;
   font-size: 18px;

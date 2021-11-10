@@ -71,7 +71,7 @@ function ProfileCard() {
 
         <div className="edit-icon" ref={stdProfileOverlayOpnBtn}>
           <i className="fas fa-edit"></i>
-          {/* <img className="edit-icon" src="assets/editicon3.png" alt="" />{" "} */}
+          {/* <img className="edit-icon" src="assets/.png" alt="" />{" "} */}
         </div>
       </div>
     </>

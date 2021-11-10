@@ -53,9 +53,7 @@ function Grievanceform() {
           reported_by: isAnonymous.current.checked
             ? "Anonymous"
             : user.userDetails.username,
-          user_id: isAnonymous.current.checked
-            ? null
-            : user.userDetails.user_id,
+          user_id: user.userDetails.user_id,
         },
         {
           headers: { "auth-token": token },

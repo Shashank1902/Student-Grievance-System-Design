@@ -9,6 +9,7 @@
   width: 85%;
   height: auto;
   display: flex;
+  position: relative;
 }
 
 .grievance-top-cont {
@@ -57,4 +58,26 @@
 .status-icon {
   color: red;
   margin-left: 5px;
+}
+
+.grievance_overlay_container {
+  position: absolute;
+  top: -150%;
+  left: calc(100vw - 130vw);
+  z-index: 100;
+}
+
+.stdGrievanceOverlayCrossBtn{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 2%;
+  right: -20px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
 }

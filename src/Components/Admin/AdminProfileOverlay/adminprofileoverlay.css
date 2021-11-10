@@ -1,0 +1,82 @@
+.admin-overlay-container {
+    font-family: "Poppins";
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 17px rgba(79, 73, 87, 0.2),
+    0px 10px 33px 4px rgba(79, 73, 87, 0.2);
+    width: 500px;
+    height: 480px;
+    position: absolute;
+    /* z-index: 100; 
+    top: 500%;
+    left: 50%; 
+    transform: translate(-50% ,-50%); 
+    overflow-y: scroll; */
+    right: 150px;
+    
+}
+
+.admin-profile-container-box {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   /* margin-top: 5px; */
+   border-bottom: 1px solid rgb(201, 195, 195);
+    
+}
+
+.admin-profile-image-cont {
+    align-self: center;
+}
+
+.admin-profile-img {
+    width: 100px;
+    height: 100px;
+  
+}
+
+.admin-text-container {
+    font-size: 16px;
+}
+/*new admin*/
+
+.new-admin-image-container {
+align-self: center;
+}
+
+.new-admin-profile-img {
+    width: 45px;
+    height: 45px;
+}
+
+.new-admin-profile-container-box {
+    display: flex;
+    flex-direction: column;
+    /* height: 190px; */
+    width: 500px;
+    /* margin-top: 25px; */
+}
+
+.new-admin-row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.new-admin-row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.new-admin-profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 180px;
+}
+
+.new-admin-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}

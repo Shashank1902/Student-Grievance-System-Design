@@ -6,6 +6,7 @@ import AdminButtons from "../../Components/Admin/AdminButtons/AdminButtons";
 import Adminrightpanel from "../../Components/Admin/Adminrightpanel/Adminrightpanel";
 import AdminGrievance from "../../Components/Admin/AdminMiddle/AdminGrievance";
 import "./adminPanel.css";
+// import AdminProfileOverlay from "../../Components/Admin/AdminProfileOverlay/AdminProfileOverlay";
 
 import { useAuthState } from "../../context/ContextIndex";
 import axios from "axios";
@@ -16,18 +17,16 @@ const AdminPanel = () => {
   const adminInfoCont = useRef("null");
   const adminInfoBtn = useRef("null");
   const adminInfoBtnImg = useRef("null");
-
   const admin = useAuthState();
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/gri/grievance", {
+      .get("https://sgsapi.herokuapp.com/gri/grievance", {
         headers: {
           "admin-auth-token": admin.adminToken,
         },
       })
       .then((result) => {
-        // console.log(result);
         setGrievances(result.data);
       })
       .catch((err) => console.log(err));
@@ -45,7 +44,8 @@ const AdminPanel = () => {
         flag = 0;
       }
     };
-  }, []);
+    return () => {};
+  }, [admin.adminToken]);
 
   return (
     <>

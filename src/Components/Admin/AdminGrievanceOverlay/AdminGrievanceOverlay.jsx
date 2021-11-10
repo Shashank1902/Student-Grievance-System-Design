@@ -24,21 +24,33 @@ export default function AdminGrievanceOverlay({ grievance, user }) {
             <div className="grievance-overlay-name">
               <span>Name: {grievance.reported_by}</span>
             </div>
-            <div className="grievance-overlay-info-box">
-              <div className="grievance-overlay-info-left">
-                <span>Institute Id: {user.institution_id}</span>
-                <span>Contact No: {user.mob_no}</span>
+            {grievance.reported_by === "Anonymous" ? null : (
+              <div className="grievance-overlay-info-box">
+                <div className="grievance-overlay-info-left">
+                  <span>Institute Id: {user.institution_id}</span>
+                  <span>Contact No: {user.mob_no}</span>
+                </div>
+                <div className="grievance-overlay-info-right">
+                  <span>Email: {user.email}</span>
+                  <span>Branch: {user.branch}</span>
+                </div>
               </div>
-              <div className="grievance-overlay-info-right">
-                <span>Email: {user.email}</span>
-                <span>Branch: {user.branch}</span>
-              </div>
-            </div>
+            )}
             <div className="grievance-overlay-desc-box">
               <span className="grievance-overlay-desc-heading">
                 Grievance Reported:
               </span>
               <span>{grievance.gri_text}</span>
+            </div>
+            <div className="grievance-overlay-desc-box">
+              <span className="grievance-overlay-desc-heading">
+                Suggestions:
+              </span>
+              <span>
+                Go to office at the fees counter and request a copy of the
+                receipt from the on duty accountant, a copy of the receipt will
+                be provided on spot.
+              </span>
             </div>
           </div>
 
@@ -71,20 +83,23 @@ export default function AdminGrievanceOverlay({ grievance, user }) {
                     <span className="grievance-overlay-rply-box-heading">
                       Admin:
                     </span>
-                    <input
-                      placeholder="Reply"
-                      className="grievance-overlay-rply-box-input"
-                      type="text"
-                    />
+                    <div className="adminmessage-container"></div>
 
                     <span className="grievance-overlay-rply-box-heading">
                       Student Name:
                     </span>
-                    <input
-                      placeholder="Reply"
-                      className="grievance-overlay-rply-box-input"
-                      type="text"
-                    />
+
+                    <div className="admin-input-container">
+                      <input
+                        className="admin-message-input"
+                        type="text"
+                        placeholder="Type your message here"
+                      />
+
+                      <button className="admin-submit-button" type="submit">
+                        <i className="fas fa-angle-double-right"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

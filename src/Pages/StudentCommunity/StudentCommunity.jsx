@@ -21,13 +21,22 @@ const StudentCommunity = () => {
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("token"));
+    const source = axios.CancelToken.source();
     const loadPost = async () => {
-      const result = await (
-        await axios.get("https://sgsapi.herokuapp.com/post", {
-          headers: { "auth-token": token },
-        })
-      ).data;
-      setPosts(result);
+      try {
+        const result = await (
+          await axios.get("https://sgsapi.herokuapp.com/post", {
+            headers: { "auth-token": token },
+            cancelToken: source.token,
+          })
+        ).data;
+        setPosts(result);
+      } catch (error) {
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
+      }
     };
 
     loadPost();
@@ -43,6 +52,9 @@ const StudentCommunity = () => {
       overlay.current.classList.add("hidden");
       footbar.current.classList.remove("hidden");
     });
+    return () => {
+      source.cancel();
+    };
   }, []);
 
   return (

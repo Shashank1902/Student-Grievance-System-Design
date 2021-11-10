@@ -1,96 +1,122 @@
 .sidebar {
-    width: 280px;
-    height: auto;
-    font-family: "Poppins";
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
+  width: 280px;
+  height: auto;
+  font-family: "Poppins";
 }
 
 .sidebar-name-details {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .sidebar-profile-pic {
-    width: 60px;
+  width: 60px;
 }
 
 .sidebar-name {
-    font-size: 24px;
-    margin-left: 15px;
+  font-size: 24px;
+  margin-left: 15px;
 }
 .sidebar-desi {
-    color: #7D7878;
-    font-size: 14px;
-    margin-left: 15px;
+  color: #7d7878;
+  font-size: 14px;
+  margin-left: 15px;
 }
 
 .dashboard-txt {
-    font-size: 34px;
-    font-weight: 500;
-    margin-top: 20px;
+  font-size: 34px;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
 .dashboard-txt hr {
-    background-color: red;
-    border: solid 2px red;
-    border-radius: 2px;
-    margin-top: 0;
+  background-color: red;
+  border: solid 2px red;
+  border-radius: 2px;
+  margin-top: 0;
 }
 
 .sidebar-option {
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 5px 0;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 5px 0;
+  padding-top: 2px;
+  padding-bottom: 1px;
 }
 
-.sidebar-option-name{
-    font-size: 20px;
+.sidebar-option-name {
+  font-size: 20px;
+}
+
+.sidebar-option-name:hover {
+  cursor: pointer;
 }
 
 .sidebar-option-icon {
-    width: 20px;
-    height: 21px;
+  width: 20px;
+  height: 21px;
+}
+
+.sidebar-option-icon:hover {
+  cursor: pointer;
+}
+
+.addadmincrossbutton:hover {
+  cursor: pointer;
 }
 
 .sidebar-option-btn-cont {
-    width: 95%;
-    height: 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: linear-gradient(90deg, #D587FE 0%, #9C55FD 100%);
-    border-radius: 5px;
-    font-size: 20px;
-    color: white;
+  width: 95%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(90deg, #d587fe 0%, #9c55fd 100%);
+  border-radius: 9px;
+  font-size: 20px;
+  color: white;
 }
 
 .sidebar-option-btn-icon {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-.specific-categories-box{
-    justify-content: space-between;
-    padding-top: 18px;
-    padding-bottom: 18px;
+.specific-categories-box {
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 18px;
 }
 
-.specific-cat-cont{
-    font-family: "Poppins";
-    font-size: 16px;
-    margin-bottom: 5px;
-    width: 70%;
-    height: 25px;
-    border-radius: 7px;
-    padding-left: 5px;  
+.specific-cat-cont {
+  font-family: "Poppins";
+  font-size: 16px;
+  margin-bottom: 5px;
+  width: 70%;
+  height: 25px;
+  border-radius: 7px;
+  padding-left: 5px;
 }
 
-.specific-cat-cont:hover{
-    background: #D385FE;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    /* border: solid 2px red; */
+.specific-cat-cont:hover {
+  background: #d385fe;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.addadmincrossbutton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 100px;
+  right: 375px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.addadmin-option-icon {
+  color: #9a6ed2;
+  font-size: 19px;
 }

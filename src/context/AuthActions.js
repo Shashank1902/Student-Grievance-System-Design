@@ -35,7 +35,7 @@ export async function loginAdmin(dispatch, loginPayload) {
   try {
     dispatch({ type: "REQUEST_LOGIN" });
     const res = await axios.post(
-      "http://localhost:8000/adminLogin",
+      "https://sgsapi.herokuapp.com/adminLogin",
       loginPayload,
       { withCredentials: true }
     );
@@ -55,7 +55,7 @@ export async function loginAdmin(dispatch, loginPayload) {
 
 export async function logoutAdmin(dispatch) {
   dispatch({ type: "LOGOUT" });
-  axios.get("http://localhost:8000/adminLogout");
+  axios.get("https://sgsapi.herokuapp.com/adminLogout");
   localStorage.removeItem("currentAdmin");
   localStorage.removeItem("adminToken");
 }

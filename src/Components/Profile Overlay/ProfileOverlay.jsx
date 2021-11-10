@@ -1,8 +1,35 @@
 import "./profileoverlay.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useAuthState } from "../../context/ContextIndex";
 
-function ProfileOverlay() {
+function ProfileOverlay({ userId }) {
   const user = useAuthState();
+  const [users, setUsers] = useState("");
+
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+
+    axios
+      .get(`https://sgsapi.herokuapp.com/studentuser/${userId}`, {
+        headers: { "auth-token": user.token },
+        cancelToken: source.token,
+      })
+      .then((result) => {
+        setUsers(result.data);
+      })
+      .catch((error) => {
+        // console.log(err);
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
+      });
+
+    return () => {
+      source.cancel();
+    };
+  }, [user.token, userId]);
 
   return (
     <>
@@ -16,20 +43,20 @@ function ProfileOverlay() {
 
         <div className="overlay-text-container">
           <p className="overlay-title-text">
-            {user.userDetails ? user.userDetails.username : "Unknown"}
+            {users ? users.username : "Unknown"}
           </p>
 
           <div className="overlay-desc-textcontainer">
             <p className="overlay-desc-textcontainer-items">
-              {user.userDetails ? user.userDetails.institution_id : "Unknown"}
+              {users ? users.institution_id : "Unknown"}
             </p>
             <p className="overlay-desc-textcontainer-items">
-              {user.userDetails ? user.userDetails.email : "Unknown"}
+              {users ? users.email : "Unknown"}
             </p>
 
             <span className="overlay-desc-textcontainer-items">
-              {user.userDetails ? user.userDetails.branch : "Unknown"} &nbsp;
-              {user.userDetails ? user.userDetails.semester : "Unknown"}
+              {users ? users.branch : "Unknown"} &nbsp;
+              {users ? users.semester : "Unknown"}
             </span>
           </div>
         </div>
