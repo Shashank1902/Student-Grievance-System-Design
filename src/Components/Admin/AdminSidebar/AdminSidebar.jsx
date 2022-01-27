@@ -11,6 +11,9 @@ const AdminSidebar = () => {
   const addadmincrossbutton = useRef("null");
   const addadminbutton = useRef("null");
   const overlay = useRef("null");
+  const editadmincrossbutton = useRef("null");
+  const editadmin = useRef("null");
+  const editadminoverlay = useRef("null");
 
   useEffect(() => {
     addadminbutton.current.addEventListener("click", () => {
@@ -22,6 +25,16 @@ const AdminSidebar = () => {
       addadmincontainer.current.classList.add("hidden");
       addadmincrossbutton.current.classList.add("hidden");
       overlay.current.classList.add("hidden");
+    });
+    editadmin.current.addEventListener("click", () => {
+      editadminoverlay.current.classList.remove("editadmin-hidden");
+      editadmincrossbutton.current.classList.remove("editadmincrossbutton-hidden");
+      editadminoverlay.current.classList.remove("hidden");
+    });
+    editadmincrossbutton.current.addEventListener("click", () => {
+      editadminoverlay.current.classList.add("editadmin-hidden");
+      editadmincrossbutton.current.classList.add("editadmincrossbutton-hidden");
+      editadminoverlay.current.classList.add("hidden");
     });
   }, []);
 
@@ -60,8 +73,8 @@ const AdminSidebar = () => {
               />
             </div>
           </div>
-          <div className="sidebar-option" onClick={() => setUpdate(!update)}>
-            <div className="sidebar-option-name">Edit Profile</div>
+          <div className="sidebar-option">
+            <div className="sidebar-option-name" ref={editadmin}>Edit Profile</div>
             <div>
               <img
                 className="sidebar-option-icon"
@@ -70,7 +83,14 @@ const AdminSidebar = () => {
               />
             </div>
           </div>
-          <div className="edit-call">{update ? <EditAdmin /> : null}</div>
+          <div className="edit-call editadmin-hidden" ref={editadminoverlay}><EditAdmin /></div>
+
+          <img
+            ref={editadmincrossbutton}
+            className="editadmincrossbutton editadmincrossbutton-hidden"
+            src="/assets/admin-overlay-cross.png"
+            alt=""
+          />
 
           <div className="sidebar-option" ref={addadminbutton}>
             <div className="sidebar-option-name">Add Admin</div>

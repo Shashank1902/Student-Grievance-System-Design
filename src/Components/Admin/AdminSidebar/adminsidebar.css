@@ -120,3 +120,26 @@
   color: #9a6ed2;
   font-size: 19px;
 }
+
+.editadmincrossbutton {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 100px;
+    right: 375px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.editadmincrossbutton:hover {
+  cursor: pointer;
+}
+
+.editadmincrossbutton-hidden {
+  display: none;
+}
+
+.editadmin-hidden {
+  display: none;
+}
