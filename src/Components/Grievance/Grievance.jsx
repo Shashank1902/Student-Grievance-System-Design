@@ -6,26 +6,35 @@ import "./grievance.css";
 
 function Grievance({ grievance }) {
   const stdOverlayConatiner = useRef("null");
-  const stdGrievanceOverlayCloseBtn = useRef("null");
+  const stdGrievanceOverlayClose = useRef("null");
   const stdGrievanceOverlayHandler = useRef("null");
   const overlay = useRef("null");
 
   useEffect(() => {
     stdGrievanceOverlayHandler.current.addEventListener("click", (event) => {
       stdOverlayConatiner.current.classList.remove("hidden");
-      stdGrievanceOverlayCloseBtn.current.classList.remove("hidden");
+      stdGrievanceOverlayClose.current.classList.remove("hidden");
       overlay.current.classList.remove("hidden");
     });
-    stdGrievanceOverlayCloseBtn.current.addEventListener("click", (event) => {
-      console.log("jkj");
+    stdGrievanceOverlayClose.current.addEventListener("click", (event) => {
+      
       stdOverlayConatiner.current.classList.add("hidden");
-      stdGrievanceOverlayCloseBtn.current.classList.add("hidden");
+      stdGrievanceOverlayClose.current.classList.add("hidden");
+      
+      overlay.current.classList.add("hidden");
     });
+    
   }, []);
 
   return (
     <>
       <div className="overlay hidden" ref={overlay}></div>
+      <img
+            ref={stdGrievanceOverlayClose}
+            className="stdGrievanceOverlayCrossBtn hidden"
+            src="assets/admin-overlay-cross.png"
+            alt=""
+          />
       <div className="grievance-box" ref={stdGrievanceOverlayHandler}>
         <div className="grievance_overlay_container">
           <div className="stdOverlayConatiner">
@@ -33,12 +42,7 @@ function Grievance({ grievance }) {
               <StudentGrevanceOverlay grievance={grievance} />
             </div>
           </div>
-          <img
-            ref={stdGrievanceOverlayCloseBtn}
-            className="stdGrievanceOverlayCrossBtn hidden"
-            src="assets/admin-overlay-cross.png"
-            alt=""
-          />
+          
         </div>
         <div className="content">
           <div className="grievance-top-cont">
